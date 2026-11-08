@@ -1,0 +1,314 @@
+<!DOCTYPE html><html class="light" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface-variant": "#424656", "on-tertiary": "#ffffff", "secondary": "#7d2dce", "background": "#faf8ff", "tertiary-fixed": "#ffd9e1", "outline": "#727687", "surface-variant": "#dde2f7", "inverse-primary": "#b3c5ff", "primary": "#0050cb", "on-secondary-fixed-variant": "#6600b7", "on-error": "#ffffff", "outline-variant": "#c2c6d8", "surface-bright": "#faf8ff", "surface": "#faf8ff", "on-tertiary-container": "#fff6f6", "surface-container-high": "#e2e7fd", "on-secondary-container": "#fffbff", "on-primary": "#ffffff", "on-tertiary-fixed-variant": "#8f0045", "surface-tint": "#0054d6", "primary-container": "#0066ff", "surface-dim": "#d4d9ef", "on-secondary": "#ffffff", "surface-container-highest": "#dde2f7", "primary-fixed": "#dae1ff", "on-tertiary-fixed": "#3f001b", "surface-container": "#eaedff", "primary-fixed-dim": "#b3c5ff", "secondary-fixed": "#efdbff", "error-container": "#ffdad6", "on-background": "#151b2b", "on-secondary-fixed": "#2b0052", "surface-container-low": "#f2f3ff", "inverse-on-surface": "#eef0ff", "tertiary-container": "#de006f", "tertiary-fixed-dim": "#ffb1c5", "on-primary-container": "#f8f7ff", "tertiary": "#b10057", "surface-container-lowest": "#ffffff", "on-error-container": "#93000a", "error": "#ba1a1a", "inverse-surface": "#2a3040", "on-surface": "#151b2b", "on-primary-fixed-variant": "#003fa4", "secondary-fixed-dim": "#dbb8ff", "on-primary-fixed": "#001849", "secondary-container": "#974ce9" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-tablet": "1.5rem", "margin-tablet": "1.5rem", "margin": "1rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "space-xl": "2rem", "space-md": "1rem", "gutter": "1rem", "space-lg": "1.5rem", "margin-desktop": "2rem" }, "fontFamily": { "headline-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "telemetry-num": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "title-sm": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"] }, "fontSize": { "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }], "display-lg-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "800" }], "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.005em", "fontWeight": "400" }], "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "telemetry-num": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "700" }], "title-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#faf8ff;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface antialiased flex flex-col min-h-screen selection:bg-primary-fixed"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex justify-between items-center px-4 h-6 text-on-surface select-none"><span class="font-telemetry-num text-telemetry-num font-semibold text-on-surface">9:41</span><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[15px] leading-none text-on-surface">network_cell</span><span class="font-label-sm text-label-sm font-bold uppercase text-on-surface tracking-wider">5G</span><div class="flex items-center gap-0.5 ml-1"><span class="font-telemetry-num text-telemetry-num font-semibold text-on-surface">98%</span><span class="material-symbols-outlined text-[16px] leading-none text-on-surface">battery_full</span></div></div></div><div class="h-16 px-4 flex items-center justify-between"><div class="flex items-center gap-2.5"><img alt="SONIQ Brand Logo" class="h-8 w-auto object-contain rounded-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgSAf9oXWA0HENnTDgPP0BTpzZnJLsJ-O6spIv0JP9IuejOgBF1PSVftLpf2fgfff1Osec5a7q5MiNuWaYTzSmShGNMdRhP4Zzc02WDV1bYVNu75sqI4kVm-doQ-AuZdZXxhbqbrZ8DOBMG2EBa6R-Yq90HQbMU6q8zMiDl_n4z9aZcJDm5iYhQwv3nqyj__EPo91cjAVQR2yd7XqjtfBYA7fHRFLMuhWmIgtK-vB0w_WxLGmBx_pFvw"><div class="flex flex-col"><div class="flex items-center gap-1.5"><span class="font-headline-sm text-headline-sm font-extrabold tracking-tight bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">SONIQ</span><span class="px-1.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm uppercase font-bold tracking-widest">PRO</span></div><span class="font-label-sm text-label-sm text-on-surface-variant line-clamp-1">Home</span></div></div><div class="flex items-center gap-1"><button aria-label="Search" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-variant/40 transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">search</span></button><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-variant/40 transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-tertiary-container ring-2 ring-surface"></span></button><div class="pl-1"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxknjZCiGSKzd6Ne8HdUjFiUtEGuY4asH497vntiwPVrnvK80Oxr6-FNWxIBp3_eyJUwXt7XoYzdBScXkwgV0FxOtWZ1_P9zir3968HUMLtPeMqVYn8YMii5QqxzGFEgJEuPlcFtP1eytXMUkVjIeBUPn-4s9bfstMgZbdrPGRwIK-R6zI6iohxqoAoOHIeNdUSTNO6SUBYE2gievtu-mVSgU_hkjbHDF6DLadAouY"></div></div></div></header><main class="flex-1 w-full bg-surface pt-22 pb-44 px-margin flex flex-col"><div class="flex flex-col w-full gap-5">
+<!-- Greeting & Audio Engine Status Badge -->
+<section class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Good evening, Alex</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Ready for high-fidelity sound?</p>
+</div>
+<button aria-label="Audio DSP Engine" class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary active:scale-95 transition-transform shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+<!-- Active Hardware Dac/Codec Stream Indicator -->
+<div class="inline-flex items-center self-start gap-2 px-3 py-1.5 rounded-full bg-surface-container-low shadow-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">LDAC 990kbps • 96kHz / 24bit</span>
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase ml-0.5">DIRECT DAC</span>
+</div>
+</section>
+<!-- Gamification / Listening XP & Daily Streak Card -->
+<section class="relative overflow-hidden rounded-2xl bg-surface-container-lowest p-4 shadow-sm">
+<div class="absolute -right-12 -top-12 w-32 h-32 rounded-full bg-gradient-to-br from-secondary-fixed to-primary-fixed opacity-60 blur-xl pointer-events-none"></div>
+<div class="flex items-start justify-between relative z-10">
+<div class="flex items-center gap-3">
+<!-- Circular XP Visualizer / Level Badge -->
+<div class="relative w-12 h-12 flex items-center justify-center shrink-0">
+<svg class="w-12 h-12 -rotate-90" viewBox="0 0 48 48">
+<circle class="text-surface-container-high" cx="24" cy="24" fill="transparent" r="20" stroke="currentColor" stroke-width="3.5"></circle>
+<circle class="text-primary" cx="24" cy="24" fill="transparent" r="20" stroke="currentColor" stroke-dasharray="125.6" stroke-dashoffset="23.2" stroke-linecap="round" stroke-width="3.5"></circle>
+</svg>
+<span class="absolute font-headline-sm text-headline-sm font-bold text-primary">14</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-title-sm text-title-sm text-on-surface">Sound Architect</span>
+<span class="px-1.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">TIER IV</span>
+</div>
+<p class="font-telemetry-num text-telemetry-num text-on-surface-variant font-semibold">2,450 / 3,000 XP</p>
+</div>
+</div>
+<!-- Streak Pill -->
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">local_fire_department</span>
+<span class="font-label-md text-label-md font-bold">18 Days</span>
+</div>
+</div>
+<!-- Daily Mission Progress Box -->
+<div class="mt-3.5 pt-3 flex items-center justify-between rounded-xl bg-surface-container-low px-3 py-2">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant">Daily Audio Ritual</span>
+<span class="font-body-sm text-body-sm text-on-surface truncate">Listen to 3 Hi-Res tracks</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 shrink-0 ml-2">
+<div class="w-16 h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-primary rounded-full w-2/3"></div>
+</div>
+<span class="font-telemetry-num text-telemetry-num text-primary font-bold">2/3</span>
+</div>
+</div>
+</section>
+<!-- Hero Jump Back In Card -->
+<section class="relative overflow-hidden rounded-2xl bg-surface-container-lowest shadow-md p-4">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">history</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Jump Back In</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-bold uppercase tracking-widest">DSD 256</span>
+</div>
+<div class="flex items-center gap-3.5">
+<!-- Vinyl / Album Visual -->
+<div class="relative w-20 h-20 rounded-xl overflow-hidden shadow-sm shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Futuristic neon album art for Nebula Drift Solar Echoes featuring deep indigo cosmic nebula, magenta laser rays, pristine ambient reflections, and glowing geometric orbs in high fidelity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaonyEWLXz_tOHY_ASbtYd-pmMXoAg_-pjDkZUKPId2QPfxMLKd6_R5fz6WS50EXyJxWwWF_quJpOoKD8nEqzzh0BBiILyCKcas0ztFREAQyLUR38AuaRqapUWL-avSUp12P0WYoriEYEyyhg4R-BCJswpf8f2t_OhpoXbFEs36QD4lUUmgHfbP9PfruFUhVa-nLefpQ1D01nWc8JlumASfuqrTSqE51oW8b2UlDto">
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/40 to-transparent"></div>
+<div class="absolute bottom-1 right-1">
+<span class="material-symbols-outlined text-surface text-[14px]">graphic_eq</span>
+</div>
+</div>
+<!-- Track Details -->
+<div class="flex flex-col min-w-0 flex-1">
+<h3 class="font-title-md text-title-md text-on-surface truncate">Solar Echoes</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Nebula Drift • Master Tape V</p>
+<!-- Interactive Waveform Scrub Snippet -->
+<div class="mt-2 flex flex-col gap-1">
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden relative">
+<div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full w-1/2"></div>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-telemetry-num text-telemetry-num">
+<span class="">2:34</span>
+<span class="">5:12</span>
+</div>
+</div>
+</div>
+<!-- Neon Gradient Play Resume Trigger -->
+<button aria-label="Resume Solar Echoes" class="w-12 h-12 rounded-full bg-gradient-to-r from-primary-container to-secondary text-on-primary flex items-center justify-center shadow-[0_6px_20px_-2px_rgba(0,102,255,0.4)] active:scale-95 transition-transform shrink-0" type="button">
+<span class="material-symbols-outlined text-[24px]">play_arrow</span>
+</button>
+</div>
+</section>
+<!-- Daily Listening Statistics Preview Metric Bar -->
+<section class="grid grid-cols-3 gap-2.5">
+<div class="flex flex-col p-3 rounded-2xl bg-surface-container-low shadow-sm">
+<span class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant truncate">Today's Pulse</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold mt-0.5">2h 45m</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold mt-1 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">trending_up</span> +32m vs avg
+      </span>
+</div>
+<div class="flex flex-col p-3 rounded-2xl bg-surface-container-low shadow-sm">
+<span class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant truncate">Top Resonance</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold mt-0.5 truncate">Ambient</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold mt-1 truncate">Synth • 64%</span>
+</div>
+<div class="flex flex-col p-3 rounded-2xl bg-surface-container-low shadow-sm">
+<span class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant truncate">Acoustic Score</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-sm text-headline-sm text-primary font-extrabold">98</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">/100</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold mt-1">Pure Audiophile</span>
+</div>
+</section>
+<!-- Recently Played Horizontal Carousel -->
+<section class="flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface">Recently Played</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold">12</span>
+</div>
+<button class="font-label-lg text-label-lg text-primary font-semibold hover:underline" type="button">View All</button>
+</div>
+<!-- Scrollable Strip -->
+<div class="flex gap-3 overflow-x-auto pb-1 -mx-margin px-margin no-scrollbar">
+<!-- Item 1 -->
+<div class="flex flex-col w-36 shrink-0 group active:scale-98 transition-transform">
+<div class="relative w-36 h-36 rounded-2xl overflow-hidden bg-surface-container shadow-sm mb-2">
+<img class="w-full h-full object-cover" data-alt="Chroma Dream dynamic album art vibrant fluorescent fluid gradients of ultramarine blue and electric violet mixing on pure white studio canvas, audiophile aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3mQghrO0PQVt3eG0iyLMG_ZHXo_RB7IwBRwwlQ17UOdN01EOjL5zCgm_NaLkKj8Brr29DmGY3xv3wCO4CI-Sk6CaJbmyrc8tHvKXDzhxB2KM-EVAhdDk__YXXiMHj7o404ghvv4Vw0CGuvFN5Rl_G-Jc-JDp5aQukRfcGTQdu-sBxOgSXhguFTOpfTQLdI30JwEu9hm2-zRLwDSkIFhcgWI2eZWWU5P-q9XRHFOjh">
+<span class="absolute top-2 right-2 px-1.5 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm font-bold uppercase shadow-sm">FLAC</span>
+</div>
+<h4 class="font-title-sm text-title-sm text-on-surface truncate">Chroma Dream</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Sora Takahashi</p>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col w-36 shrink-0 group active:scale-98 transition-transform">
+<div class="relative w-36 h-36 rounded-2xl overflow-hidden bg-surface-container shadow-sm mb-2">
+<img class="w-full h-full object-cover" data-alt="Tokyo Midnight Drive atmospheric album art featuring rain soaked neon reflected asphalt in Shinjuku at midnight, cinematic magenta and cyan headlights, high key purity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4vzOCXWAnVKspikej1zg9PU6CpnhXNALmjx7m6mjsFM-dMKI_HKspzKAAqCCid2rNPZttmJGZcAtwsHZfhb2RyMokei9yMJU2N-PXhMEvMhRMSHzVHCCMlLocY_MU6Wd3tpgYYyBW0cZ0UlHJv5VbbOk7O0UNhrnAnXkhGDIoHx1-437zy4Hkh8xA1RC8Lkb7aB-A_5TAO1Yt-blHEhyDuhTC6_CtlqgRU17zFLH_">
+<span class="absolute top-2 right-2 px-1.5 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-secondary font-label-sm text-label-sm font-bold uppercase shadow-sm">MQA</span>
+</div>
+<h4 class="font-title-sm text-title-sm text-on-surface truncate">Tokyo Midnight</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Kenji &amp; The Echo</p>
+</div>
+<!-- Item 3 -->
+<div class="flex flex-col w-36 shrink-0 group active:scale-98 transition-transform">
+<div class="relative w-36 h-36 rounded-2xl overflow-hidden bg-surface-container shadow-sm mb-2">
+<img class="w-full h-full object-cover" data-alt="Acoustic Horizon minimal album art with warm cedar acoustic guitar soundboard, crisp sunlight spilling over wooden grain, pristine and luminous aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6VU0rdDPddzVt-keo028Uaw2TU0tAZveWLd405dkAa8P6cBxi5s34Brcqtl9KWlzhmMQjQNJaTfAJ1OsgYbYqvsHxthSUo5h2Y1CASLoI-ooWcw7u6mt3w25yc98G64VjXh7EPY2gQj5rv_L_ZZzoSvjY3k2YmN15AI1YDLRGR7-F47ivRcWfYcjEl8uJGqeKSI1yabqpqr_32Ld2o5HUmKrB7PB079ygowG7WB5i">
+<span class="absolute top-2 right-2 px-1.5 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm font-bold uppercase shadow-sm">FLAC 192</span>
+</div>
+<h4 class="font-title-sm text-title-sm text-on-surface truncate">Acoustic Horizon</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Elena Rostov</p>
+</div>
+<!-- Item 4 -->
+<div class="flex flex-col w-36 shrink-0 group active:scale-98 transition-transform">
+<div class="relative w-36 h-36 rounded-2xl overflow-hidden bg-surface-container shadow-sm mb-2">
+<img class="w-full h-full object-cover" data-alt="Velvet Subharmonic electronic album cover with geometric minimalist sound sculpture floating in a luminous bright white modern architecture gallery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEDjcC9sXi4hVUp1R0ZFGr70oU7fppwUGRb1CmadvdpVwBWTdAD0q-KoGniqWaK-lwfox39Jor6UbWyeNeITcrj7OsOb6sjJAO87ejJRvsYj7HZGg6jBkcPi8J9acuR6g7BGAZMVtPPO0dTTtL1n-pwsX-Dkjy5MW2ZL9x8bZ0mk3155xhEbaeh5Ocf4UqDtzZRsX9rdBewbQ8B6AB-L3g_sE7v76CqphX1cJcD-Nh">
+<span class="absolute top-2 right-2 px-1.5 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-secondary font-label-sm text-label-sm font-bold uppercase shadow-sm">DSD</span>
+</div>
+<h4 class="font-title-sm text-title-sm text-on-surface truncate">Velvet Subharmonic</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Oscillator Unit</p>
+</div>
+</div>
+</section>
+<!-- Popular Artists with Live / Active Indicators -->
+<section class="flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">Featured Artists</span>
+<button class="font-label-lg text-label-lg text-primary font-semibold hover:underline" type="button">Explore</button>
+</div>
+<div class="flex gap-4 overflow-x-auto pb-1 -mx-margin px-margin no-scrollbar">
+<!-- Artist 1 -->
+<div class="flex flex-col items-center shrink-0 w-20 group">
+<div class="relative w-18 h-18 mb-1.5">
+<div class="w-16 h-16 rounded-full overflow-hidden shadow-sm bg-surface-container mx-auto">
+<img class="w-full h-full object-cover" data-alt="Portrait of electronic music producer Kaelen in crisp modern studio wearing audiophile studio monitor headphones with soft violet background light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqfbT8F6gEaAus1nluZp7uFcfj-BHSXSWRwrkSM1HmSzDk9JWBenON_IZDVl2k_oG1-p2lpjQdK-TSNT59ldKobPpDMFI1fl5rpck2Y0AkrBCt3YNettRvAcCHOhn95PZvc2EphfsRnbB1Z24OcgvDX7LEdHPhpo8QxoCluYwtqwee8qkyQzsNyxw3kkhTV7A9dj-W97kEXhZRT4bDCVGam0whQx0-0q5rokTOAum0">
+</div>
+<span class="absolute bottom-1 right-2 w-3.5 h-3.5 rounded-full bg-primary ring-2 ring-surface flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-surface"></span>
+</span>
+</div>
+<span class="font-title-sm text-title-sm text-on-surface text-center truncate w-full">Kaelen</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">On Tour</span>
+</div>
+<!-- Artist 2 -->
+<div class="flex flex-col items-center shrink-0 w-20 group">
+<div class="relative w-18 h-18 mb-1.5">
+<div class="w-16 h-16 rounded-full overflow-hidden shadow-sm bg-surface-container mx-auto">
+<img class="w-full h-full object-cover" data-alt="Portrait of female synthwave artist Arca Luna with sleek metallic aesthetic against minimalist white laboratory lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhK7dUjgjjN5_i2ZGvcjt2FrGtCSkFnCxp4wssiLiv7-Mc93SQ5nCIh5wCH-XGVuhTs0BzyZ_UgY4kSo4qd8IlxlZ9AzazNXHg9l-Q2Mu03xtwpFKrXAwUvmEm1ak_tuOEfyq1cTX73AjfjCKPuglWN1QXm9KdV8GDU9DZnpja2rIImDUpXBZjBqrFdcUDtNFLzxpVyF5BMAU7p_4MMVS6yu9uuzr4ld-_X_H3WUCJ">
+</div>
+<span class="absolute bottom-1 right-2 w-3.5 h-3.5 rounded-full bg-secondary ring-2 ring-surface flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-surface"></span>
+</span>
+</div>
+<span class="font-title-sm text-title-sm text-on-surface text-center truncate w-full">Arca Luna</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">New Master</span>
+</div>
+<!-- Artist 3 -->
+<div class="flex flex-col items-center shrink-0 w-20 group">
+<div class="relative w-18 h-18 mb-1.5">
+<div class="w-16 h-16 rounded-full overflow-hidden shadow-sm bg-surface-container mx-auto">
+<img class="w-full h-full object-cover" data-alt="Stylized portrait of duo musical artists The Midnight sitting near analog modular synthesizers under soft diffuse dawn daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqyuH5rvBcLRR2PDUOGwQv5VmuzKGGMf47j_wuUwsNx8xvpR90adVgrKymfTr1qxjVgF6JNWMJ364LJ_NuiTaiKn9aMVPnPsWy1XpD3_AqRoSSbAEe6juXV3h7nXiVEdZUtrjZP631ZMpl4u4xes3B6eX01TrUwPfUIaE6WOSCSgGI_FfRi-vjjv7ulnqbjTZlVJoLjr77vvMLKOC1UXZGIlzUuDtvgHu4RFN-v-Qi">
+</div>
+<span class="absolute bottom-1 right-2 w-3.5 h-3.5 rounded-full bg-tertiary ring-2 ring-surface flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-surface"></span>
+</span>
+</div>
+<span class="font-title-sm text-title-sm text-on-surface text-center truncate w-full">The Midnight</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Live Session</span>
+</div>
+<!-- Artist 4 -->
+<div class="flex flex-col items-center shrink-0 w-20 group">
+<div class="relative w-18 h-18 mb-1.5">
+<div class="w-16 h-16 rounded-full overflow-hidden shadow-sm bg-surface-container mx-auto">
+<img class="w-full h-full object-cover" data-alt="Portrait of acoustic cellist Marcus Vance with warm wooden instrument in modern bright architectural auditorium" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEwvBEgRGBwuv30yxDdnp9iImysIGXmv9MVeO6XzcQ1Rs7iaCjFdM-ckAnQfIiH03vlK4vwAvwgvRudNVteHgG_DSit4fbG3OsW25r2Hk57FlB-CbssZR-VGfcKYPAsO-FjtJNr6FY4PQgqhjTWEtHOSlp6rVUxXOuRoNCmHwBX-Ys0h3fpV7x2eLruRTdPIP_3OZc_GQArCePVcHH0RPRjdopMsvTBVi7B7fs6pb8">
+</div>
+</div>
+<span class="font-title-sm text-title-sm text-on-surface text-center truncate w-full">M. Vance</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Spatial Audio</span>
+</div>
+</div>
+</section>
+<!-- Curated Algorithmic Mixes (Recommended for You) -->
+<section class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">auto_awesome</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Curated by SONIQ AI</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant">Daily Update</span>
+</div>
+<!-- Vertical List of Algorithmic Cards -->
+<div class="flex flex-col gap-2.5">
+<!-- Mix Card 1 -->
+<div class="flex items-center p-3 rounded-2xl bg-surface-container-lowest shadow-sm active:scale-99 transition-transform">
+<div class="relative w-16 h-16 rounded-xl overflow-hidden bg-surface-container shrink-0 mr-3">
+<img class="w-full h-full object-cover" data-alt="Abstract artwork representing Hi-Res Discover Weekly with crystalline sonic prisms breaking white light into neon cobalt and magenta rays" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNVhPs_VYyttDGW2JP7krCoG4oVIR1h3-jtI891WyTfVQVqlUIejUWNY2pgBedMALhBDNLKUL2Xf54kmN3hYJXqmJIFQOx9ZS_TlJNonvmIVyi9C57qbKKmpwmNiCLl5a-emGMomKiTaOwBx8Sc4e8qkUAWT32lpAEeQ-mq8q6_lU0wI27zG76fiJ5XZf3CIe5b26q6sURegSFJSDZzxlg6PUFDAGPhia0xD3zn7zd">
+<div class="absolute inset-0 bg-primary/10"></div>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-1.5">
+<h4 class="font-title-md text-title-md text-on-surface truncate">Hi-Res Discover Weekly</h4>
+<span class="material-symbols-outlined text-[16px] text-primary">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Mastered strictly in 24-bit 192kHz • 30 Tracks</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">Studio Master</span>
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant">2h 18m</span>
+</div>
+</div>
+<button aria-label="Play Discover Weekly" class="w-10 h-10 rounded-full bg-surface-container-high text-primary flex items-center justify-center shrink-0 ml-2 active:bg-primary active:text-on-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">play_arrow</span>
+</button>
+</div>
+<!-- Mix Card 2 -->
+<div class="flex items-center p-3 rounded-2xl bg-surface-container-lowest shadow-sm active:scale-99 transition-transform">
+<div class="relative w-16 h-16 rounded-xl overflow-hidden bg-surface-container shrink-0 mr-3">
+<img class="w-full h-full object-cover" data-alt="Cover art for Acoustic Unplugged mix with organic strings and warm light shining through spruce guitar soundboard in high clarity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKVKON6lDkRpwpGAJ0OsXrx_7Tn836hUGRxdc1WOnk2SDJYyCLZBPqnT05U1AbTRZVCJdMkAOAIm3dTxYjpWvHJ2RdGT4tl07SmwI6iiGxjnTRfXEi4tu5XpwxQXXOSluIIDDTQI6sdxHxmVX7TotSgqmjnk3zCR6KB2XruVVdIALYMeMAzGzIMe8ieUAKk21HH5g_2DDslGBA3wt7NkYa3TLO6lfbYMCYVS2DWRsn">
+<div class="absolute inset-0 bg-secondary/10"></div>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<h4 class="font-title-md text-title-md text-on-surface truncate">Acoustic Unplugged</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Pure binaural microphone captures • 24 Tracks</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">Binaural 3D</span>
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant">1h 45m</span>
+</div>
+</div>
+<button aria-label="Play Acoustic Unplugged" class="w-10 h-10 rounded-full bg-surface-container-high text-primary flex items-center justify-center shrink-0 ml-2 active:bg-primary active:text-on-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">play_arrow</span>
+</button>
+</div>
+<!-- Mix Card 3 -->
+<div class="flex items-center p-3 rounded-2xl bg-surface-container-lowest shadow-sm active:scale-99 transition-transform">
+<div class="relative w-16 h-16 rounded-xl overflow-hidden bg-surface-container shrink-0 mr-3">
+<img class="w-full h-full object-cover" data-alt="Cover art for Cyberpunk Focus Beats featuring futuristic clean neon synth synthesizer pads with laser blue gradients on pure white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqqHPGjsKFd-yjcDKm0I26JUHHE4rkBUKXSb1dqAYbNKtgfHPOhA7G5tTIpZ-kC9_J_sFP9tMiOjQcIue_XKHHFcmOusLS3dpMweASoN1bNSZRXzbho1VVgl0XAcLK3MVf63c0mfCx4IHEVKZb7PykOlN2g3ibM411O0elVourXdl8Rdna4wFUunpHDO1PBUfwKzw6NJmhN_MSH3Vbf5-OJbxYcXJdhJmkwub20x7P">
+<div class="absolute inset-0 bg-primary/10"></div>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<h4 class="font-title-md text-title-md text-on-surface truncate">Cyberpunk Focus Beats</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Sub-bass spatial dynamics for flow state • 40 Tracks</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-bold">Dolby Atmos</span>
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant">2h 55m</span>
+</div>
+</div>
+<button aria-label="Play Cyberpunk Focus" class="w-10 h-10 rounded-full bg-surface-container-high text-primary flex items-center justify-center shrink-0 ml-2 active:bg-primary active:text-on-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">play_arrow</span>
+</button>
+</div>
+</div>
+</section>
+</div></main><aside aria-label="Now Playing Mini Player" class="fixed bottom-20 inset-x-margin z-40 h-[68px] rounded-[24px] bg-surface-container-lowest/90 backdrop-blur-2xl shadow-[0_12px_32px_-4px_rgba(13,19,34,0.08),0_4px_12px_-2px_rgba(13,19,34,0.03)] border-t border-surface-container-lowest flex flex-col justify-between overflow-hidden"><div class="flex items-center justify-between h-full px-3 py-2 gap-3"><div class="flex items-center gap-3 min-w-0 flex-1"><div class="relative w-12 h-12 rounded-lg bg-surface-container-highest overflow-hidden flex-shrink-0 shadow-sm flex items-center justify-center"><span class="material-symbols-outlined text-primary text-2xl">album</span><div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent pointer-events-none"></div></div><div class="flex flex-col min-w-0 flex-1"><div class="flex items-center gap-1.5"><h4 class="font-title-sm text-title-sm text-on-surface truncate">Resonance Waves</h4><span class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm tracking-wide uppercase font-bold shrink-0">FLAC</span></div><p class="font-body-sm text-body-sm text-on-surface-variant truncate">Kaelen Brooks • 96kHz / 24bit</p></div></div><div class="flex items-center gap-1 shrink-0"><button aria-label="Play Pause" class="w-11 h-11 rounded-full bg-gradient-to-r from-primary to-secondary text-on-primary flex items-center justify-center shadow-[0_8px_20px_-2px_rgba(0,102,255,0.35)] active:scale-95 transition-transform" type="button"><span class="material-symbols-outlined text-[24px]">pause</span></button><button aria-label="Next Track" class="w-11 h-11 rounded-full text-on-surface-variant hover:text-on-surface flex items-center justify-center active:scale-95 transition-transform" type="button"><span class="material-symbols-outlined text-[24px]">skip_next</span></button></div></div><div class="w-full h-[2px] bg-surface-container-high relative"><div class="h-full bg-gradient-to-r from-primary to-secondary w-3/5 rounded-full"></div></div></aside><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-1px_12px_rgba(0,0,0,0.03)]" data-active-classes="text-primary font-bold"><div class="flex items-center justify-around h-16 px-2"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-12 transition-colors text-primary font-bold" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">home</span><span class="font-label-md text-label-md mt-0.5">Home</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant transition-colors" data-path="music" href="#"><span class="material-symbols-outlined text-[22px]">graphic_eq</span><span class="font-label-md text-label-md mt-0.5">Music</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant transition-colors" data-path="videos" href="#"><span class="material-symbols-outlined text-[22px]">smart_display</span><span class="font-label-md text-label-md mt-0.5">Videos</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant transition-colors" data-path="search" href="#"><span class="material-symbols-outlined text-[22px]">explore</span><span class="font-label-md text-label-md mt-0.5">Search</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant transition-colors" data-path="library" href="#"><span class="material-symbols-outlined text-[22px]">library_music</span><span class="font-label-md text-label-md mt-0.5">Library</span></a></div></nav>
+
+</body></html>

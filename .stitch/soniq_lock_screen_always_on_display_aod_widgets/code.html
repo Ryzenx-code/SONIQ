@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#faf8ff;}body{overscroll-behavior-y:none;font-family:'Plus Jakarta Sans',sans-serif;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface": "#faf8ff", "on-primary": "#ffffff", "on-secondary": "#ffffff", "surface-container-lowest": "#ffffff", "tertiary-fixed-dim": "#ffb1c5", "on-primary-container": "#f8f7ff", "on-tertiary": "#ffffff", "error": "#ba1a1a", "outline": "#727687", "surface-dim": "#d4d9ef", "on-primary-fixed": "#001849", "tertiary-container": "#de006f", "inverse-on-surface": "#eef0ff", "tertiary": "#b10057", "tertiary-fixed": "#ffd9e1", "on-tertiary-fixed-variant": "#8f0045", "background": "#faf8ff", "on-secondary-container": "#fffbff", "surface-bright": "#faf8ff", "primary-fixed-dim": "#b3c5ff", "on-tertiary-container": "#fff6f6", "primary-container": "#0066ff", "secondary": "#7d2dce", "secondary-fixed-dim": "#dbb8ff", "on-error": "#ffffff", "on-tertiary-fixed": "#3f001b", "surface-tint": "#0054d6", "on-surface-variant": "#424656", "primary": "#0050cb", "on-secondary-fixed-variant": "#6600b7", "inverse-surface": "#2a3040", "surface-container-low": "#f2f3ff", "error-container": "#ffdad6", "outline-variant": "#c2c6d8", "surface-container": "#eaedff", "on-secondary-fixed": "#2b0052", "surface-variant": "#dde2f7", "on-primary-fixed-variant": "#003fa4", "surface-container-highest": "#dde2f7", "surface-container-high": "#e2e7fd", "secondary-container": "#974ce9", "on-background": "#151b2b", "on-surface": "#151b2b", "inverse-primary": "#b3c5ff", "primary-fixed": "#dae1ff", "on-error-container": "#93000a", "secondary-fixed": "#efdbff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-sm": "0.5rem", "space-xs": "0.25rem", "margin": "1rem", "space-lg": "1.5rem", "margin-desktop": "2rem", "gutter-tablet": "1.5rem", "gutter": "1rem", "margin-tablet": "1.5rem", "space-md": "1rem", "space-xl": "2rem" }, fontFamily: { "body-sm": ["Plus Jakarta Sans"], "telemetry-num": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "title-sm": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"] }, fontSize: { "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }], "telemetry-num": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.005em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "700" }], "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }], "title-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" }], "display-lg-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "800" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "700" }] } } } };</script><style>body { min-height: max(884px, 100dvh); }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs"><button aria-label="Go back" class="w-11 h-11 -ml-space-xs flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container active:scale-95 transition-all" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="SONIQ Neon Media Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UuPyYaYvTwOhtga7spFwe35_70_ECQU1K8iV5Q5IqIU2eMILXF9bP6CGIOa4NxxmyIJ0RAIqhamqejwhHqNFE-R-SGojiXxRP4TYkpBcfb3agAAJajGINm7dentWW3lx2EvjCCvNvWCpsTHwd-_h0HMs_r6uK40bH_xMixwa7UFq6lUkvI9qqSB20pPZqhq1iMit5iIVmJMnAuG2nKnUBtTHaV92GswR5-_NwRfStS-SMLzqBFqZeotrM"/><div class="flex flex-col ml-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold leading-none">AOD &amp; Lock Screen Glance System</span><h1 class="font-title-md text-title-md font-semibold text-on-surface tracking-tight leading-tight truncate max-w-[210px]">Soniq Lock Screen &amp; Always On Display (Aod) Widgets</h1></div></div><div class="flex items-center gap-space-xs"><button class="h-11 px-space-sm flex items-center gap-1 rounded-full text-primary hover:bg-primary/10 active:scale-95 transition-all" title="Reset to defaults" type="button"><span class="material-symbols-outlined text-[20px]">restart_alt</span><span class="font-label-lg text-label-lg">Reset</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_2px_8px_rgba(0,80,203,0.25)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full">
+<!-- Top Technical Status & Concept Hero -->
+<section class="px-margin pt-space-md pb-space-lg">
+<div class="flex flex-col gap-space-xs mb-space-md">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+          Glance Engine v4.2
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-low text-secondary font-label-sm text-label-sm">
+          Android 14/15 RemoteViews
+        </span>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">
+        AOD &amp; Lock Screen Glance Architecture
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        Ultra-low-power glanceable media controls, sub-pixel ambient typography, and lock screen media surface extensions engineered for LTPO 1Hz OLED panels.
+      </p>
+</div>
+<!-- Telemetry Pill Badges Bar -->
+<div class="grid grid-cols-2 gap-space-xs sm:grid-cols-4">
+<div class="flex flex-col p-space-sm rounded-xl bg-surface-container-low">
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-primary">brightness_low</span>
+<span>PLR TARGET</span>
+</div>
+<span class="font-telemetry-num text-telemetry-num font-bold text-on-surface mt-0.5">1.8% Pure Black</span>
+</div>
+<div class="flex flex-col p-space-sm rounded-xl bg-surface-container-low">
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">speed</span>
+<span>REFRESH RATE</span>
+</div>
+<span class="font-telemetry-num text-telemetry-num font-bold text-on-surface mt-0.5">1Hz LTPO Throttle</span>
+</div>
+<div class="flex flex-col p-space-sm rounded-xl bg-surface-container-low">
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary">shield</span>
+<span>BURN-IN GUARD</span>
+</div>
+<span class="font-telemetry-num text-telemetry-num font-bold text-on-surface mt-0.5">±3px Sub-Shift</span>
+</div>
+<div class="flex flex-col p-space-sm rounded-xl bg-surface-container-low">
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-primary">battery_charging_full</span>
+<span>DRAIN RATE</span>
+</div>
+<span class="font-telemetry-num text-telemetry-num font-bold text-on-surface mt-0.5">&lt;0.48% / Hour</span>
+</div>
+</div>
+</section>
+<!-- SECTION 1: Always-On Display (AOD) Ambient Modes -->
+<section class="px-margin pb-space-xl">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Ambient Modes</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-inverse-surface text-inverse-on-surface font-label-sm text-label-sm font-semibold">OLED #000000</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">
+          True-Black 1Hz Ambient Surface
+        </h3>
+</div>
+<button class="px-3 py-1.5 rounded-full bg-surface-container text-primary font-label-lg text-label-lg hover:bg-primary/10 transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>AOD Styles</span>
+</button>
+</div>
+<!-- 3 AOD Phone Simulation Cards -->
+<div class="flex flex-col gap-space-md">
+<!-- Variant A: Minimalist Ambient Dot & Clock -->
+<div class="rounded-3xl bg-black p-5 text-white shadow-xl relative overflow-hidden">
+<!-- Ambient Drift Marker Indicator -->
+<div class="flex items-center justify-between text-neutral-500 font-label-sm text-label-sm mb-4">
+<span class="flex items-center gap-1 tracking-wide">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+            PARADIGM A • MINIMALIST DOT
+          </span>
+<span class="font-telemetry-num text-telemetry-num text-neutral-400">88% • 96kHz FLAC</span>
+</div>
+<div class="flex flex-col items-center py-2 text-center">
+<!-- Outline Clock -->
+<span class="font-display-lg text-display-lg tracking-tighter font-extralight text-neutral-200 leading-none select-none">
+            10:42
+          </span>
+<span class="font-label-md text-label-md text-neutral-400 uppercase tracking-widest mt-1">
+            Wednesday, Oct 24
+          </span>
+<!-- Ambient Media Glyph Card -->
+<div class="mt-5 w-full max-w-[280px] p-3 rounded-2xl bg-neutral-950/80 flex items-center gap-3">
+<!-- Dim outline album art -->
+<div class="w-11 h-11 rounded-lg bg-neutral-900 flex items-center justify-center relative overflow-hidden flex-shrink-0">
+<span class="material-symbols-outlined text-neutral-400 text-[20px]">graphic_eq</span>
+<div class="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-container"></div>
+</div>
+<div class="flex flex-col text-left min-w-0 flex-1">
+<span class="font-title-sm text-title-sm text-neutral-100 truncate font-semibold">Neon Horizon</span>
+<span class="font-body-sm text-body-sm text-neutral-400 truncate">Aura Spectrum</span>
+</div>
+<!-- Tiny Pulse Glyph -->
+<div class="flex items-center gap-0.5 flex-shrink-0">
+<span class="w-0.5 h-3 bg-primary-container rounded-full animate-pulse"></span>
+<span class="w-0.5 h-4 bg-primary-container rounded-full animate-pulse delay-75"></span>
+<span class="w-0.5 h-2 bg-primary-container rounded-full animate-pulse delay-150"></span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-neutral-500 font-label-sm text-label-sm">
+<span>OLED Light: 1.4% PLR</span>
+<span class="text-neutral-400">Pixel-shift: +2px X / -1px Y</span>
+</div>
+</div>
+<!-- Variant B: OLED True Black Glance Ring -->
+<div class="rounded-3xl bg-black p-5 text-white shadow-xl relative overflow-hidden">
+<div class="flex items-center justify-between text-neutral-500 font-label-sm text-label-sm mb-3">
+<span class="flex items-center gap-1 tracking-wide">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+            PARADIGM B • GLANCE RING
+          </span>
+<span class="px-2 py-0.5 rounded-full bg-neutral-900 text-neutral-300 font-label-sm text-label-sm">
+            ±3px/15min drift
+          </span>
+</div>
+<div class="flex items-center justify-between py-2">
+<!-- Circular Track Progress Dial -->
+<div class="relative w-28 h-28 flex items-center justify-center flex-shrink-0">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="none" r="42" stroke="#222" stroke-width="3"></circle>
+<circle cx="50" cy="50" fill="none" r="42" stroke="#0066FF" stroke-dasharray="264" stroke-dashoffset="110" stroke-linecap="round" stroke-width="3.5"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline-sm text-headline-sm font-semibold text-neutral-100">10:42</span>
+<span class="font-label-sm text-label-sm text-neutral-400">58% track</span>
+</div>
+</div>
+<!-- Metadata & Minimalist Glyphs -->
+<div class="flex flex-col gap-1.5 ml-4 flex-1 min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded bg-neutral-900 text-primary-fixed-dim font-label-sm text-label-sm font-mono">DSD 256</span>
+<span class="font-telemetry-num text-telemetry-num text-neutral-400">03:12 / 05:32</span>
+</div>
+<span class="font-title-md text-title-md text-white font-bold truncate">Solstice Mirage</span>
+<span class="font-body-sm text-body-sm text-neutral-400 truncate">Vapor Sound Lab</span>
+<div class="flex items-center gap-3 mt-1 text-neutral-300">
+<button class="w-8 h-8 rounded-full bg-neutral-900 flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[18px]">skip_previous</span>
+</button>
+<button class="w-9 h-9 rounded-full bg-primary-container text-white flex items-center justify-center active:scale-90 transition-transform shadow-lg shadow-primary-container/20">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-neutral-900 flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[18px]">skip_next</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-3 pt-2.5 flex items-center justify-between text-neutral-500 font-label-sm text-label-sm">
+<span>Sub-pixel render engine</span>
+<span class="text-neutral-400">1Hz LTPO Locked</span>
+</div>
+</div>
+<!-- Variant C: Music Focus AOD Widget -->
+<div class="rounded-3xl bg-black p-5 text-white shadow-xl relative overflow-hidden">
+<div class="flex items-center justify-between text-neutral-500 font-label-sm text-label-sm mb-3">
+<span class="flex items-center gap-1 tracking-wide">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+            PARADIGM C • MUSIC FOCUS
+          </span>
+<span class="text-neutral-400 font-telemetry-num text-telemetry-num">-02:15 left</span>
+</div>
+<!-- High-Contrast Dimmed Bar Display -->
+<div class="flex items-center gap-3.5">
+<div class="w-14 h-14 rounded-xl bg-neutral-900 p-1 flex items-center justify-center flex-shrink-0">
+<!-- Simulated album wireframe outline -->
+<svg class="w-10 h-10 text-neutral-500" fill="none" viewbox="0 0 40 40">
+<rect height="36" rx="8" stroke="currentColor" stroke-dasharray="2 2" stroke-width="1.5" width="36" x="2" y="2"></rect>
+<circle cx="20" cy="20" r="8" stroke="currentColor" stroke-width="1.5"></circle>
+<circle cx="20" cy="20" fill="currentColor" r="2.5"></circle>
+</svg>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-title-sm font-semibold text-neutral-100 truncate">Prism Reflection</span>
+<span class="font-label-sm text-label-sm text-neutral-400">VOL 72%</span>
+</div>
+<span class="font-body-sm text-body-sm text-neutral-400 truncate block">Kavinsky • Reborn Edition</span>
+<!-- Progress Bar -->
+<div class="w-full bg-neutral-900 h-1.5 rounded-full mt-2.5 overflow-hidden">
+<div class="bg-neutral-300 h-full w-2/3 rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-neutral-500 font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-neutral-400">tap_and_play</span>
+            Hardware Volume Keys Active
+          </span>
+<span class="text-neutral-400">1.9% PLR Ambient</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: Android 14/15 Expanded Lock Screen Media Notification -->
+<section class="px-margin pb-space-xl">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Lock Screen Surface</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">Jetpack Glance</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">
+          Dynamic Notification Card
+        </h3>
+</div>
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant font-medium">RemoteViews v2</span>
+</div>
+<!-- Realistic Android 14/15 Frosted Glass Lock Screen Notification -->
+<div class="w-full rounded-3xl bg-surface-container-lowest p-5 shadow-xl relative overflow-hidden backdrop-blur-2xl">
+<!-- Ambient Glow Behind Card Content -->
+<div class="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-12 -left-12 w-48 h-48 rounded-full bg-secondary/10 blur-3xl pointer-events-none"></div>
+<!-- Top Row: App Attribution & Output Tag -->
+<div class="flex items-center justify-between mb-4 relative z-10">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-lg bg-primary-container flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-white text-[15px]">play_arrow</span>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface tracking-tight">SONIQ PLAYER</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-primary font-semibold uppercase">Lossless Master</span>
+</div>
+<!-- Output device switcher pill -->
+<button class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[15px] text-primary">headphones</span>
+<span class="font-medium">WH-1000XM5</span>
+<span class="material-symbols-outlined text-[13px] text-on-surface-variant">expand_more</span>
+</button>
+</div>
+<!-- Media Main Content Area -->
+<div class="flex gap-4 items-center relative z-10 mb-4">
+<!-- High-res square Album Art -->
+<div class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden shadow-md flex-shrink-0 bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Futuristic neon holographic sound album cover with deep blue violet light refraction and metallic geometric crystal waves high resolution minimalist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9NxqECZB2U2lJoOQDmTPENHrW4BI7pK_DgEL4t1W36L_YK2CKBLN3W5OkrKkDP2YNJnKzJCXRTZ4tAPFBwsMVtV_ryQQramaKHrWHBLgQxUnIjIGRaXmMb_b-IoqPLQzaotePCSKJ99-VC322vd8ogZEnV4mMxSQhWLqqMogMNV5cJfZV0teMUahkQaRVFArRJKtZ9o17gHb4MgIURLU2i3AcbbjJt-neWUQigKJC"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<div class="absolute bottom-1.5 right-1.5 px-1.5 py-0.5 rounded-full bg-black/70 backdrop-blur-md text-white font-label-sm text-label-sm flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px] text-primary-fixed-dim">high_res</span>
+<span>990k</span>
+</div>
+</div>
+<!-- Metadata Stack -->
+<div class="flex flex-col justify-center flex-1 min-w-0">
+<div class="flex items-center gap-1.5 mb-0.5">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-primary/10 text-primary font-label-sm text-label-sm font-semibold">
+              LDAC • 24-bit/96kHz
+            </span>
+</div>
+<h4 class="font-title-md text-title-md font-bold text-on-surface truncate leading-tight">
+            Neon Horizon
+          </h4>
+<p class="font-body-md text-body-md text-on-surface-variant truncate">
+            Aura Spectrum (Deluxe Audiophile)
+          </p>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">graphic_eq</span>
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant">Direct DSD Bitstream</span>
+</div>
+</div>
+</div>
+<!-- Dynamic Wavy Scrubber Bar (Android 14/15 Media Style) -->
+<div class="flex flex-col gap-1 relative z-10 mb-4">
+<div class="relative w-full h-6 flex items-center cursor-pointer group">
+<!-- Fluid Waveform/Track Progress SVG -->
+<svg class="w-full h-4" preserveaspectratio="none" viewbox="0 0 320 16">
+<!-- Background track -->
+<path d="M 0 8 L 320 8" stroke="#eaedff" stroke-linecap="round" stroke-width="4"></path>
+<!-- Played wavy fluid segment -->
+<path d="M 0 8 Q 30 2, 60 8 T 120 8 T 160 8" fill="none" stroke="#0050cb" stroke-linecap="round" stroke-width="4"></path>
+</svg>
+<!-- Scrubber Thumb -->
+<div class="absolute left-[50%] -translate-x-1/2 w-4 h-4 rounded-full bg-primary shadow-md flex items-center justify-center transition-transform group-hover:scale-125">
+<div class="w-1.5 h-1.5 rounded-full bg-white"></div>
+</div>
+</div>
+<div class="flex items-center justify-between font-telemetry-num text-telemetry-num text-on-surface-variant">
+<span>02:44</span>
+<span class="text-primary font-semibold">47% Complete</span>
+<span>-03:04</span>
+</div>
+</div>
+<!-- Transport Controls Row -->
+<div class="flex items-center justify-between relative z-10 py-1">
+<!-- Favorite Toggle -->
+<button aria-label="Favorite Track" class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:text-tertiary hover:bg-surface-container active:scale-90 transition-all" type="button">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<!-- Previous -->
+<button aria-label="Previous Track" class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-90 transition-all" type="button">
+<span class="material-symbols-outlined text-[24px]">skip_previous</span>
+</button>
+<!-- Rewind 10s -->
+<button aria-label="Rewind 10 seconds" class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-90 transition-all" type="button">
+<span class="material-symbols-outlined text-[22px]">replay_10</span>
+</button>
+<!-- Hero Play/Pause Button -->
+<button aria-label="Pause" class="w-14 h-14 rounded-full bg-gradient-to-tr from-primary to-secondary text-white flex items-center justify-center shadow-lg shadow-primary/30 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[30px]" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+<!-- Forward 10s -->
+<button aria-label="Forward 10 seconds" class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-90 transition-all" type="button">
+<span class="material-symbols-outlined text-[22px]">forward_10</span>
+</button>
+<!-- Next -->
+<button aria-label="Next Track" class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-90 transition-all" type="button">
+<span class="material-symbols-outlined text-[24px]">skip_next</span>
+</button>
+<!-- More / Sound Profile -->
+<button aria-label="Audio Output Settings" class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container active:scale-90 transition-all" type="button">
+<span class="material-symbols-outlined text-[22px]">equalizer</span>
+</button>
+</div>
+<!-- Bottom Interactive Chips -->
+<div class="mt-4 pt-3 flex items-center gap-2 overflow-x-auto no-scrollbar relative z-10">
+<button class="flex-shrink-0 px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">speaker_group</span>
+<span>Living Room DAC (Wi-Fi 96k)</span>
+</button>
+<button class="flex-shrink-0 px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">subtitles</span>
+<span>Synced Lyrics</span>
+</button>
+<button class="flex-shrink-0 px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">speed</span>
+<span>1.0x Pitch</span>
+</button>
+</div>
+</div>
+</section>
+<!-- SECTION 3: Modular Lock Screen Micro-Widgets (Android 15 Carousel) -->
+<section class="px-margin pb-space-xl">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Android 15 Glanceables</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">Sub-Clock Area</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">
+          Modular Lock Screen Carousel
+        </h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">4 Active Slots</span>
+</div>
+<!-- 2x2 Grid of Micro Widgets -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<!-- Widget 1: Compact Pill Player -->
+<div class="p-4 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Compact Pill</span>
+</div>
+<span class="font-telemetry-num text-telemetry-num text-primary font-bold">FLAC</span>
+</div>
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary text-[20px]">music_note</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface truncate">Neon Horizon</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Aura Spectrum</span>
+</div>
+<button class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center flex-shrink-0 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+</div>
+<div class="w-full bg-surface-container h-1 rounded-full mt-3 overflow-hidden">
+<div class="bg-primary h-full w-3/5 rounded-full"></div>
+</div>
+</div>
+<!-- Widget 2: Acoustic Telemetry Widget -->
+<div class="p-4 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">insights</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Audiophile Stats</span>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-secondary/10 text-secondary font-label-sm text-label-sm font-bold">14d Streak</span>
+</div>
+<div class="flex items-end justify-between">
+<div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">3h 42m</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">High-Res Today</span>
+</div>
+<div class="text-right">
+<span class="font-telemetry-num text-telemetry-num text-primary font-bold">96kHz Avg</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Zero Dithering</span>
+</div>
+</div>
+<div class="mt-3 flex items-center justify-between pt-2 border-t border-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+<span>Dolby Atmos Ready</span>
+<span class="text-secondary font-semibold">Top 2% Listener</span>
+</div>
+</div>
+<!-- Widget 3: Sleep Timer Countdown -->
+<div class="p-4 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-tertiary text-[16px]">bedtime</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Sleep Timer</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">Fade-out On</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">timer</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">24m 18s</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">Until silence</span>
+</div>
+</div>
+<button class="px-2.5 py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors active:scale-95">
+            +15m
+          </button>
+</div>
+<div class="mt-3 w-full bg-surface-container h-1 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full w-1/4 rounded-full"></div>
+</div>
+</div>
+<!-- Widget 4: Output Device Switcher -->
+<div class="p-4 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]">cast</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Output Node</span>
+</div>
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant">BT 5.4</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">headset</span>
+</div>
+<div class="min-w-0">
+<span class="font-title-sm text-title-sm font-bold text-on-surface truncate block">WH-1000XM5</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate block">LDAC • 92% Battery</span>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors active:scale-90 flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">swap_horiz</span>
+</button>
+</div>
+<div class="mt-3 flex items-center justify-between pt-2 border-t border-surface-container-low font-label-sm text-label-sm text-on-surface-variant">
+<span>Tap to route to DAC</span>
+<span class="text-primary font-semibold">Low Latency</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: AOD Power Consumption & Anti-Burn-In Telemetry -->
+<section class="px-margin pb-space-xl">
+<div class="p-5 rounded-3xl bg-surface-container-lowest shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">energy_savings_leaf</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md font-bold text-on-surface">
+              OLED Conservation Engine
+            </h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Realtime Hardware Micro-Controllers</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-bold">
+          PASSED QA
+        </span>
+</div>
+<!-- Detail rows -->
+<div class="flex flex-col gap-3">
+<!-- PLR Gauge Bar -->
+<div class="p-3 rounded-2xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface">Pixel Light Ratio (PLR)</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Safe Limit &lt; 2.5%</span>
+</div>
+<span class="font-telemetry-num text-telemetry-num text-primary font-bold">1.8% Actively Lit</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 72%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+            98.2% of display pixels remain completely unpowered at absolute true zero volts.
+          </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+<div class="p-3 rounded-xl bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">grid_guides</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface">Sub-Pixel Pixel Shift</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Every 60s, UI coordinates translate 1-3 sub-pixels invisibly to eliminate phosphor memory.
+              </span>
+</div>
+</div>
+<div class="p-3 rounded-xl bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">dark_mode</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface">Pitch Dark Nit Adaptation</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Auto-clamps brightness to 2 nits when ambient light drops below 5 lux to avoid eye strain.
+              </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: Lock Screen Quick-Access Shortcut Corners -->
+<section class="px-margin pb-space-xl">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Device Anchors</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">
+          Lock Screen Corner Triggers
+        </h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">System Quick Keys</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Left Shortcut -->
+<div class="p-4 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary mb-2 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">lock</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Bottom Left</span>
+<h5 class="font-title-sm text-title-sm font-bold text-on-surface mt-0.5">Private Vault</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Biometric fingerprint instant unlock to hidden recordings
+        </p>
+</div>
+<!-- Right Shortcut -->
+<div class="p-4 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-secondary mb-2 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">graphic_eq</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Bottom Right</span>
+<h5 class="font-title-sm text-title-sm font-bold text-on-surface mt-0.5">Sound Identifier</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          1-tap ambient Shazam-grade acoustic frequency matcher
+        </p>
+</div>
+</div>
+</section>
+<!-- Primary Interactive Action Buttons -->
+<section class="px-margin pb-space-xl flex flex-col gap-space-sm">
+<button class="w-full py-4 px-6 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-title-sm text-title-sm font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary/25 active:scale-[0.98] transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">palette</span>
+<span>Configure Lock Screen Appearance</span>
+</button>
+<button class="w-full py-3.5 px-6 rounded-full bg-surface-container text-on-surface font-title-sm text-title-sm font-semibold flex items-center justify-center gap-2 hover:bg-surface-container-high active:scale-[0.98] transition-all" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">screen_rotation</span>
+<span>Simulate AOD Burn-In Protection (10x Speed)</span>
+</button>
+</section>
+</div></main></body></html>
