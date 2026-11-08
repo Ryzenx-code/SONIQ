@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-background": "#151b2b", "inverse-surface": "#2a3040", "on-secondary-container": "#fffbff", "secondary-container": "#974ce9", "surface-bright": "#faf8ff", "on-surface-variant": "#424656", "surface-container": "#eaedff", "on-secondary": "#ffffff", "surface-tint": "#0054d6", "on-primary": "#ffffff", "outline-variant": "#c2c6d8", "surface": "#faf8ff", "on-error": "#ffffff", "tertiary": "#b10057", "surface-container-lowest": "#ffffff", "tertiary-fixed-dim": "#ffb1c5", "primary-fixed-dim": "#b3c5ff", "primary": "#0050cb", "background": "#faf8ff", "tertiary-fixed": "#ffd9e1", "error": "#ba1a1a", "on-secondary-fixed-variant": "#6600b7", "surface-dim": "#d4d9ef", "secondary-fixed-dim": "#dbb8ff", "on-primary-fixed": "#001849", "outline": "#727687", "primary-container": "#0066ff", "secondary-fixed": "#efdbff", "surface-container-high": "#e2e7fd", "on-primary-fixed-variant": "#003fa4", "on-tertiary-fixed": "#3f001b", "inverse-on-surface": "#eef0ff", "on-error-container": "#93000a", "tertiary-container": "#de006f", "surface-variant": "#dde2f7", "secondary": "#7d2dce", "on-tertiary": "#ffffff", "inverse-primary": "#b3c5ff", "primary-fixed": "#dae1ff", "on-tertiary-fixed-variant": "#8f0045", "surface-container-low": "#f2f3ff", "on-tertiary-container": "#fff6f6", "on-secondary-fixed": "#2b0052", "on-primary-container": "#f8f7ff", "on-surface": "#151b2b", "surface-container-highest": "#dde2f7", "error-container": "#ffdad6" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin": "1rem", "space-sm": "0.5rem", "margin-tablet": "1.5rem", "space-xl": "2rem", "gutter-tablet": "1.5rem", "space-md": "1rem", "gutter": "1rem", "space-lg": "1.5rem", "margin-desktop": "2rem", "space-xs": "0.25rem" }, "fontFamily": { "display-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "telemetry-num": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "title-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"] }, "fontSize": { "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.005em", "fontWeight": "400" }], "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-lg-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "800" }], "title-md": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "telemetry-num": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "700" }], "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }], "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }], "title-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#faf8ff;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}body{min-height:max(884px,100dvh);}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs"><button aria-label="Navigate back" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container active:scale-95 transition-all" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><div class="flex items-center gap-space-sm"><img alt="SONIQ Neon Media Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UuPyYaYvTwOhtga7spFwe35_70_ECQU1K8iV5Q5IqIU2eMILXF9bP6CGIOa4NxxmyIJ0RAIqhamqejwhHqNFE-R-SGojiXxRP4TYkpBcfb3agAAJajGINm7dentWW3lx2EvjCCvNvWCpsTHwd-_h0HMs_r6uK40bH_xMixwa7UFq6lUkvI9qqSB20pPZqhq1iMit5iIVmJMnAuG2nKnUBtTHaV92GswR5-_NwRfStS-SMLzqBFqZeotrM"/><div class="flex flex-col"><span class="font-label-sm text-label-sm uppercase text-primary tracking-wider font-bold">SONIQ Setup</span><span class="font-title-sm text-title-sm font-bold text-on-surface leading-tight">Soniq Final Setup Summary</span></div></div></div><div class="flex items-center gap-space-xs"><a class="h-9 px-space-sm flex items-center justify-center rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="soniq-launch-completion" href="#">Skip</a><div class="w-8 h-8 rounded-full bg-primary-container/10 border border-primary/20 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-primary text-[18px]">tune</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen px-margin"><div class="flex flex-col w-full pb-10">
+<!-- Progress Milestone Header -->
+<section class="flex flex-col gap-space-xs mt-space-md mb-space-lg">
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-space-xs bg-primary-fixed/60 text-primary px-3 py-1 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-extrabold">Final Steps • Step 5 of 5</span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container-high px-2.5 py-1 rounded-full">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-telemetry-num text-telemetry-num text-primary font-bold">100% Ready</span>
+</div>
+</div>
+<!-- Segmented Neon Tracker -->
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden flex gap-0.5 p-0.5">
+<div class="h-full flex-1 bg-primary rounded-full"></div>
+<div class="h-full flex-1 bg-primary rounded-full"></div>
+<div class="h-full flex-1 bg-primary rounded-full"></div>
+<div class="h-full flex-1 bg-primary rounded-full"></div>
+<div class="h-full flex-1 bg-gradient-to-r from-primary via-primary-container to-secondary rounded-full shadow-sm"></div>
+</div>
+<!-- Title & Narrative framing -->
+<div class="mt-space-sm flex flex-col gap-1">
+<h1 class="font-headline-md text-headline-md text-on-surface font-extrabold tracking-tight">Setup Complete &amp; Ready</h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        Review your configured preferences before launching SONIQ Universal Media Player. All settings can be adjusted anytime.
+      </p>
+</div>
+</section>
+<!-- Hardware Engine Attestation Hologram Badge -->
+<section class="mb-space-md">
+<div class="relative overflow-hidden bg-gradient-to-r from-surface-container-lowest via-surface-container-low to-surface-container rounded-xl p-space-md shadow-sm">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 bg-primary/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-start gap-space-sm relative z-10">
+<div class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0 mt-0.5 shadow-inner">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-extrabold">Hardware Certified</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest font-telemetry-num text-telemetry-num text-on-surface-variant font-bold">PRO-CORE</span>
+</div>
+<p class="font-title-sm text-title-sm font-bold text-on-surface mt-0.5 truncate">SONIQ Engine v4.2 Pro • Android 15 Verified</p>
+<div class="flex items-center gap-space-xs mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[15px] text-primary">security</span>
+<span class="truncate">100% Local Sandboxed Storage • Zero Cloud Telemetry</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Setup Checklist Bento Stack -->
+<section aria-label="Configured Preferences Checklist" class="flex flex-col gap-space-sm mb-space-lg">
+<!-- Item 1: Appearance & Theme -->
+<div class="group bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all active:scale-[0.99] flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">palette</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-title-sm text-title-sm font-bold text-on-surface">Appearance &amp; Theme</span>
+<span class="material-symbols-outlined text-primary text-[15px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Light Theme • Electric Blue Accent (<span class="font-telemetry-num">#0066FF</span>)</p>
+</div>
+</div>
+<button aria-label="Edit Appearance and Theme" class="px-space-sm py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md transition-colors flex-shrink-0" type="button">
+        Edit
+      </button>
+</div>
+<!-- Item 2: Media Access & Permissions -->
+<div class="group bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all active:scale-[0.99] flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">folder_special</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-title-sm text-title-sm font-bold text-on-surface">Media Access &amp; Permissions</span>
+<span class="material-symbols-outlined text-primary text-[15px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Audio &amp; Storage Granted • Notifications Enabled</p>
+</div>
+</div>
+<button aria-label="Edit Media Access" class="px-space-sm py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md transition-colors flex-shrink-0" type="button">
+        Edit
+      </button>
+</div>
+<!-- Item 3: Music & Video Library -->
+<div class="group bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all active:scale-[0.99] flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">library_music</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-title-sm text-title-sm font-bold text-on-surface">Music &amp; Video Library</span>
+<span class="material-symbols-outlined text-primary text-[15px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Scanned (<span class="font-telemetry-num">3,652</span> Tracks, <span class="font-telemetry-num">528</span> Videos) • Bit-Perfect</p>
+</div>
+</div>
+<button aria-label="Edit Library Index" class="px-space-sm py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md transition-colors flex-shrink-0" type="button">
+        Edit
+      </button>
+</div>
+<!-- Item 4: Playback Preferences -->
+<div class="group bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all active:scale-[0.99] flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">graphic_eq</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-title-sm text-title-sm font-bold text-on-surface">Playback Preferences</span>
+<span class="material-symbols-outlined text-primary text-[15px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Gapless ON • <span class="font-telemetry-num">192kHz</span> Direct DAC • Shuffle Mode</p>
+</div>
+</div>
+<button aria-label="Edit Playback Settings" class="px-space-sm py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md transition-colors flex-shrink-0" type="button">
+        Edit
+      </button>
+</div>
+<!-- Item 5: Profile & Identity -->
+<div class="group bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all active:scale-[0.99] flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-title-sm text-title-sm font-bold text-on-surface">Profile &amp; Identity</span>
+<span class="material-symbols-outlined text-primary text-[15px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Configured ("Alex Soundwave") • Audiophile Purist</p>
+</div>
+</div>
+<button aria-label="Edit Profile" class="px-space-sm py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md transition-colors flex-shrink-0" type="button">
+        Edit
+      </button>
+</div>
+<!-- Item 6: Gamification & Rewards -->
+<div class="group bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all active:scale-[0.99] flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-tertiary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">military_tech</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-title-sm text-title-sm font-bold text-on-surface">Gamification &amp; Rewards</span>
+<span class="material-symbols-outlined text-primary text-[15px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Enabled (Level <span class="font-telemetry-num">1</span> • <span class="font-telemetry-num">7</span>-Day Streak Active)</p>
+</div>
+</div>
+<button aria-label="Edit Gamification" class="px-space-sm py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md transition-colors flex-shrink-0" type="button">
+        Edit
+      </button>
+</div>
+<!-- Item 7: Private Locker & Security -->
+<div class="group bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all active:scale-[0.99] flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-title-sm text-title-sm font-bold text-on-surface">Private Locker &amp; Security</span>
+<span class="material-symbols-outlined text-primary text-[15px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Biometric Vault Configured • AES-<span class="font-telemetry-num">256</span> Armed</p>
+</div>
+</div>
+<button aria-label="Edit Security" class="px-space-sm py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md transition-colors flex-shrink-0" type="button">
+        Edit
+      </button>
+</div>
+</section>
+<!-- Audio Visualizer Readiness Preview Tile -->
+<section class="bg-surface-container-low rounded-xl p-space-md mb-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">surround_sound</span>
+<span class="font-title-sm text-title-sm font-bold text-on-surface">Audio Engine Status</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-extrabold tracking-wider">Bit-Perfect 32-bit</span>
+</div>
+<!-- Real-time Micro Waveform Graphic -->
+<div class="h-10 w-full flex items-center justify-between gap-1 px-1">
+<span class="w-1.5 rounded-full bg-primary h-3"></span>
+<span class="w-1.5 rounded-full bg-primary h-5"></span>
+<span class="w-1.5 rounded-full bg-primary h-8"></span>
+<span class="w-1.5 rounded-full bg-primary h-4"></span>
+<span class="w-1.5 rounded-full bg-primary h-7"></span>
+<span class="w-1.5 rounded-full bg-primary h-10 animate-pulse"></span>
+<span class="w-1.5 rounded-full bg-primary h-6"></span>
+<span class="w-1.5 rounded-full bg-secondary h-9"></span>
+<span class="w-1.5 rounded-full bg-secondary h-5"></span>
+<span class="w-1.5 rounded-full bg-secondary h-8"></span>
+<span class="w-1.5 rounded-full bg-secondary h-4"></span>
+<span class="w-1.5 rounded-full bg-tertiary h-7"></span>
+<span class="w-1.5 rounded-full bg-tertiary h-3"></span>
+<span class="w-1.5 rounded-full bg-primary h-6"></span>
+<span class="w-1.5 rounded-full bg-primary h-8"></span>
+<span class="w-1.5 rounded-full bg-primary h-2"></span>
+<span class="w-1.5 rounded-full bg-primary h-5"></span>
+</div>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs text-on-surface-variant font-telemetry-num text-telemetry-num">
+<span>Latency: 4.2ms</span>
+<span>Sample Rate: 192.0 kHz</span>
+<span>Direct Out: DAC Active</span>
+</div>
+</section>
+<!-- Sticky Actions Deck -->
+<section class="flex flex-col gap-space-sm mt-auto">
+<!-- Primary Launch Button with outer chromatic glow -->
+<button class="w-full h-14 rounded-full bg-gradient-to-r from-primary via-primary-container to-secondary text-on-primary font-title-sm text-title-sm font-bold flex items-center justify-center gap-space-sm shadow-[0_8px_24px_-2px_rgba(0,102,255,0.35)] active:scale-[0.98] transition-transform" type="button">
+<span>Finish Setup &amp; Launch SONIQ</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<!-- Secondary Utility Actions Dual Row -->
+<div class="grid grid-cols-2 gap-space-sm">
+<button class="h-11 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg font-semibold flex items-center justify-center gap-1.5 transition-colors active:scale-95" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">tune</span>
+<span>Edit All</span>
+</button>
+<button class="h-11 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg font-semibold flex items-center justify-center gap-1.5 transition-colors active:scale-95" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">file_download</span>
+<span>Export Backup</span>
+</button>
+</div>
+</section>
+</div></main></body></html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-dim": "#111319",
+          "tertiary-container": "#ce2e81",
+          "on-error-container": "#ffdad6",
+          "canvas-deep": "#07090E",
+          "surface-glass": "rgba(255, 255, 255, 0.04)",
+          "surface-variant": "#1c2333",
+          "surface-container-lowest": "#07090e",
+          "surface-container-low": "#0b0f19",
+          "surface-slate": "#131926",
+          "on-tertiary-fixed-variant": "#8c0053",
+          "secondary-fixed-dim": "#ddb7ff",
+          "surface-bright": "#37393f",
+          "on-primary-fixed-variant": "#003fa4",
+          "primary-fixed-dim": "#b3c5ff",
+          "secondary-fixed": "#f0dbff",
+          "on-primary": "#002b75",
+          "secondary": "#ddb7ff",
+          "tertiary": "#ffb0cd",
+          "on-secondary-fixed-variant": "#6900b3",
+          "secondary-container": "#6f00be",
+          "primary-container": "#0066ff",
+          "inverse-primary": "#0054d6",
+          "outline-variant": "rgba(255, 255, 255, 0.08)",
+          "on-primary-container": "#f8f7ff",
+          "on-background": "#e2e2ea",
+          "outline": "#8c90a1",
+          "primary-fixed": "#dae1ff",
+          "surface-container": "#131926",
+          "inverse-on-surface": "#2e3036",
+          "surface-container-high": "#1c2333",
+          "canvas-subtle": "#0B0F17",
+          "text-muted": "#64748B",
+          "text-silver": "#94A3B8",
+          "primary": "#0066ff",
+          "on-secondary-fixed": "#2c0051",
+          "on-secondary": "#490080",
+          "on-primary-fixed": "#001849",
+          "accent-magenta": "#EC4899",
+          "on-tertiary-fixed": "#3e0022",
+          "error-container": "#93000a",
+          "surface-slate-high": "#1C2333",
+          "accent-electric-bright": "#2979FF",
+          "on-secondary-container": "#d6a9ff",
+          "tertiary-fixed": "#ffd9e4",
+          "background": "#07090e",
+          "tertiary-fixed-dim": "#ffb0cd",
+          "inverse-surface": "#e2e2ea",
+          "on-surface-variant": "#94a3b8",
+          "on-error": "#690005",
+          "on-tertiary-container": "#fff6f7",
+          "error": "#ffb4ab",
+          "surface-glass-border": "rgba(255, 255, 255, 0.08)",
+          "text-pure": "#FFFFFF",
+          "surface-tint": "#b3c5ff",
+          "on-tertiary": "#640039",
+          "on-surface": "#ffffff",
+          "surface-container-highest": "#282a30",
+          "surface": "#07090e"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "margin": "1rem",
+          "gutter-tablet": "1.5rem",
+          "space-sm": "0.5rem",
+          "gutter": "1rem",
+          "space-lg": "1.5rem",
+          "space-md": "1rem",
+          "margin-desktop": "2rem",
+          "space-xs": "0.25rem",
+          "space-xl": "2rem",
+          "margin-tablet": "1.5rem"
+        },
+        "fontFamily": {
+          "body-lg": ["Plus Jakarta Sans"],
+          "body-sm": ["Plus Jakarta Sans"],
+          "headline-lg": ["Plus Jakarta Sans"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "label-lg": ["Plus Jakarta Sans"],
+          "body-md": ["Plus Jakarta Sans"],
+          "label-sm": ["Plus Jakarta Sans"],
+          "telemetry-num": ["Plus Jakarta Sans"],
+          "title-md": ["Plus Jakarta Sans"],
+          "display-lg": ["Plus Jakarta Sans"],
+          "label-md": ["Plus Jakarta Sans"],
+          "title-sm": ["Plus Jakarta Sans"],
+          "headline-sm": ["Plus Jakarta Sans"],
+          "display-lg-mobile": ["Plus Jakarta Sans"]
+        },
+        "fontSize": {
+          "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+          "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+          "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+          "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+          "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+          "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+          "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+          "telemetry-num": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+          "title-md": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+          "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+          "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+          "title-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" }],
+          "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+          "display-lg-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "800" }]
+        }
+      }
+    }
+  };
+</script><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#07090e;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-[#07090e] text-[#ffffff] antialiased flex flex-col min-h-screen selection:bg-primary/30"><header class="fixed top-0 w-full z-50 pt-safe bg-[#07090e]/80 backdrop-blur-xl border-b border-white/[0.06]"><div class="flex justify-between items-center px-4 h-6 text-[#ffffff] select-none"><span class="font-telemetry-num text-telemetry-num font-semibold text-white">9:41</span><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[15px] leading-none text-white">network_cell</span><span class="font-label-sm text-label-sm font-bold uppercase text-white tracking-wider">5G</span><div class="flex items-center gap-0.5 ml-1"><span class="font-telemetry-num text-telemetry-num font-semibold text-white">98%</span><span class="material-symbols-outlined text-[16px] leading-none text-white">battery_full</span></div></div></div><div class="h-16 px-3 flex items-center justify-between"><div class="flex items-center gap-2"><button aria-label="Go Back" class="w-11 h-11 flex items-center justify-center rounded-full text-white hover:bg-white/10 active:scale-95 transition-all" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><div class="flex items-center gap-2"><img alt="SONIQ Brand Logo" class="h-9 w-auto object-contain rounded-lg shadow-[0_0_12px_rgba(0,102,255,0.3)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgSAf9oXWA0HENnTDgPP0BTpzZnJLsJ-O6spIv0JP9IuejOgBF1PSVftLpf2fgfff1Osec5a7q5MiNuWaYTzSmShGNMdRhP4Zzc02WDV1bYVNu75sqI4kVm-doQ-AuZdZXxhbqbrZ8DOBMG2EBa6R-Yq90HQbMU6q8zMiDl_n4z9aZcJDm5iYhQwv3nqyj__EPo91cjAVQR2yd7XqjtfBYA7fHRFLMuhWmIgtK-vB0w_WxLGmBx_pFvw"/><h1 class="font-title-md text-title-md font-bold tracking-tight text-white truncate">Now Playing</h1></div></div><div class="flex items-center gap-1"><button aria-label="Cast Output" class="w-11 h-11 flex items-center justify-center rounded-full text-[#94a3b8] hover:text-white hover:bg-white/10 active:scale-95 transition-all" type="button"><span class="material-symbols-outlined text-[22px]">cast</span></button><div class="pl-1"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-[#0066ff]/40 shadow-[0_0_8px_rgba(0,102,255,0.4)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxknjZCiGSKzd6Ne8HdUjFiUtEGuY4asH497vntiwPVrnvK80Oxr6-FNWxIBp3_eyJUwXt7XoYzdBScXkwgV0FxOtWZ1_P9zir3968HUMLtPeMqVYn8YMii5QqxzGFEgJEuPlcFtP1eytXMUkVjIeBUPn-4s9bfstMgZbdrPGRwIK-R6zI6iohxqoAoOHIeNdUSTNO6SUBYE2gievtu-mVSgU_hkjbHDF6DLadAouY"/></div></div></div></header><main class="flex-1 w-full bg-[#07090e] pt-22 pb-safe px-margin flex flex-col"><div class="flex flex-col w-full pb-8 select-none">
+<!-- Context Bar (Playing Origin) -->
+<div class="flex items-center justify-between px-1 py-1 mb-3">
+<button aria-label="Collapse view" class="w-10 h-10 rounded-full flex items-center justify-center bg-white/[0.05] border border-white/[0.08] text-white hover:bg-white/[0.1] transition-transform active:scale-95 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">keyboard_arrow_down</span>
+</button>
+<div class="flex flex-col items-center max-w-[200px] truncate text-center">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-[#2979FF] font-bold">Playing From Album</span>
+<span class="font-title-sm text-title-sm text-white truncate font-semibold">Nebula Horizon</span>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="More options" class="w-10 h-10 rounded-full flex items-center justify-center bg-white/[0.05] border border-white/[0.08] text-white hover:bg-white/[0.1] transition-transform active:scale-95 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Hero Vinyl Album Art with Dynamic Ambient Chromatic Glow -->
+<div class="relative w-full aspect-square max-w-[340px] mx-auto my-2 flex items-center justify-center">
+<!-- Atmospheric Under-Glow (Lab-grade visualizer aura) -->
+<div class="absolute -inset-3 rounded-full bg-gradient-to-tr from-[#0066ff]/45 via-[#9333ea]/35 to-[#ec4899]/30 blur-3xl transform-gpu -z-10 scale-95 opacity-90 animate-pulse"></div>
+<!-- Acoustic Wave Concentric Ring -->
+<div class="absolute inset-0 rounded-full border border-[#0066ff]/30 scale-105 pointer-events-none animate-[ping_4s_cubic-bezier(0,0,0.2,1)_infinite] opacity-35"></div>
+<!-- Vinyl Disc Peek Mockup Effect -->
+<div class="relative w-full h-full rounded-[28px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.9),0_0_30px_rgba(0,102,255,0.25)] border border-white/[0.12] bg-[#0b0f19] flex items-center justify-center group">
+<!-- Album Cover Image -->
+<img class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Futuristic luminous album cover art depicting hyper-clean celestial nebula rings, floating iridescent crystal shards, vibrant electric blue and violet lasers illuminating pristine cosmic dust in cinematic ultra-high fidelity." id="albumArtImg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnN5ymv1ihOCAZnNyw_dabxp8AHtSTrYsGG69rKbI9DAIn9zqGF9h_fJcF99Ixw3cIaa7DPXzRAzFbUaj4abXbK1HT08pdLcy_2wvsahNZy2hI0_WGqhn6FJzlI9CBdsYS4ZaPWYiv5BwpwuWgYuX5FeneAO9-nA_62K_m-kE79rBArEK8eX-Kw6DZERcniXlBpUpPAOVFzoBk8ycQkX8a03Uhjd50CjBR4p6xQsbw"/>
+<!-- High-gloss Acrylic Glass Sheen Overlay -->
+<div class="absolute inset-0 bg-gradient-to-br from-white/15 via-transparent to-black/60 pointer-events-none"></div>
+<!-- Holographic Audio Watermark Badge (Corner) -->
+<div class="absolute top-3.5 left-3.5 px-2.5 py-1 rounded-full bg-[#07090e]/80 border border-white/10 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
+<span class="w-1.5 h-1.5 rounded-full bg-[#0066ff] shadow-[0_0_8px_#0066ff] animate-ping"></span>
+<span class="font-label-sm text-label-sm text-white font-bold tracking-wider">HI-RES AUDIO</span>
+</div>
+<!-- Live Vinyl Spinner Center Graphic -->
+<div class="absolute bottom-3.5 right-3.5 w-9 h-9 rounded-full bg-[#07090e]/85 border border-white/10 backdrop-blur-md shadow-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-[#2979FF] text-[20px] animate-[spin_8s_linear_infinite]">album</span>
+</div>
+</div>
+</div>
+<!-- Audiophile Specs Badge Cluster -->
+<div class="flex items-center justify-center gap-2 mt-4 mb-3 flex-wrap">
+<div class="px-2.5 py-1 rounded-full bg-white/[0.04] border border-[#0066ff]/30 flex items-center gap-1.5 text-white shadow-[0_0_12px_rgba(0,102,255,0.15)]">
+<span class="material-symbols-outlined text-[#2979FF] text-[14px]">graphic_eq</span>
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider text-[#94a3b8]">FLAC 96kHz / 24-bit</span>
+</div>
+<div class="px-2.5 py-1 rounded-full bg-white/[0.04] border border-[#ddb7ff]/30 text-white flex items-center gap-1.5 shadow-[0_0_12px_rgba(221,183,255,0.15)]">
+<span class="material-symbols-outlined text-[#ddb7ff] text-[14px]">surround_sound</span>
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider text-[#94a3b8]">Dolby Atmos</span>
+</div>
+<div class="px-2.5 py-1 rounded-full bg-white/[0.04] border border-[#ec4899]/30 text-white flex items-center gap-1.5 shadow-[0_0_12px_rgba(236,72,153,0.15)]">
+<span class="material-symbols-outlined text-[#ec4899] text-[14px]">verified</span>
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider text-[#94a3b8]">Bit-Perfect Engine</span>
+</div>
+</div>
+<!-- Song Metadata & Social Quick-Actions -->
+<div class="flex items-center justify-between mt-2 px-1">
+<div class="flex flex-col min-w-0 pr-2">
+<h2 class="font-headline-md text-headline-md text-white tracking-tight truncate leading-tight font-extrabold" id="songTitle">
+        Quantum Resonance
+      </h2>
+<p class="font-body-md text-body-md text-[#94a3b8] truncate font-medium mt-0.5">
+        Kaelen Brooks feat. Maya Lin
+      </p>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<!-- Add to Playlist Icon Button -->
+<button aria-label="Add to playlist" class="w-10 h-10 rounded-full flex items-center justify-center bg-white/[0.04] border border-white/[0.08] text-[#94a3b8] hover:text-[#0066ff] hover:border-[#0066ff]/40 transition-colors active:scale-95 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">playlist_add</span>
+</button>
+<!-- Favourite Heart with Active Gradient Glow State -->
+<button aria-label="Like track" class="w-10 h-10 rounded-full flex items-center justify-center bg-[#ec4899] text-white shadow-[0_0_20px_rgba(236,72,153,0.6)] transition-transform active:scale-110" id="favouriteBtn" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+</div>
+<!-- Interactive Waveform Seekbar Segment -->
+<div class="w-full flex flex-col mt-4 bg-white/[0.04] border border-white/[0.08] backdrop-blur-xl p-3.5 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+<!-- Sound Waveform Canvas & Bar Array -->
+<div class="relative w-full h-11 flex items-center cursor-pointer group" id="waveformContainer">
+<!-- Unplayed / Played Bars Composite via SVG -->
+<div class="w-full h-full flex items-end justify-between gap-[2px] px-1 pointer-events-none">
+<!-- 36 Frequency Spectrum Bars -->
+<span class="w-[3px] rounded-full bg-[#0066ff] shadow-[0_0_8px_rgba(0,102,255,0.7)] h-[20%]"></span>
+<span class="w-[3px] rounded-full bg-[#0066ff] shadow-[0_0_8px_rgba(0,102,255,0.7)] h-[42%]"></span>
+<span class="w-[3px] rounded-full bg-[#0066ff] shadow-[0_0_8px_rgba(0,102,255,0.7)] h-[65%]"></span>
+<span class="w-[3px] rounded-full bg-[#0066ff] shadow-[0_0_8px_rgba(0,102,255,0.7)] h-[35%]"></span>
+<span class="w-[3px] rounded-full bg-[#0066ff] shadow-[0_0_8px_rgba(0,102,255,0.7)] h-[80%]"></span>
+<span class="w-[3px] rounded-full bg-[#0066ff] shadow-[0_0_8px_rgba(0,102,255,0.7)] h-[92%]"></span>
+<span class="w-[3px] rounded-full bg-[#0066ff] shadow-[0_0_8px_rgba(0,102,255,0.7)] h-[55%]"></span>
+<span class="w-[3px] rounded-full bg-[#9333ea] shadow-[0_0_8px_rgba(147,51,234,0.7)] h-[70%]"></span>
+<span class="w-[3px] rounded-full bg-[#9333ea] shadow-[0_0_8px_rgba(147,51,234,0.7)] h-[100%]"></span>
+<span class="w-[3px] rounded-full bg-[#9333ea] shadow-[0_0_8px_rgba(147,51,234,0.7)] h-[85%]"></span>
+<span class="w-[3px] rounded-full bg-[#9333ea] shadow-[0_0_8px_rgba(147,51,234,0.7)] h-[45%]"></span>
+<span class="w-[3px] rounded-full bg-[#9333ea] shadow-[0_0_8px_rgba(147,51,234,0.7)] h-[60%]"></span>
+<span class="w-[3px] rounded-full bg-[#9333ea] shadow-[0_0_8px_rgba(147,51,234,0.7)] h-[78%]"></span>
+<span class="w-[3px] rounded-full bg-[#ec4899] shadow-[0_0_8px_rgba(236,72,153,0.7)] h-[95%]"></span>
+<span class="w-[3px] rounded-full bg-[#ec4899] shadow-[0_0_8px_rgba(236,72,153,0.7)] h-[60%]"></span>
+<span class="w-[3px] rounded-full bg-[#ec4899] shadow-[0_0_8px_rgba(236,72,153,0.7)] h-[40%]"></span>
+<span class="w-[3px] rounded-full bg-[#ec4899] shadow-[0_0_8px_rgba(236,72,153,0.7)] h-[82%]"></span>
+<span class="w-[3px] rounded-full bg-[#ec4899] shadow-[0_0_8px_rgba(236,72,153,0.7)] h-[90%]"></span>
+<span class="w-[3px] rounded-full bg-[#ec4899] shadow-[0_0_8px_rgba(236,72,153,0.7)] h-[75%]"></span>
+<!-- Current Playhead Cutoff boundary -->
+<span class="w-[3px] rounded-full bg-white/20 h-[55%]"></span>
+<span class="w-[3px] rounded-full bg-white/20 h-[38%]"></span>
+<span class="w-[3px] rounded-full bg-white/20 h-[72%]"></span>
+<span class="w-[3px] rounded-full bg-white/20 h-[88%]"></span>
+<span class="w-[3px] rounded-full bg-white/20 h-[60%]"></span>
+<span class="w-[3px] rounded-full bg-white/20 h-[45%]"></span>
+<span class="w-[3px] rounded-full bg-white/20 h-[70%]"></span>
+<span class="w-[3px] rounded-full bg-white/20 h-[85%]"></span>
+<span class="w-[3px] rounded-full bg-white/20 h-[50%]"></span>
+<span class="w-[3px] rounded-full bg-white/20 h-[32%]"></span>
+<span class="w-[3px] rounded-full bg-white/20 h-[64%]"></span>
+<span class="w-[3px] rounded-full bg-white/20 h-[48%]"></span>
+<span class="w-[3px] rounded-full bg-white/20 h-[25%]"></span>
+</div>
+<!-- Illuminated Playhead Scrubber Thumb Indicator -->
+<div class="absolute left-[54%] top-1/2 -translate-y-1/2 -translate-x-1/2 flex items-center justify-center pointer-events-none">
+<div class="w-4 h-4 rounded-full bg-white shadow-[0_0_14px_#0066ff,0_0_24px_#0066ff] flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-[#0066ff]"></div>
+</div>
+</div>
+</div>
+<!-- Timestamp Row with Telemetry Font -->
+<div class="flex items-center justify-between mt-1 px-1">
+<span class="font-telemetry-num text-telemetry-num text-[#2979FF] font-bold">02:44</span>
+<div class="flex items-center gap-1 text-[#94a3b8]">
+<span class="material-symbols-outlined text-[12px] text-[#2979FF]">graphic_eq</span>
+<span class="font-label-sm text-label-sm uppercase font-bold tracking-wider">Acoustic Map</span>
+</div>
+<span class="font-telemetry-num text-telemetry-num text-[#94a3b8] font-semibold">-02:18</span>
+</div>
+</div>
+<!-- Primary Playback Controls Stack -->
+<div class="flex items-center justify-between px-3 mt-4 mb-2">
+<!-- Shuffle Toggle (Active State) -->
+<button aria-label="Shuffle mode active" class="relative w-11 h-11 rounded-full flex items-center justify-center bg-white/[0.04] border border-white/[0.08] text-[#0066ff] hover:bg-white/[0.08] transition-transform active:scale-95 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[22px]">shuffle</span>
+<span class="absolute bottom-2 w-1.5 h-1.5 rounded-full bg-[#0066ff] shadow-[0_0_6px_#0066ff]"></span>
+</button>
+<!-- Previous Track Trigger -->
+<button aria-label="Previous track" class="w-13 h-13 rounded-full flex items-center justify-center bg-white/[0.05] border border-white/[0.08] text-white hover:bg-white/[0.1] transition-transform active:scale-90 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">skip_previous</span>
+</button>
+<!-- Main Circular Play/Pause Hero Trigger (Chromatic Glow) -->
+<button aria-label="Pause playback" class="relative w-18 h-18 rounded-full bg-gradient-to-tr from-[#0066ff] via-[#9333ea] to-[#ec4899] text-white flex items-center justify-center shadow-[0_0_30px_rgba(0,102,255,0.55),0_0_40px_rgba(236,72,153,0.35)] border border-white/20 transition-all hover:scale-105 active:scale-95" id="mainPlayPauseBtn" type="button">
+<span class="material-symbols-outlined text-[36px]" id="playPauseIcon" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+<!-- Next Track Trigger -->
+<button aria-label="Next track" class="w-13 h-13 rounded-full flex items-center justify-center bg-white/[0.05] border border-white/[0.08] text-white hover:bg-white/[0.1] transition-transform active:scale-90 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">skip_next</span>
+</button>
+<!-- Repeat Mode Cycle (Loop All Mode) -->
+<button aria-label="Repeat mode" class="relative w-11 h-11 rounded-full flex items-center justify-center bg-white/[0.04] border border-white/[0.08] text-white hover:bg-white/[0.08] transition-transform active:scale-95 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[22px]">repeat</span>
+<span class="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-[#ec4899] shadow-[0_0_6px_#ec4899]"></span>
+</button>
+</div>
+<!-- Synchronized Lyrics Preview Bar (Interactive Moment of Delight) -->
+<div class="mt-3 w-full bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.07] backdrop-blur-xl rounded-2xl p-3 flex items-center justify-between cursor-pointer transition-colors shadow-sm active:scale-[0.99]" id="lyricsDrawerTrigger">
+<div class="flex items-center gap-2.5 min-w-0 pr-2">
+<div class="w-8 h-8 rounded-full bg-[#0066ff]/20 border border-[#0066ff]/40 flex items-center justify-center text-[#2979FF] shrink-0 shadow-[0_0_10px_rgba(0,102,255,0.3)]">
+<span class="material-symbols-outlined text-[18px]">mic</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider text-[#2979FF]">Live Lyrics</span>
+<p class="font-title-sm text-title-sm text-white truncate font-medium italic">
+          “Drifting through dimensions of light, we find the frequency...”
+        </p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#94a3b8] text-[20px] shrink-0">unfold_more</span>
+</div>
+<!-- Secondary Audio Tools Toolbar -->
+<div class="grid grid-cols-3 gap-2 mt-3">
+<!-- Playback Rate Pill -->
+<button aria-label="Change playback speed" class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white shadow-sm active:bg-white/[0.08]" type="button">
+<span class="material-symbols-outlined text-[18px] text-[#2979FF]">speed</span>
+<span class="font-label-lg text-label-lg font-bold">1.0x</span>
+</button>
+<!-- Sleep Timer Pill -->
+<button aria-label="Sleep timer settings" class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white shadow-sm active:bg-white/[0.08]" type="button">
+<span class="material-symbols-outlined text-[18px] text-[#ddb7ff]">bedtime</span>
+<span class="font-label-lg text-label-lg font-bold">30 min</span>
+</button>
+<!-- Studio EQ Direct Modal Trigger -->
+<button aria-label="Audio equalizer" class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white shadow-sm active:bg-white/[0.08]" type="button">
+<span class="material-symbols-outlined text-[18px] text-[#ec4899]">tune</span>
+<span class="font-label-lg text-label-lg font-bold">EQ Lab</span>
+</button>
+</div>
+<!-- Output Device Streaming Bar & Volume Deck -->
+<div class="mt-3 bg-white/[0.04] border border-white/[0.08] backdrop-blur-xl p-3.5 rounded-2xl flex flex-col gap-2.5 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-[#2979FF] text-[20px]">headphones</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm font-semibold truncate leading-none text-white">Sony WH-1000XM5</span>
+<span class="font-label-sm text-label-sm text-[#94a3b8] font-medium mt-0.5">LDAC 990kbps • High Resolution Audio</span>
+</div>
+</div>
+<button aria-label="Switch output route" class="px-2.5 py-1 rounded-full bg-white/[0.06] border border-white/[0.1] text-white font-label-sm text-label-sm font-bold uppercase tracking-wider flex items-center gap-1 active:bg-white/10" type="button">
+        Switch
+        <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+<!-- Integrated Volume Slider -->
+<div class="flex items-center gap-3 pt-1">
+<span class="material-symbols-outlined text-[#94a3b8] text-[18px]">volume_down</span>
+<div class="flex-1 h-2 bg-white/10 rounded-full overflow-hidden relative cursor-pointer" id="volumeTrack">
+<div class="h-full bg-gradient-to-r from-[#0066ff] to-[#2979FF] rounded-full w-[78%] shadow-[0_0_10px_rgba(0,102,255,0.8)]"></div>
+</div>
+<span class="material-symbols-outlined text-[#94a3b8] text-[18px]">volume_up</span>
+</div>
+</div>
+<!-- Expandable Up Next Queue Peek Drawer -->
+<div class="mt-4 bg-white/[0.04] border border-white/[0.08] backdrop-blur-xl p-3 rounded-2xl flex items-center justify-between cursor-pointer hover:bg-white/[0.07] transition-colors shadow-sm active:scale-[0.99]" id="upNextDrawer">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg overflow-hidden shrink-0 shadow-[0_0_10px_rgba(0,0,0,0.6)] border border-white/10">
+<img class="w-full h-full object-cover" data-alt="Cover artwork thumbnail showing sleek neon synthwave grid city under starry night sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDLtCe4TsW6W4toqHaljk0EkJaz7fuJJZvmFhsF8W4uMLq_caXHVCjJnPbE6tty2w-LnmW0VWJay0E9cGiD5Tqq8-iGtquLW3RJm4qRcm51XrFQI85BxnAI0uRB0AlWtsEapGPSqrJ51bvh2vstyxbrP40O14Yn6kEakq1Z_KsbJhb6W2TgEzss4R1hRX6jyfz6uH-rTBJwhzypIDp33_SXq0cj9AXM3_xlXE3HTPc"/>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider text-[#2979FF]">Up Next</span>
+<span class="w-1 h-1 rounded-full bg-white/30"></span>
+<span class="font-label-sm text-label-sm text-[#94a3b8]">Queue (14)</span>
+</div>
+<span class="font-title-sm text-title-sm text-white font-semibold truncate leading-tight mt-0.5">Cyber Odyssey • Cynthia Vance</span>
+</div>
+</div>
+<div class="w-8 h-8 rounded-full bg-white/[0.06] border border-white/[0.1] flex items-center justify-center text-white shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">queue_music</span>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    // Play/Pause State Toggle
+    const playPauseBtn = document.getElementById('mainPlayPauseBtn');
+    const playPauseIcon = document.getElementById('playPauseIcon');
+    let isPlaying = true;
+
+    if (playPauseBtn && playPauseIcon) {
+      playPauseBtn.addEventListener('click', function() {
+        isPlaying = !isPlaying;
+        playPauseIcon.textContent = isPlaying ? 'pause' : 'play_arrow';
+        if (isPlaying) {
+          playPauseBtn.classList.remove('opacity-90');
+        } else {
+          playPauseBtn.classList.add('opacity-90');
+        }
+      });
+    }
+
+    // Favourite Heart Action
+    const favBtn = document.getElementById('favouriteBtn');
+    let isFav = true;
+    if (favBtn) {
+      favBtn.addEventListener('click', function() {
+        isFav = !isFav;
+        if (isFav) {
+          favBtn.className = 'w-10 h-10 rounded-full flex items-center justify-center bg-[#ec4899] text-white shadow-[0_0_20px_rgba(236,72,153,0.6)] transition-transform active:scale-110';
+        } else {
+          favBtn.className = 'w-10 h-10 rounded-full flex items-center justify-center bg-white/[0.04] border border-white/[0.08] text-[#94a3b8] transition-transform active:scale-110';
+        }
+      });
+    }
+  })();
+</script></main>
+</body></html>
