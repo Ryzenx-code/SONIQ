@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-surface": "#2a3040", "on-secondary": "#ffffff", "on-surface": "#151b2b", "on-primary-container": "#f8f7ff", "tertiary-container": "#de006f", "outline": "#727687", "primary": "#0050cb", "surface-container-low": "#f2f3ff", "surface-container-highest": "#dde2f7", "tertiary-fixed-dim": "#ffb1c5", "on-tertiary": "#ffffff", "error-container": "#ffdad6", "primary-fixed-dim": "#b3c5ff", "surface-dim": "#d4d9ef", "surface-variant": "#dde2f7", "on-tertiary-fixed-variant": "#8f0045", "tertiary-fixed": "#ffd9e1", "on-tertiary-container": "#fff6f6", "on-primary-fixed-variant": "#003fa4", "on-background": "#151b2b", "secondary-container": "#974ce9", "on-error": "#ffffff", "surface-container": "#eaedff", "background": "#faf8ff", "secondary-fixed-dim": "#dbb8ff", "surface-container-lowest": "#ffffff", "surface-container-high": "#e2e7fd", "on-surface-variant": "#424656", "primary-fixed": "#dae1ff", "secondary-fixed": "#efdbff", "on-secondary-fixed-variant": "#6600b7", "error": "#ba1a1a", "outline-variant": "#c2c6d8", "on-primary": "#ffffff", "on-primary-fixed": "#001849", "primary-container": "#0066ff", "surface-tint": "#0054d6", "surface": "#faf8ff", "on-secondary-container": "#fffbff", "on-secondary-fixed": "#2b0052", "secondary": "#7d2dce", "tertiary": "#b10057", "surface-bright": "#faf8ff", "inverse-on-surface": "#eef0ff", "on-tertiary-fixed": "#3f001b", "inverse-primary": "#b3c5ff", "on-error-container": "#93000a" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-desktop": "2rem", "space-xl": "2rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "gutter-tablet": "1.5rem", "space-sm": "0.5rem", "margin": "1rem", "gutter": "1rem", "space-md": "1rem", "margin-tablet": "1.5rem" }, "fontFamily": { "body-md": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "title-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "telemetry-num": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.005em", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }], "display-lg-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "800" }], "title-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "700" }], "telemetry-num": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface antialiased min-h-full flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><button aria-label="Go Back" class="w-11 h-11 -ml-1.5 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high transition-colors shrink-0" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="SONIQ Neon Media Logo.png" class="h-7 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1UuPyYaYvTwOhtga7spFwe35_70_ECQU1K8iV5Q5IqIU2eMILXF9bP6CGIOa4NxxmyIJ0RAIqhamqejwhHqNFE-R-SGojiXxRP4TYkpBcfb3agAAJajGINm7dentWW3lx2EvjCCvNvWCpsTHwd-_h0HMs_r6uK40bH_xMixwa7UFq6lUkvI9qqSB20pPZqhq1iMit5iIVmJMnAuG2nKnUBtTHaV92GswR5-_NwRfStS-SMLzqBFqZeotrM"/><span class="font-title-md text-title-md text-on-surface truncate">Permissions &amp; Device Setup</span></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Close Setup" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="window.location.href='#close'"><span class="material-symbols-outlined text-[22px]">close</span></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full px-margin pb-space-xl">
+<!-- Step Tracker & Progress -->
+<div class="flex flex-col gap-space-xs mt-space-sm mb-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-primary tracking-wider font-semibold">SETUP JOURNEY • STEP 3 OF 6</span>
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant font-medium">50% Complete</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-700 ease-out" style="width: 50%;"></div>
+</div>
+</div>
+<!-- Hero Content -->
+<div class="flex flex-col gap-space-xs mb-space-lg text-left">
+<div class="inline-flex items-center gap-space-xs self-start px-space-sm py-0.5 rounded-full bg-surface-container-high text-primary">
+<span class="material-symbols-outlined text-[16px]">spatial_audio_off</span>
+<span class="font-label-md text-label-md">Foreground Playback Service</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight">
+      Uninterrupted Background Playback
+    </h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+      Enable Android 14/15 media notifications to control music and videos from your lock screen, notification shade, and always-on display without keeping the app open.
+    </p>
+</div>
+<!-- Interactive Realistic Media Notification Preview -->
+<div class="relative w-full mb-space-lg select-none">
+<div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-primary/20 via-secondary/15 to-tertiary/20 blur-xl opacity-70"></div>
+<div class="relative w-full bg-surface-container-lowest rounded-2xl shadow-xl overflow-hidden p-space-md transition-all duration-300">
+<!-- Top Row: App identity & Telemetry codec badge -->
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 rounded-md bg-primary-container flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[14px]">graphic_eq</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface tracking-wide uppercase font-bold">SONIQ</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Now Playing</span>
+</div>
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container-high">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-primary font-bold">LDAC • 96kHz</span>
+</div>
+</div>
+<!-- Main Notification Body: Art & Info -->
+<div class="flex items-center gap-space-md mb-2">
+<!-- Album Art with Neon Subtle Halo -->
+<div class="relative shrink-0 w-16 h-16 rounded-xl overflow-hidden shadow-md">
+<img class="w-full h-full object-cover" data-alt="Album cover for Neon Horizon by Aura Spectrum with hyper-futuristic glowing iridescent geometric waves, electric blue and magenta neon hues, modern clean studio lighting, high resolution digital artwork." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPEqGcmdYxpKf53RPOWRQuVc8Invyy39jBr-IKyFW-bFkFFAzDnDwPyBBdhRevGaqrQpWGoCvapIcAEEGgLmd_jBAFJAaO0AgtbldHym1ULPsvAsynE9sVIgqBXFBcuspHfQ0s8J-D8vU5aCcQ-o2pPdtm7aY0UbbL-dN2K4LkbQcerkuSBQbXDwI9cxG5WYXZFyXB2li5o9P_b4gI8qqQPglu-n3WCeiEVtE4kwm7"/>
+<div class="absolute inset-0 rounded-xl bg-gradient-to-tr from-primary/20 to-transparent pointer-events-none"></div>
+</div>
+<!-- Track & Artist Metadata -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h3 class="font-title-md text-title-md text-on-surface font-bold truncate">Neon Horizon</h3>
+<button aria-label="Favorite Track" class="text-on-surface-variant hover:text-tertiary transition-colors" id="favorite-btn">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Aura Spectrum</p>
+<div class="flex items-center gap-1 mt-1 text-primary">
+<span class="material-symbols-outlined text-[14px]">headphones</span>
+<span class="font-label-sm text-label-sm font-semibold truncate">Sony WH-1000XM5</span>
+</div>
+</div>
+</div>
+<!-- Android Squiggly Scrubber Bar Preview (42% progress) -->
+<div class="flex flex-col gap-1 w-full my-1">
+<div class="relative w-full h-5 flex items-center cursor-pointer group">
+<!-- Background track line -->
+<div class="w-full h-1 bg-surface-container-high rounded-full overflow-hidden flex items-center">
+<!-- Left played squiggly waveform line simulated with SVG -->
+<div class="h-full bg-primary rounded-full relative flex items-center" style="width: 42%;"></div>
+</div>
+<!-- Squiggly segment overlaid on played portion -->
+<div class="absolute left-0 top-1/2 -translate-y-1/2 overflow-hidden pointer-events-none" style="width: 42%;">
+<svg class="h-2 w-full text-primary" fill="none" preserveaspectratio="none" viewbox="0 0 160 8">
+<path d="M0,4 Q10,0 20,4 T40,4 T60,4 T80,4 T100,4 T120,4 T140,4 T160,4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+</svg>
+</div>
+<!-- Active Scrubber Handle thumb -->
+<div class="absolute top-1/2 -translate-y-1/2 -ml-2 w-4 h-4 rounded-full bg-surface-container-lowest shadow-md flex items-center justify-center transition-transform group-hover:scale-125" style="left: 42%;">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+</div>
+</div>
+<!-- Timestamps -->
+<div class="flex justify-between items-center font-telemetry-num text-label-sm text-on-surface-variant px-0.5">
+<span>02:14</span>
+<span>-03:30</span>
+</div>
+</div>
+<!-- Playback Transport Buttons -->
+<div class="flex items-center justify-between pt-1">
+<button aria-label="Route Output Audio" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors" id="like-chip">
+<span class="material-symbols-outlined text-[16px]">cast</span>
+<span class="font-label-sm text-label-sm font-semibold">Living Room</span>
+</button>
+<div class="flex items-center gap-2">
+<button aria-label="Previous Track" class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">skip_previous</span>
+</button>
+<button aria-label="Rewind 10 Seconds" class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">replay_10</span>
+</button>
+<!-- Main Play/Pause Button -->
+<button aria-label="Pause Track" class="w-12 h-12 rounded-full bg-gradient-to-tr from-primary to-primary-container text-on-primary shadow-[0_4px_14px_rgba(0,102,255,0.4)] flex items-center justify-center transform active:scale-95 transition-all" id="preview-play-btn">
+<span class="material-symbols-outlined text-[26px]" id="preview-play-icon">pause</span>
+</button>
+<button aria-label="Fast Forward 10 Seconds" class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">forward_10</span>
+</button>
+<button aria-label="Next Track" class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">skip_next</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Value Propositions / Android Benefit Highlights -->
+<div class="flex flex-col gap-space-sm mb-space-xl">
+<!-- Item 1: Lock Screen & AOD -->
+<div class="flex items-start gap-space-md p-space-md rounded-2xl bg-surface-container-lowest shadow-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]">screen_lock_portrait</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold">Lock Screen &amp; AOD Controls</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-snug">
+          Scrub through tracks, toggle pause, and view real-time lossless telemetry directly from your phone lock screen.
+        </p>
+</div>
+</div>
+<!-- Item 2: Foreground Service Android 13/14+ -->
+<div class="flex items-start gap-space-md p-space-md rounded-2xl bg-surface-container-lowest shadow-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-secondary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]">notification_important</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold">Foreground Media Session</h4>
+<span class="px-1.5 py-0.2 rounded font-label-sm text-label-sm bg-surface-container text-on-surface-variant">POST_NOTIFICATIONS</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-snug">
+          Complies with Android 13+ notification permission. Ensures the Android system doesn't kill playback when backgrounding or screen is off.
+        </p>
+</div>
+</div>
+<!-- Item 3: Zero Spam Promise -->
+<div class="flex items-start gap-space-md p-space-md rounded-2xl bg-surface-container-lowest shadow-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-title-sm text-title-sm text-on-surface font-semibold">Zero Annoying Promotional Alerts</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-snug">
+          SONIQ uses notification channels strictly for active media playback. No marketing pushes, spam, or background telemetry.
+        </p>
+</div>
+</div>
+</div>
+<!-- Action CTA Area -->
+<div class="flex flex-col gap-space-sm items-center w-full mt-auto">
+<!-- Primary CTA with Neon Glow Effect -->
+<button class="w-full h-14 rounded-full bg-gradient-to-r from-primary to-secondary text-on-primary font-title-md text-title-md font-bold shadow-[0_8px_24px_-4px_rgba(0,102,255,0.4)] active:scale-[0.98] transition-all flex items-center justify-center gap-space-xs" id="enable-notifications-cta">
+<span>Enable Playback Notifications</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<!-- Secondary Skip Action -->
+<button class="w-full h-12 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-lg text-label-lg font-semibold transition-colors flex items-center justify-center" id="skip-cta">
+      Skip for Now
+    </button>
+<!-- Native Prompt Disclosure Caption -->
+<div class="flex items-center gap-1.5 mt-1 text-center">
+<span class="material-symbols-outlined text-[14px] text-outline">info</span>
+<p class="font-body-sm text-body-sm text-outline">
+        Android will present the official notification permission prompt next.
+      </p>
+</div>
+</div>
+<!-- Interactive micro-interaction script -->
+<script>
+    (function() {
+      // Toggle play/pause preview state
+      const playBtn = document.getElementById('preview-play-btn');
+      const playIcon = document.getElementById('preview-play-icon');
+      let isPlaying = true;
+
+      if (playBtn && playIcon) {
+        playBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          isPlaying = !isPlaying;
+          playIcon.textContent = isPlaying ? 'pause' : 'play_arrow';
+        });
+      }
+
+      // Favorite toggle
+      const favBtn = document.getElementById('favorite-btn');
+      let isFavorited = false;
+      if (favBtn) {
+        favBtn.addEventListener('click', function() {
+          isFavorited = !isFavorited;
+          const icon = favBtn.querySelector('.material-symbols-outlined');
+          if (icon) {
+            icon.textContent = isFavorited ? 'favorite' : 'favorite';
+            icon.style.fontVariationSettings = isFavorited ? "'FILL' 1" : "'FILL' 0";
+            favBtn.className = isFavorited ? 'text-tertiary transition-colors' : 'text-on-surface-variant hover:text-tertiary transition-colors';
+          }
+        });
+      }
+
+      // Button navigation handlers
+      const enableCta = document.getElementById('enable-notifications-cta');
+      const skipCta = document.getElementById('skip-cta');
+
+      if (enableCta) {
+        enableCta.addEventListener('click', function() {
+          // Trigger next step or system hook
+          window.location.href = '#permission-granted';
+        });
+      }
+
+      if (skipCta) {
+        skipCta.addEventListener('click', function() {
+          window.location.href = '#skip-step';
+        });
+      }
+    })();
+  </script>
+</div></main></body></html>

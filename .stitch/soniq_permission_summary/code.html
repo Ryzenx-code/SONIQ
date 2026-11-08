@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-surface": "#2a3040", "on-secondary": "#ffffff", "on-surface": "#151b2b", "on-primary-container": "#f8f7ff", "tertiary-container": "#de006f", "outline": "#727687", "primary": "#0050cb", "surface-container-low": "#f2f3ff", "surface-container-highest": "#dde2f7", "tertiary-fixed-dim": "#ffb1c5", "on-tertiary": "#ffffff", "error-container": "#ffdad6", "primary-fixed-dim": "#b3c5ff", "surface-dim": "#d4d9ef", "surface-variant": "#dde2f7", "on-tertiary-fixed-variant": "#8f0045", "tertiary-fixed": "#ffd9e1", "on-tertiary-container": "#fff6f6", "on-primary-fixed-variant": "#003fa4", "on-background": "#151b2b", "secondary-container": "#974ce9", "on-error": "#ffffff", "surface-container": "#eaedff", "background": "#faf8ff", "secondary-fixed-dim": "#dbb8ff", "surface-container-lowest": "#ffffff", "surface-container-high": "#e2e7fd", "on-surface-variant": "#424656", "primary-fixed": "#dae1ff", "secondary-fixed": "#efdbff", "on-secondary-fixed-variant": "#6600b7", "error": "#ba1a1a", "outline-variant": "#c2c6d8", "on-primary": "#ffffff", "on-primary-fixed": "#001849", "primary-container": "#0066ff", "surface-tint": "#0054d6", "surface": "#faf8ff", "on-secondary-container": "#fffbff", "on-secondary-fixed": "#2b0052", "secondary": "#7d2dce", "tertiary": "#b10057", "surface-bright": "#faf8ff", "inverse-on-surface": "#eef0ff", "on-tertiary-fixed": "#3f001b", "inverse-primary": "#b3c5ff", "on-error-container": "#93000a" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-desktop": "2rem", "space-xl": "2rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "gutter-tablet": "1.5rem", "space-sm": "0.5rem", "margin": "1rem", "gutter": "1rem", "space-md": "1rem", "margin-tablet": "1.5rem" }, "fontFamily": { "body-md": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "title-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "telemetry-num": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.005em", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }], "display-lg-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "800" }], "title-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "700" }], "telemetry-num": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface antialiased min-h-full flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><button aria-label="Go Back" class="w-11 h-11 -ml-1.5 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high transition-colors shrink-0" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="SONIQ Neon Media Logo.png" class="h-7 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1UuPyYaYvTwOhtga7spFwe35_70_ECQU1K8iV5Q5IqIU2eMILXF9bP6CGIOa4NxxmyIJ0RAIqhamqejwhHqNFE-R-SGojiXxRP4TYkpBcfb3agAAJajGINm7dentWW3lx2EvjCCvNvWCpsTHwd-_h0HMs_r6uK40bH_xMixwa7UFq6lUkvI9qqSB20pPZqhq1iMit5iIVmJMnAuG2nKnUBtTHaV92GswR5-_NwRfStS-SMLzqBFqZeotrM"/><span class="font-title-md text-title-md text-on-surface truncate">Permissions &amp; Device Setup</span></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Close Setup" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="window.location.href='#close'"><span class="material-symbols-outlined text-[22px]">close</span></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full pb-8">
+<!-- Interactive Confetti / Glow Canvas Container -->
+<div class="relative w-full px-margin pt-4 pb-2">
+<!-- Step Tracker Header -->
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1.5">
+<span class="inline-block w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-md text-label-md text-primary tracking-wider uppercase">Setup Journey • Step 6 of 6</span>
+</div>
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant font-bold">100% COMPLETE</span>
+</div>
+<!-- Progress Indicator Bar -->
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden shadow-inner">
+<div class="h-full bg-gradient-to-r from-primary via-primary-container to-secondary rounded-full w-full transition-all duration-700"></div>
+</div>
+</div>
+<!-- Hero Content Section -->
+<div class="px-margin pt-4 pb-4">
+<div class="flex items-center gap-2 mb-1.5">
+<div class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight">Setup Summary &amp; Access</h1>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+      Review your configured permissions. You are fully calibrated to index your lossless music collection and unlock high-fidelity playback.
+    </p>
+</div>
+<!-- Audiophile Readiness Banner -->
+<div class="px-margin mb-6">
+<div class="bg-gradient-to-r from-surface-container-lowest to-surface-container-low p-4 rounded-xl shadow-md flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-on-primary shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[26px]">graphic_eq</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm text-on-surface">Lossless Engine</span>
+<span class="bg-surface-container-lowest px-2 py-0.5 rounded-full font-label-sm text-label-sm text-primary uppercase font-bold shadow-sm">Bit-Perfect</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">384kHz • 32-bit DSD/FLAC Ready</p>
+</div>
+</div>
+<div class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</div>
+</div>
+</div>
+<!-- SECTION 1: GRANTED & ACTIVE PERMISSIONS -->
+<div class="px-margin mb-6">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-emerald-700" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h2 class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider font-bold">Granted &amp; Active Core</h2>
+</div>
+<span class="font-telemetry-num text-telemetry-num text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full font-semibold">3 Active</span>
+</div>
+<div class="flex flex-col gap-2.5">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-sm flex items-center justify-between transition-all active:scale-[0.99]">
+<div class="flex items-center gap-3 min-w-0 pr-2">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">waves</span>
+</div>
+<div class="min-w-0">
+<div class="font-title-sm text-title-sm text-on-surface truncate">Music &amp; Audio Storage</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Read access enabled • Internal &amp; SD Card</div>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-1.5 bg-emerald-50 px-2.5 py-1 rounded-full text-emerald-800">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check</span>
+<span class="font-label-sm text-label-sm font-bold uppercase">Granted</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-sm flex items-center justify-between transition-all active:scale-[0.99]">
+<div class="flex items-center gap-3 min-w-0 pr-2">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">notifications_active</span>
+</div>
+<div class="min-w-0">
+<div class="font-title-sm text-title-sm text-on-surface truncate">Playback Notifications</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Lock screen &amp; background transport active</div>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-1.5 bg-emerald-50 px-2.5 py-1 rounded-full text-emerald-800">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check</span>
+<span class="font-label-sm text-label-sm font-bold uppercase">Granted</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-sm flex items-center justify-between transition-all active:scale-[0.99]">
+<div class="flex items-center gap-3 min-w-0 pr-2">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">bluetooth_audio</span>
+</div>
+<div class="min-w-0">
+<div class="font-title-sm text-title-sm text-on-surface truncate">Bluetooth Device Discovery</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">LDAC passthrough &amp; headphone detection active</div>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-1.5 bg-emerald-50 px-2.5 py-1 rounded-full text-emerald-800">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check</span>
+<span class="font-label-sm text-label-sm font-bold uppercase">Granted</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 2: OPTIONAL & EXPANDED MODULES -->
+<div class="px-margin mb-6">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">tune</span>
+</div>
+<h2 class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider font-bold">Optional Modules &amp; Network</h2>
+</div>
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant bg-surface-container-low px-2 py-0.5 rounded-full font-semibold">2 of 3 On</span>
+</div>
+<div class="flex flex-col gap-2.5">
+<!-- Card 4 (Not Enabled / Quick Action) -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-sm flex items-center justify-between transition-all" id="video-access-card">
+<div class="flex items-center gap-3 min-w-0 pr-2">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface-variant shrink-0" id="video-icon">
+<span class="material-symbols-outlined text-[22px]">movie</span>
+</div>
+<div class="min-w-0">
+<div class="font-title-sm text-title-sm text-on-surface truncate">Video &amp; Cinema Access</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5" id="video-desc">Disabled • Tap to enable 8K MKV &amp; video player</div>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-2" id="video-actions">
+<span class="bg-surface-container px-2 py-0.5 rounded-full font-label-sm text-label-sm text-on-surface-variant">Optional</span>
+<button class="font-label-lg text-label-lg text-primary font-bold bg-surface-container-low hover:bg-surface-container px-3 py-1 rounded-full transition-colors active:scale-95" id="toggle-video-btn" onclick="toggleVideoPermission()">
+            Enable
+          </button>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-3 min-w-0 pr-2">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">wifi_tethering</span>
+</div>
+<div class="min-w-0">
+<div class="font-title-sm text-title-sm text-on-surface truncate">Wi-Fi Local Network</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Ready for DLNA/UPnP streaming DACs</div>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-1.5 bg-emerald-50 px-2.5 py-1 rounded-full text-emerald-800">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check</span>
+<span class="font-label-sm text-label-sm font-bold uppercase">Enabled</span>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-3 min-w-0 pr-2">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">fingerprint</span>
+</div>
+<div class="min-w-0">
+<div class="font-title-sm text-title-sm text-on-surface truncate">Biometric Authentication</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Private Locker can be locked with PIN or Biometrics</div>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-1.5 bg-emerald-50 px-2.5 py-1 rounded-full text-emerald-800">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check</span>
+<span class="font-label-sm text-label-sm font-bold uppercase">Configured</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 3: PRIVACY & SECURITY GUARANTEE CARD -->
+<div class="px-margin mb-8">
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm relative overflow-hidden">
+<!-- Subtle top color accent line -->
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-tertiary-container"></div>
+<div class="flex items-start gap-3.5 pt-1">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary shrink-0 shadow-inner">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<div class="min-w-0 flex-1">
+<div class="flex items-center gap-2 mb-1">
+<h3 class="font-title-sm text-title-sm text-on-surface font-bold">Strict Zero-Telemetry Sandbox</h3>
+<span class="bg-surface-container px-2 py-0.2 rounded-full font-label-sm text-label-sm text-primary uppercase">100% Local</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            All audio indexing, metadata processing, DSP acoustic calibration, and biometric cryptographic keys remain strictly on this device. No personal data or files are ever transmitted or uploaded.
+          </p>
+<div class="mt-3 flex items-center gap-3">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-emerald-600">lock</span>
+<span class="font-label-sm text-label-sm">Hardware Keystore</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-emerald-600">wifi_off</span>
+<span class="font-label-sm text-label-sm">Offline Engine</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- BOTTOM ACTIONS & CALL TO ACTION -->
+<div class="px-margin flex flex-col gap-3">
+<!-- Primary CTA: High-contrast Gradient with Glow -->
+<button class="relative w-full h-14 rounded-full bg-gradient-to-r from-primary-container via-primary to-secondary text-on-primary font-title-md text-title-md font-bold flex items-center justify-center gap-2 shadow-[0_8px_24px_-2px_rgba(0,102,255,0.4),0_2px_6px_0px_rgba(121,40,202,0.25)] hover:opacity-95 active:scale-[0.98] transition-all" id="complete-btn" onclick="triggerCompletion()">
+<span class="tracking-wide">Complete Setup &amp; Open SONIQ</span>
+<span class="material-symbols-outlined text-[20px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
+</button>
+<!-- Secondary CTA: Modify in system settings -->
+<button class="w-full h-12 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg font-semibold flex items-center justify-center gap-2 transition-colors active:scale-[0.98]" onclick="window.location.href='#system-settings'">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">settings</span>
+<span>Modify Permissions in System Settings</span>
+</button>
+</div>
+<!-- Inline Micro-Interactions Script -->
+<script>
+    function toggleVideoPermission() {
+      const card = document.getElementById('video-access-card');
+      const icon = document.getElementById('video-icon');
+      const desc = document.getElementById('video-desc');
+      const actions = document.getElementById('video-actions');
+      
+      // Update icon and description
+      icon.classList.remove('text-on-surface-variant');
+      icon.classList.add('text-primary');
+      desc.textContent = 'Enabled • Ultra HD & 8K MKV acceleration active';
+      
+      // Replace button with granted status badge
+      actions.innerHTML = `
+        <div class="shrink-0 flex items-center gap-1.5 bg-emerald-50 px-2.5 py-1 rounded-full text-emerald-800 animate-fadeIn">
+          <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check</span>
+          <span class="font-label-sm text-label-sm font-bold uppercase">Granted</span>
+        </div>
+      `;
+    }
+
+    function triggerCompletion() {
+      const btn = document.getElementById('complete-btn');
+      btn.innerHTML = `
+        <span class="inline-block w-5 h-5 border-2 border-on-primary border-t-transparent rounded-full animate-spin"></span>
+        <span>Initializing Sound Engine...</span>
+      `;
+      btn.disabled = true;
+      btn.classList.add('opacity-90');
+      
+      setTimeout(() => {
+        window.location.href = '#library-scan';
+      }, 900);
+    }
+  </script>
+</div></main></body></html>

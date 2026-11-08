@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-surface": "#2a3040", "on-secondary": "#ffffff", "on-surface": "#151b2b", "on-primary-container": "#f8f7ff", "tertiary-container": "#de006f", "outline": "#727687", "primary": "#0050cb", "surface-container-low": "#f2f3ff", "surface-container-highest": "#dde2f7", "tertiary-fixed-dim": "#ffb1c5", "on-tertiary": "#ffffff", "error-container": "#ffdad6", "primary-fixed-dim": "#b3c5ff", "surface-dim": "#d4d9ef", "surface-variant": "#dde2f7", "on-tertiary-fixed-variant": "#8f0045", "tertiary-fixed": "#ffd9e1", "on-tertiary-container": "#fff6f6", "on-primary-fixed-variant": "#003fa4", "on-background": "#151b2b", "secondary-container": "#974ce9", "on-error": "#ffffff", "surface-container": "#eaedff", "background": "#faf8ff", "secondary-fixed-dim": "#dbb8ff", "surface-container-lowest": "#ffffff", "surface-container-high": "#e2e7fd", "on-surface-variant": "#424656", "primary-fixed": "#dae1ff", "secondary-fixed": "#efdbff", "on-secondary-fixed-variant": "#6600b7", "error": "#ba1a1a", "outline-variant": "#c2c6d8", "on-primary": "#ffffff", "on-primary-fixed": "#001849", "primary-container": "#0066ff", "surface-tint": "#0054d6", "surface": "#faf8ff", "on-secondary-container": "#fffbff", "on-secondary-fixed": "#2b0052", "secondary": "#7d2dce", "tertiary": "#b10057", "surface-bright": "#faf8ff", "inverse-on-surface": "#eef0ff", "on-tertiary-fixed": "#3f001b", "inverse-primary": "#b3c5ff", "on-error-container": "#93000a" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-desktop": "2rem", "space-xl": "2rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "gutter-tablet": "1.5rem", "space-sm": "0.5rem", "margin": "1rem", "gutter": "1rem", "space-md": "1rem", "margin-tablet": "1.5rem" }, "fontFamily": { "body-md": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "title-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "telemetry-num": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.005em", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }], "display-lg-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "800" }], "title-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "700" }], "telemetry-num": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface antialiased min-h-full flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><button aria-label="Go Back" class="w-11 h-11 -ml-1.5 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="SONIQ Neon Media Logo.png" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1UuPyYaYvTwOhtga7spFwe35_70_ECQU1K8iV5Q5IqIU2eMILXF9bP6CGIOa4NxxmyIJ0RAIqhamqejwhHqNFE-R-SGojiXxRP4TYkpBcfb3agAAJajGINm7dentWW3lx2EvjCCvNvWCpsTHwd-_h0HMs_r6uK40bH_xMixwa7UFq6lUkvI9qqSB20pPZqhq1iMit5iIVmJMnAuG2nKnUBtTHaV92GswR5-_NwRfStS-SMLzqBFqZeotrM"/><span class="font-title-md text-title-md text-on-surface truncate">Spatial Audio Opt In</span></div><div class="flex items-center gap-space-sm shrink-0"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full">
+<!-- Interactive Ambient Sonic Canvas Decorator -->
+<div class="relative w-full overflow-hidden px-margin pb-space-xl">
+<!-- Top Step Progress Section -->
+<div class="pt-space-md pb-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-md text-label-md">
+            SETUP JOURNEY
+          </span>
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant">
+            Step 1 of 4
+          </span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+          25% COMPLETE
+        </div>
+</div>
+<!-- Segmented Step Bar (Strict borderless architectural aesthetic) -->
+<div class="grid grid-cols-4 gap-2 pt-2 pb-1">
+<div class="h-1.5 rounded-full bg-gradient-to-r from-primary to-secondary shadow-sm shadow-primary/20"></div>
+<div class="h-1.5 rounded-full bg-surface-container-high"></div>
+<div class="h-1.5 rounded-full bg-surface-container-high"></div>
+<div class="h-1.5 rounded-full bg-surface-container-high"></div>
+</div>
+</div>
+<!-- Title & Narrative Lead -->
+<div class="pt-space-sm pb-space-md flex flex-col gap-1">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+        Configure Your Experience
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        A 60-second guided setup to index your local storage, optimize the audio DSP engine, and personalize your playback interface.
+      </p>
+</div>
+<!-- Vertical Step Cards Journey -->
+<div class="flex flex-col gap-space-md">
+<!-- STEP 1: ACTIVE / EXPANDED CARD -->
+<div class="relative overflow-hidden rounded-2xl bg-surface-container-lowest shadow-md p-space-md transition-all duration-300">
+<!-- Chromatic dynamic left accent ribbon -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-primary via-secondary to-tertiary"></div>
+<div class="flex flex-col gap-space-md pl-1">
+<!-- Card Header Info -->
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-3">
+<div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0 shadow-sm shadow-primary/10">
+<span class="material-symbols-outlined text-[24px]">folder_special</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-primary uppercase tracking-wider">Step 1</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm shadow-sm">
+                    ACTION REQUIRED
+                  </span>
+</div>
+<h2 class="font-title-md text-title-md text-on-surface pt-0.5">Media &amp; Storage Access</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-0.5">
+                  Required to locate your lossless FLAC, DSD files, and video files across internal and external SD cards.
+                </p>
+</div>
+</div>
+</div>
+<!-- Micro Visual Preview: Android Scoped Storage Permission Pill -->
+<div class="p-3 rounded-xl bg-surface-container-low flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+<span class="font-label-md text-label-md text-on-surface">Scoped Storage Engine</span>
+</div>
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant">SAF API 34</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              SONIQ never uploads or shares your files. Read-only permissions maintain bit-level integrity for your master files.
+            </p>
+<button class="w-full mt-1 py-2.5 px-space-md rounded-xl bg-primary-container text-on-primary-container font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-all" id="permission-btn" onclick="togglePermissionMock()">
+<span class="material-symbols-outlined text-[18px]" id="perm-icon">lock_open</span>
+<span id="perm-text">Grant Scoped Storage Access</span>
+</button>
+</div>
+</div>
+</div>
+<!-- STEP 2: PENDING CARD -->
+<div class="relative overflow-hidden rounded-2xl bg-surface-container-lowest p-space-md shadow-sm opacity-90 transition-all">
+<div class="flex items-start gap-3">
+<div class="w-11 h-11 rounded-xl bg-surface-container-high text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">palette</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Step 2</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Pending • Ready in 10s</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface pt-0.5">Acoustic Theme &amp; UI Layout</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-0.5">
+              Choose between SONIQ Light, Midnight Pitch, or Neon Spectrum with responsive waveform renderers.
+            </p>
+</div>
+</div>
+</div>
+<!-- STEP 3: PENDING CARD -->
+<div class="relative overflow-hidden rounded-2xl bg-surface-container-lowest p-space-md shadow-sm opacity-80 transition-all">
+<div class="flex items-start gap-3">
+<div class="w-11 h-11 rounded-xl bg-surface-container-high text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">graphic_eq</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Step 3</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Pending</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface pt-0.5">Automated Metadata &amp; Artwork Matcher</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-0.5">
+              Scans embedded ID3v2/Vorbis tags and matches lossless 1000px album and video artwork automatically.
+            </p>
+</div>
+</div>
+</div>
+<!-- STEP 4: PENDING CARD -->
+<div class="relative overflow-hidden rounded-2xl bg-surface-container-lowest p-space-md shadow-sm opacity-70 transition-all">
+<div class="flex items-start gap-3">
+<div class="w-11 h-11 rounded-xl bg-surface-container-high text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">headphones</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Step 4</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Pending</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface pt-0.5">Hardware Engine &amp; Bit-Perfect Direct</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-0.5">
+              Calibrate audiophile output for Sony WH-1000XM5, external USB DACs, or LDAC Bluetooth pipelines.
+            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Settings Preset Summary Glass Box -->
+<div class="mt-space-md p-space-md rounded-2xl bg-surface-container-high flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-wide flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]">tune</span>
+          Initial Output Preset
+        </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest font-telemetry-num text-telemetry-num text-primary">
+          192kHz / 32-bit
+        </span>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div class="p-2.5 rounded-xl bg-surface-container-lowest flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Default Sound Profile</span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">High-Fidelity Audiophile</span>
+</div>
+<div class="p-2.5 rounded-xl bg-surface-container-lowest flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Direct Driver Mode</span>
+<span class="font-title-sm text-title-sm text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+            Bit-Perfect Enabled
+          </span>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Navigation CTA Panel -->
+<div class="pt-space-lg flex flex-col items-center gap-space-sm">
+<button class="w-full h-14 rounded-full bg-gradient-to-r from-primary via-primary-container to-secondary text-on-primary font-title-md text-title-md shadow-lg shadow-primary/30 flex items-center justify-center gap-2 active:scale-[0.98] transition-all">
+<span>Continue to Step 1</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<button class="py-2.5 px-space-md rounded-full text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span>Express Setup (Use Recommended Defaults)</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  function togglePermissionMock() {
+    const btn = document.getElementById('permission-btn');
+    const icon = document.getElementById('perm-icon');
+    const text = document.getElementById('perm-text');
+    if (!btn) return;
+    
+    if (text.innerText.includes('Grant')) {
+      text.innerText = 'Storage Access Granted';
+      icon.innerText = 'task_alt';
+      btn.classList.remove('bg-primary-container', 'text-on-primary-container');
+      btn.classList.add('bg-surface-container-highest', 'text-primary');
+    } else {
+      text.innerText = 'Grant Scoped Storage Access';
+      icon.innerText = 'lock_open';
+      btn.classList.remove('bg-surface-container-highest', 'text-primary');
+      btn.classList.add('bg-primary-container', 'text-on-primary-container');
+    }
+  }
+</script></main></body></html>

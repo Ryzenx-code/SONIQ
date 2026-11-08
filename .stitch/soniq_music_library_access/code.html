@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-surface": "#2a3040", "on-secondary": "#ffffff", "on-surface": "#151b2b", "on-primary-container": "#f8f7ff", "tertiary-container": "#de006f", "outline": "#727687", "primary": "#0050cb", "surface-container-low": "#f2f3ff", "surface-container-highest": "#dde2f7", "tertiary-fixed-dim": "#ffb1c5", "on-tertiary": "#ffffff", "error-container": "#ffdad6", "primary-fixed-dim": "#b3c5ff", "surface-dim": "#d4d9ef", "surface-variant": "#dde2f7", "on-tertiary-fixed-variant": "#8f0045", "tertiary-fixed": "#ffd9e1", "on-tertiary-container": "#fff6f6", "on-primary-fixed-variant": "#003fa4", "on-background": "#151b2b", "secondary-container": "#974ce9", "on-error": "#ffffff", "surface-container": "#eaedff", "background": "#faf8ff", "secondary-fixed-dim": "#dbb8ff", "surface-container-lowest": "#ffffff", "surface-container-high": "#e2e7fd", "on-surface-variant": "#424656", "primary-fixed": "#dae1ff", "secondary-fixed": "#efdbff", "on-secondary-fixed-variant": "#6600b7", "error": "#ba1a1a", "outline-variant": "#c2c6d8", "on-primary": "#ffffff", "on-primary-fixed": "#001849", "primary-container": "#0066ff", "surface-tint": "#0054d6", "surface": "#faf8ff", "on-secondary-container": "#fffbff", "on-secondary-fixed": "#2b0052", "secondary": "#7d2dce", "tertiary": "#b10057", "surface-bright": "#faf8ff", "inverse-on-surface": "#eef0ff", "on-tertiary-fixed": "#3f001b", "inverse-primary": "#b3c5ff", "on-error-container": "#93000a" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-desktop": "2rem", "space-xl": "2rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "gutter-tablet": "1.5rem", "space-sm": "0.5rem", "margin": "1rem", "gutter": "1rem", "space-md": "1rem", "margin-tablet": "1.5rem" }, "fontFamily": { "body-md": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "title-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "telemetry-num": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.005em", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }], "display-lg-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "800" }], "title-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "700" }], "telemetry-num": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface antialiased min-h-full flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><button aria-label="Go Back" class="w-11 h-11 -ml-1.5 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high transition-colors shrink-0" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="SONIQ Neon Media Logo.png" class="h-7 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1UuPyYaYvTwOhtga7spFwe35_70_ECQU1K8iV5Q5IqIU2eMILXF9bP6CGIOa4NxxmyIJ0RAIqhamqejwhHqNFE-R-SGojiXxRP4TYkpBcfb3agAAJajGINm7dentWW3lx2EvjCCvNvWCpsTHwd-_h0HMs_r6uK40bH_xMixwa7UFq6lUkvI9qqSB20pPZqhq1iMit5iIVmJMnAuG2nKnUBtTHaV92GswR5-_NwRfStS-SMLzqBFqZeotrM"/><span class="font-title-md text-title-md text-on-surface truncate">Permissions &amp; Device Setup</span></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Close Setup" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="window.location.href='#close'"><span class="material-symbols-outlined text-[22px]">close</span></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full px-margin pb-space-xl">
+<!-- Step Tracker Header -->
+<div class="flex flex-col gap-space-xs mb-space-lg">
+<div class="flex items-center justify-between text-on-surface-variant font-label-md text-label-md tracking-wider uppercase">
+<span>Setup Journey • Step 1 of 6</span>
+<span class="font-telemetry-num text-telemetry-num text-primary font-bold">16%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary-container via-secondary to-tertiary rounded-full transition-all duration-700 ease-out" style="width: 16%;"></div>
+</div>
+</div>
+<!-- Hero Visual Stage -->
+<div class="relative overflow-hidden rounded-2xl bg-gradient-to-b from-surface-container-low to-surface-container-highest p-space-lg shadow-sm mb-space-lg">
+<!-- Ambient Spectral Glow Orbs -->
+<div class="absolute -top-12 -left-12 w-48 h-48 bg-primary-container/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-10 -right-10 w-44 h-44 bg-secondary-container/20 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Lossless Codec Floating Badges -->
+<div class="flex flex-wrap gap-space-xs justify-center mb-space-md relative z-10">
+<div class="px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md shadow-sm flex items-center gap-1.5 animate-pulse">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm tracking-wide font-extrabold text-primary">FLAC 24-BIT / 192kHz</span>
+</div>
+<div class="px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md shadow-sm flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm tracking-wide font-extrabold text-secondary">DSD 5.6MHz (DoP)</span>
+</div>
+<div class="px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md shadow-sm flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span class="font-label-sm text-label-sm tracking-wide font-extrabold text-tertiary">WAV 32-BIT FLOAT</span>
+</div>
+<div class="px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md shadow-sm flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm tracking-wide font-extrabold text-on-surface">ALAC LOSSLESS</span>
+</div>
+</div>
+<!-- Stylized Acoustic Resonator Visual -->
+<div class="relative flex flex-col items-center justify-center py-space-sm z-10">
+<div class="relative w-24 h-24 rounded-full bg-gradient-to-tr from-primary to-secondary flex items-center justify-center shadow-lg shadow-primary/25 mb-space-sm">
+<div class="absolute inset-1 rounded-full bg-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-[44px] text-primary" style="font-variation-settings: 'FILL' 1;">headphones</span>
+</div>
+<!-- Pulse Rings -->
+<div class="absolute -inset-2 rounded-full border border-primary/20 animate-ping opacity-30 pointer-events-none"></div>
+</div>
+<!-- Real-time Equalizer Simulation -->
+<div class="flex items-end justify-center gap-1.5 h-10 w-full max-w-[200px]" id="visualizer-bars">
+<div class="w-1.5 bg-primary rounded-full transition-all duration-300" style="height: 45%;"></div>
+<div class="w-1.5 bg-primary-container rounded-full transition-all duration-300" style="height: 75%;"></div>
+<div class="w-1.5 bg-secondary rounded-full transition-all duration-300" style="height: 100%;"></div>
+<div class="w-1.5 bg-secondary-container rounded-full transition-all duration-300" style="height: 60%;"></div>
+<div class="w-1.5 bg-tertiary rounded-full transition-all duration-300" style="height: 85%;"></div>
+<div class="w-1.5 bg-tertiary-container rounded-full transition-all duration-300" style="height: 40%;"></div>
+<div class="w-1.5 bg-primary rounded-full transition-all duration-300" style="height: 65%;"></div>
+<div class="w-1.5 bg-primary-container rounded-full transition-all duration-300" style="height: 90%;"></div>
+</div>
+</div>
+</div>
+<!-- Hero Content Intro -->
+<div class="flex flex-col gap-space-xs text-center mb-space-lg">
+<h1 class="font-headline-md text-headline-md text-on-surface">
+      Bit-Perfect Music Library Access
+    </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto">
+      SONIQ is engineered for audiophiles. To curate your collection with embedded artwork, cuesheets, and metadata tags, SONIQ requires read-only access to your device audio storage.
+    </p>
+</div>
+<!-- Architecture Breakdown Cards -->
+<div class="flex flex-col gap-space-sm mb-space-lg">
+<!-- Item 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<div class="flex flex-col gap-0.5 min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Android Scoped Storage (READ_MEDIA_AUDIO)</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Operates under strict Android 13+ Scoped Storage guidelines. Only reads audio files; your personal documents, photos, and system files remain completely untouched and inaccessible.
+        </p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0 text-secondary">
+<span class="material-symbols-outlined text-[24px]">lock</span>
+</div>
+<div class="flex flex-col gap-0.5 min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Zero Modification Guarantee</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          SONIQ never re-tags, re-encodes, renames, or moves your files. Original bitstreams are preserved with 100% cryptographic checksum integrity.
+        </p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0 text-tertiary">
+<span class="material-symbols-outlined text-[24px]">auto_awesome</span>
+</div>
+<div class="flex flex-col gap-0.5 min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Automatic Lossless Indexing</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Instantly matches embedded ID3v2, Vorbis, and FLAC tags, extracting embedded 1000px cover art and parsing multi-track .CUE cue sheets.
+        </p>
+</div>
+</div>
+</div>
+<!-- Scope Choice Selector -->
+<div class="flex flex-col gap-space-sm mb-space-xl">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider px-1">Indexing Scope</span>
+<!-- Option 1: Full Scan (Recommended) -->
+<label class="group relative flex items-start justify-between p-space-md rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer transition-all hover:bg-surface-container-low" id="scope-full-wrapper">
+<div class="flex items-start gap-space-sm min-w-0 flex-1 pr-2">
+<div class="mt-0.5">
+<input checked="" class="sr-only peer" id="scope-full" name="storage_scope" type="radio" value="full"/>
+<div class="w-5 h-5 rounded-full bg-surface-container flex items-center justify-center peer-checked:bg-primary transition-colors">
+<div class="w-2 h-2 rounded-full bg-on-primary"></div>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-title-sm text-title-sm text-on-surface font-bold">Full Audio Scan</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm uppercase">Recommended</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Internal storage &amp; mounted MicroSD cards automatically synced</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[22px] shrink-0 mt-0.5">sd_card</span>
+</label>
+<!-- Option 2: Folder Only -->
+<label class="group relative flex items-start justify-between p-space-md rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer transition-all hover:bg-surface-container-low" id="scope-custom-wrapper">
+<div class="flex items-start gap-space-sm min-w-0 flex-1 pr-2">
+<div class="mt-0.5">
+<input class="sr-only peer" id="scope-custom" name="storage_scope" type="radio" value="custom"/>
+<div class="w-5 h-5 rounded-full bg-surface-container flex items-center justify-center peer-checked:bg-primary transition-colors">
+<div class="w-2 h-2 rounded-full bg-on-primary hidden peer-checked:block"></div>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-bold">Specific Audio Folders Only</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Select high-res music directory via Android SAF Picker</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[22px] shrink-0 mt-0.5">folder_open</span>
+</label>
+</div>
+<!-- Action CTA Area -->
+<div class="flex flex-col gap-space-sm items-center w-full">
+<button class="w-full h-14 rounded-2xl bg-gradient-to-r from-primary-container via-primary to-secondary text-on-primary font-title-md text-title-md font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary/30 active:scale-[0.98] transition-transform" id="btn-grant">
+<span>Grant Audio Permission</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<button class="w-full h-12 rounded-2xl bg-surface-container text-on-surface-variant font-label-lg text-label-lg font-semibold flex items-center justify-center hover:bg-surface-container-high transition-colors active:scale-[0.98]" onclick="window.location.href='#skip-manual'">
+      Not Now (Limited to Manual File Open)
+    </button>
+<!-- Trust & Control Footnote -->
+<div class="flex items-center gap-1.5 text-center px-space-md mt-space-xs text-outline font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] shrink-0">tune</span>
+<span>You can adjust or revoke storage access at any time in Android Settings &gt; Apps &gt; SONIQ.</span>
+</div>
+</div>
+</div>
+<script>
+  // Dynamic visualizer dance for delight
+  const bars = document.querySelectorAll('#visualizer-bars > div');
+  setInterval(() => {
+    bars.forEach(bar => {
+      const height = Math.floor(Math.random() * 65) + 35;
+      bar.style.height = height + '%';
+    });
+  }, 240);
+
+  // Selector interactivity
+  const radios = document.querySelectorAll('input[name="storage_scope"]');
+  radios.forEach(radio => {
+    radio.addEventListener('change', () => {
+      document.querySelectorAll('#scope-full-wrapper, #scope-custom-wrapper').forEach(card => {
+        card.classList.remove('bg-surface-container-low');
+      });
+      const parent = radio.closest('label');
+      if (radio.checked) {
+        parent.classList.add('bg-surface-container-low');
+      }
+    });
+  });
+
+  // Primary Action feedback
+  document.getElementById('btn-grant').addEventListener('click', function() {
+    this.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">progress_activity</span><span>Requesting System Storage...</span>';
+    setTimeout(() => {
+      window.location.href = '#step-2-complete';
+    }, 900);
+  });
+</script></main></body></html>

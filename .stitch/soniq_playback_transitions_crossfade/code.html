@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#faf8ff;}body{overscroll-behavior-y:none;font-family:'Plus Jakarta Sans',sans-serif;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface": "#faf8ff", "on-primary": "#ffffff", "on-secondary": "#ffffff", "surface-container-lowest": "#ffffff", "tertiary-fixed-dim": "#ffb1c5", "on-primary-container": "#f8f7ff", "on-tertiary": "#ffffff", "error": "#ba1a1a", "outline": "#727687", "surface-dim": "#d4d9ef", "on-primary-fixed": "#001849", "tertiary-container": "#de006f", "inverse-on-surface": "#eef0ff", "tertiary": "#b10057", "tertiary-fixed": "#ffd9e1", "on-tertiary-fixed-variant": "#8f0045", "background": "#faf8ff", "on-secondary-container": "#fffbff", "surface-bright": "#faf8ff", "primary-fixed-dim": "#b3c5ff", "on-tertiary-container": "#fff6f6", "primary-container": "#0066ff", "secondary": "#7d2dce", "secondary-fixed-dim": "#dbb8ff", "on-error": "#ffffff", "on-tertiary-fixed": "#3f001b", "surface-tint": "#0054d6", "on-surface-variant": "#424656", "primary": "#0050cb", "on-secondary-fixed-variant": "#6600b7", "inverse-surface": "#2a3040", "surface-container-low": "#f2f3ff", "error-container": "#ffdad6", "outline-variant": "#c2c6d8", "surface-container": "#eaedff", "on-secondary-fixed": "#2b0052", "surface-variant": "#dde2f7", "on-primary-fixed-variant": "#003fa4", "surface-container-highest": "#dde2f7", "surface-container-high": "#e2e7fd", "secondary-container": "#974ce9", "on-background": "#151b2b", "on-surface": "#151b2b", "inverse-primary": "#b3c5ff", "primary-fixed": "#dae1ff", "on-error-container": "#93000a", "secondary-fixed": "#efdbff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-sm": "0.5rem", "space-xs": "0.25rem", "margin": "1rem", "space-lg": "1.5rem", "margin-desktop": "2rem", "gutter-tablet": "1.5rem", "gutter": "1rem", "margin-tablet": "1.5rem", "space-md": "1rem", "space-xl": "2rem" }, fontFamily: { "body-sm": ["Plus Jakarta Sans"], "telemetry-num": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "title-sm": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"] }, fontSize: { "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }], "telemetry-num": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.005em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "700" }], "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }], "title-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" }], "display-lg-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "800" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "700" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs"><button aria-label="Go back" class="w-11 h-11 -ml-space-xs flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container active:scale-95 transition-all" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="SONIQ Neon Media Logo.png" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UuPyYaYvTwOhtga7spFwe35_70_ECQU1K8iV5Q5IqIU2eMILXF9bP6CGIOa4NxxmyIJ0RAIqhamqejwhHqNFE-R-SGojiXxRP4TYkpBcfb3agAAJajGINm7dentWW3lx2EvjCCvNvWCpsTHwd-_h0HMs_r6uK40bH_xMixwa7UFq6lUkvI9qqSB20pPZqhq1iMit5iIVmJMnAuG2nKnUBtTHaV92GswR5-_NwRfStS-SMLzqBFqZeotrM"/><div class="flex flex-col ml-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold leading-none">SONIQ</span><h1 class="font-title-md text-title-md font-semibold text-on-surface tracking-tight leading-tight truncate max-w-[180px]">Playback Transitions</h1></div></div><div class="flex items-center gap-space-xs"><button class="h-11 px-space-sm flex items-center gap-1 rounded-full text-primary hover:bg-primary/10 active:scale-95 transition-all" title="Reset to defaults" type="button"><span class="material-symbols-outlined text-[20px]">restart_alt</span><span class="font-label-lg text-label-lg">Reset</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_2px_8px_rgba(0,80,203,0.25)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full pb-32">
+<!-- Subtle Ambient Top Glow -->
+<div class="relative w-full overflow-hidden px-margin pt-4 pb-2">
+<div class="absolute -top-10 -right-10 w-44 h-44 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+<div class="absolute top-20 -left-12 w-48 h-48 rounded-full bg-secondary/10 blur-3xl pointer-events-none"></div>
+<!-- 1. Engine Status Banner -->
+<div class="relative z-10 w-full rounded-2xl bg-surface-container-lowest p-space-md shadow-[0_4px_20px_-2px_rgba(13,19,34,0.05)]">
+<div class="flex items-center justify-between gap-space-sm mb-3">
+<div class="flex items-center gap-space-xs flex-wrap">
+<div class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></div>
+<span class="font-title-sm text-title-sm font-bold text-on-surface tracking-tight">DSP Transition Engine v4.2</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm uppercase font-bold tracking-wider">
+            Bit-Perfect Aligned
+          </span>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="master-engine-switch" type="checkbox"/>
+<label class="w-12 h-7 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:rounded-full after:h-6 after:w-6 after:transition-all after:shadow-sm peer-checked:bg-primary transition-colors cursor-pointer" for="master-engine-switch"></label>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm mb-3 bg-surface-container-low/70 p-2.5 rounded-xl">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-primary text-[18px]">graphic_eq</span>
+<span class="truncate font-medium text-on-surface">Active Transition: <span class="text-primary font-semibold" id="active-duration-label">4.5s Equal Power</span></span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline px-1.5 py-0.5 rounded bg-surface-container-lowest font-semibold">32-Bit Float</span>
+</div>
+<!-- Audiophile Advisory Box -->
+<div class="flex items-start gap-2.5 p-3 rounded-xl bg-surface-container-low text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">verified</span>
+<p class="font-body-sm text-body-sm leading-relaxed">
+<strong class="text-on-surface font-semibold">Audiophile Note:</strong> True Gapless playback delivers bit-perfect, zero-latency sample splicing without altering PCM frames. Crossfade introduces non-destructive real-time DSP gain curves between sequential audio streams.
+        </p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-lg px-margin mt-3">
+<!-- 2. Gapless Playback Module -->
+<section class="flex flex-col rounded-2xl bg-surface-container-lowest p-space-md shadow-[0_4px_18px_-2px_rgba(13,19,34,0.04)]">
+<div class="flex items-center justify-between gap-space-sm mb-2">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">all_inclusive</span>
+</div>
+<div>
+<h2 class="font-title-md text-title-md font-semibold text-on-surface">True Gapless Playback</h2>
+<span class="font-label-sm text-label-sm uppercase text-primary font-bold tracking-wide">Studio Spec</span>
+</div>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="gapless-toggle" type="checkbox"/>
+<label class="w-12 h-7 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:rounded-full after:h-6 after:w-6 after:transition-all after:shadow-sm peer-checked:bg-primary transition-colors cursor-pointer" for="gapless-toggle"></label>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 leading-relaxed">
+        Zero-latency, sample-accurate frame stitching designed for live concerts, symphonic movements, and concept albums. Seamlessly passes audio without boundary stutter.
+      </p>
+<div class="space-y-3 pt-2">
+<!-- Sub-setting 1 -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2.5 min-w-0 pr-2">
+<span class="material-symbols-outlined text-outline text-[20px]">auto_stories</span>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm font-medium text-on-surface truncate">Auto-detect Continuous Albums</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Matches cue metadata &amp; gapless track flags</span>
+</div>
+</div>
+<input checked="" class="w-5 h-5 accent-primary rounded cursor-pointer shrink-0" type="checkbox"/>
+</div>
+<!-- Sub-setting 2 -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2.5 min-w-0 pr-2">
+<span class="material-symbols-outlined text-outline text-[20px]">content_cut</span>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm font-medium text-on-surface truncate">Silence Truncation</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Trim lead/tail silent frames (&gt; 50ms)</span>
+</div>
+</div>
+<input class="w-5 h-5 accent-primary rounded cursor-pointer shrink-0" type="checkbox"/>
+</div>
+</div>
+</section>
+<!-- 3. Crossfade Engine Module -->
+<section class="flex flex-col rounded-2xl bg-surface-container-lowest p-space-md shadow-[0_4px_18px_-2px_rgba(13,19,34,0.04)]">
+<div class="flex items-center justify-between gap-space-sm mb-1">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</div>
+<div>
+<h2 class="font-title-md text-title-md font-semibold text-on-surface">Smart Crossfade</h2>
+<span class="font-label-sm text-label-sm uppercase text-secondary font-bold tracking-wide">Multi-Curve Matrix</span>
+</div>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="crossfade-toggle" type="checkbox"/>
+<label class="w-12 h-7 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:rounded-full after:h-6 after:w-6 after:transition-all after:shadow-sm peer-checked:bg-secondary transition-colors cursor-pointer" for="crossfade-toggle"></label>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 leading-relaxed">
+        Smoothly blends departing and arriving tracks using psychoacoustic volume compensation curves.
+      </p>
+<!-- Duration Slider -->
+<div class="p-3.5 rounded-xl bg-surface-container-low mb-4">
+<div class="flex items-center justify-between mb-2">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface">Blend Duration</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-lowest text-primary font-telemetry-num text-telemetry-num font-bold shadow-sm" id="slider-readout">4.5s</span>
+</div>
+<div class="relative w-full flex items-center py-2">
+<input class="w-full h-2 bg-surface-container-high rounded-lg appearance-none cursor-pointer accent-primary" id="crossfade-slider" max="12.0" min="1.0" step="0.5" type="range" value="4.5"/>
+</div>
+<div class="flex justify-between items-center px-1 font-label-sm text-label-sm text-outline font-semibold">
+<span>1.0s</span>
+<span>4.0s</span>
+<span>6.0s</span>
+<span>8.0s</span>
+<span>10.0s</span>
+<span>12.0s</span>
+</div>
+</div>
+<!-- Curve Selector Grid -->
+<div class="mb-4">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface block mb-2.5">Acoustic Curve Profile</span>
+<div class="grid grid-cols-2 gap-2.5" id="curve-grid">
+<!-- Equal Power (Active) -->
+<div class="curve-card active cursor-pointer p-3 rounded-xl bg-primary text-on-primary transition-all duration-200 shadow-md flex flex-col justify-between" data-curve="equal-power">
+<div class="flex items-center justify-between mb-1">
+<span class="font-title-sm text-title-sm font-bold">Equal Power</span>
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-primary-fixed opacity-95">Sine/Cosine blend. Constant perceived loudness. Ideal for EDM, Pop &amp; Rock.</p>
+</div>
+<!-- Linear -->
+<div class="curve-card cursor-pointer p-3 rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container transition-all duration-200 flex flex-col justify-between" data-curve="linear">
+<div class="flex items-center justify-between mb-1">
+<span class="font-title-sm text-title-sm font-bold">Linear</span>
+<span class="material-symbols-outlined text-[18px] text-outline">radio_button_unchecked</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Uniform gain decay. Preserves delicate acoustic space &amp; folk tones.</p>
+</div>
+<!-- Logarithmic -->
+<div class="curve-card cursor-pointer p-3 rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container transition-all duration-200 flex flex-col justify-between" data-curve="logarithmic">
+<div class="flex items-center justify-between mb-1">
+<span class="font-title-sm text-title-sm font-bold">Logarithmic</span>
+<span class="material-symbols-outlined text-[18px] text-outline">radio_button_unchecked</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Fast initial drop with sustained tail. Prevents vocal collision.</p>
+</div>
+<!-- Exponential -->
+<div class="curve-card cursor-pointer p-3 rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container transition-all duration-200 flex flex-col justify-between" data-curve="exponential">
+<div class="flex items-center justify-between mb-1">
+<span class="font-title-sm text-title-sm font-bold">Exponential</span>
+<span class="material-symbols-outlined text-[18px] text-outline">radio_button_unchecked</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">DJ Club crossover. Sharp snap transition at the overlap peak.</p>
+</div>
+</div>
+</div>
+<!-- Waveform Envelope Simulation Canvas / SVG -->
+<div class="relative w-full rounded-2xl bg-surface-container-high/60 p-3.5 overflow-hidden">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">waves</span>
+<span class="font-title-sm text-title-sm font-semibold text-on-surface">Dynamic Overlap Envelope</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest text-secondary font-label-sm text-label-sm font-bold tracking-wide shadow-sm">-3dB Midpoint</span>
+</div>
+<!-- SVG Visualizer Curves -->
+<div class="relative w-full h-32 rounded-xl bg-surface-container-lowest p-2 flex items-center justify-center shadow-inner overflow-hidden">
+<!-- Background Waveform Stems Track A -->
+<svg class="absolute inset-0 w-full h-full" preserveaspectratio="none" viewbox="0 0 340 100">
+<defs>
+<lineargradient id="trackAGradient" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0%" stop-color="#0066ff" stop-opacity="0.8"></stop>
+<stop offset="70%" stop-color="#7928ca" stop-opacity="0.5"></stop>
+<stop offset="100%" stop-color="#7928ca" stop-opacity="0.0"></stop>
+</lineargradient>
+<lineargradient id="trackBGradient" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0%" stop-color="#00d2ff" stop-opacity="0.0"></stop>
+<stop offset="30%" stop-color="#00d2ff" stop-opacity="0.4"></stop>
+<stop offset="100%" stop-color="#0050cb" stop-opacity="0.85"></stop>
+</lineargradient>
+</defs>
+<!-- Grid Lines -->
+<line stroke="#eaedff" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="340" y1="50" y2="50"></line>
+<line opacity="0.6" stroke="#727687" stroke-dasharray="2 2" stroke-width="1.5" x1="170" x2="170" y1="0" y2="100"></line>
+<!-- Track A Envelope (Fade Out) -->
+<path d="M 0 15 Q 150 20 170 50 T 320 95 L 320 98 L 0 98 Z" fill="url(#trackAGradient)" id="curve-a-path"></path>
+<path d="M 0 15 Q 150 20 170 50 T 320 95" fill="none" id="curve-a-line" stroke="#0050cb" stroke-width="2.5"></path>
+<!-- Track B Envelope (Fade In) -->
+<path d="M 20 95 Q 130 90 170 50 T 340 15 L 340 98 L 20 98 Z" fill="url(#trackBGradient)" id="curve-b-path"></path>
+<path d="M 20 95 Q 130 90 170 50 T 340 15" fill="none" id="curve-b-line" stroke="#7d2dce" stroke-width="2.5"></path>
+<!-- Midpoint Intersect Node -->
+<circle cx="170" cy="50" fill="#ffffff" r="4.5" stroke="#0050cb" stroke-width="2.5"></circle>
+</svg>
+<!-- Label Overlays -->
+<div class="absolute bottom-2 left-3 flex items-center gap-1 bg-surface-container-lowest/80 px-2 py-0.5 rounded backdrop-blur-sm">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface truncate max-w-[90px]">A: Neon Horizon</span>
+</div>
+<div class="absolute bottom-2 right-3 flex items-center gap-1 bg-surface-container-lowest/80 px-2 py-0.5 rounded backdrop-blur-sm">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface truncate max-w-[90px]">B: Sub Aurora</span>
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+</div>
+</div>
+<!-- Play Preview Button -->
+<button class="mt-3 w-full py-2.5 px-4 rounded-xl bg-surface-container-lowest hover:bg-surface text-primary font-title-sm text-title-sm font-semibold shadow-sm flex items-center justify-center gap-2 active:scale-[0.98] transition-all" id="audition-btn">
+<span class="material-symbols-outlined text-[20px] text-primary" id="audition-icon">play_arrow</span>
+<span id="audition-text">Audition Transition (4.5s Preview)</span>
+</button>
+</div>
+</section>
+<!-- 4. Manual Fade-In & Fade-Out Options -->
+<section class="flex flex-col rounded-2xl bg-surface-container-lowest p-space-md shadow-[0_4px_18px_-2px_rgba(13,19,34,0.04)]">
+<div class="flex items-center gap-space-xs mb-3">
+<div class="w-8 h-8 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">volume_up</span>
+</div>
+<div>
+<h2 class="font-title-md text-title-md font-semibold text-on-surface">Tactile Fades</h2>
+<span class="font-label-sm text-label-sm uppercase text-outline font-bold tracking-wide">Manual Transport Controls</span>
+</div>
+</div>
+<!-- Manual Track Start Fade-In -->
+<div class="p-3.5 rounded-xl bg-surface-container-low mb-3">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface">Manual Track Start Fade-In</span>
+<input checked="" class="w-5 h-5 accent-primary rounded cursor-pointer" type="checkbox"/>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2.5">
+          Gently elevates output volume when resume/play is pressed from dead pause.
+        </p>
+<div class="flex gap-2">
+<button class="flex-1 py-1 rounded-full text-center font-label-lg text-label-lg font-medium bg-surface-container-lowest text-on-surface-variant hover:bg-surface">Off</button>
+<button class="flex-1 py-1 rounded-full text-center font-label-lg text-label-lg font-medium bg-surface-container-lowest text-on-surface-variant hover:bg-surface">0.5s</button>
+<button class="flex-1 py-1 rounded-full text-center font-label-lg text-label-lg font-bold bg-primary text-on-primary shadow-sm">1.0s</button>
+<button class="flex-1 py-1 rounded-full text-center font-label-lg text-label-lg font-medium bg-surface-container-lowest text-on-surface-variant hover:bg-surface">2.0s</button>
+</div>
+</div>
+<!-- Manual Pause/Stop Fade-Out -->
+<div class="p-3.5 rounded-xl bg-surface-container-low mb-3">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface">Manual Pause / Stop Fade-Out</span>
+<input checked="" class="w-5 h-5 accent-primary rounded cursor-pointer" type="checkbox"/>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2.5">
+          Soft ramp-down damping to protect analog stages and banish abrupt click transients.
+        </p>
+<div class="flex gap-2">
+<button class="flex-1 py-1 rounded-full text-center font-label-lg text-label-lg font-medium bg-surface-container-lowest text-on-surface-variant hover:bg-surface">Off</button>
+<button class="flex-1 py-1 rounded-full text-center font-label-lg text-label-lg font-bold bg-primary text-on-primary shadow-sm">0.3s</button>
+<button class="flex-1 py-1 rounded-full text-center font-label-lg text-label-lg font-medium bg-surface-container-lowest text-on-surface-variant hover:bg-surface">0.8s</button>
+<button class="flex-1 py-1 rounded-full text-center font-label-lg text-label-lg font-medium bg-surface-container-lowest text-on-surface-variant hover:bg-surface">1.5s</button>
+</div>
+</div>
+<!-- Next Track Manual Skip Crossfade -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low">
+<div class="flex flex-col pr-2">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface">Next Track Manual Skip Crossfade</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Inject instantaneous 1.5s smooth overlap when skip button is tapped</span>
+</div>
+<input checked="" class="w-5 h-5 accent-primary rounded cursor-pointer shrink-0" type="checkbox"/>
+</div>
+</section>
+<!-- 5. End-of-Track & Playback Rules -->
+<section class="flex flex-col rounded-2xl bg-surface-container-lowest p-space-md shadow-[0_4px_18px_-2px_rgba(13,19,34,0.04)]">
+<div class="flex items-center gap-space-xs mb-3">
+<div class="w-8 h-8 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">queue_music</span>
+</div>
+<div>
+<h2 class="font-title-md text-title-md font-semibold text-on-surface">Queue Progression Rules</h2>
+<span class="font-label-sm text-label-sm uppercase text-outline font-bold tracking-wide">Album Cohesion</span>
+</div>
+</div>
+<!-- End of Track Behavior Selector -->
+<span class="font-title-sm text-title-sm font-semibold text-on-surface mb-2 block">Terminal Queue Action</span>
+<div class="space-y-2 mb-4">
+<!-- Option 1: Selected -->
+<label class="flex items-center justify-between p-3 rounded-xl bg-primary/5 cursor-pointer">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px]">playlist_play</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm font-bold text-primary">Continuous Play</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Seamlessly transition into subsequent queue entry</span>
+</div>
+</div>
+<input checked="" class="w-4 h-4 accent-primary" name="end_action" type="radio"/>
+</label>
+<!-- Option 2 -->
+<label class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-outline text-[20px]">pause_circle</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface">Pause &amp; Await Input</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Recommended for critical single-track audio evaluation</span>
+</div>
+</div>
+<input class="w-4 h-4 accent-primary" name="end_action" type="radio"/>
+</label>
+<!-- Option 3 -->
+<label class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-outline text-[20px]">repeat_one</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface">Loop Current Track</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Continuous cyclic repeat of current PCM stream</span>
+</div>
+</div>
+<input class="w-4 h-4 accent-primary" name="end_action" type="radio"/>
+</label>
+</div>
+<!-- Same Album Override -->
+<div class="flex items-center justify-between p-3.5 rounded-xl bg-surface-container-low mb-3">
+<div class="flex flex-col pr-2">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface">Same-Album Crossfade Override</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Preserve original intentional studio sequencing by disabling crossfade across identical album tracks</span>
+</div>
+<input checked="" class="w-5 h-5 accent-primary rounded cursor-pointer shrink-0" type="checkbox"/>
+</div>
+<!-- BPM Beat-Match Sync -->
+<div class="flex items-center justify-between p-3.5 rounded-xl bg-surface-container-low">
+<div class="flex flex-col pr-2">
+<div class="flex items-center gap-2 mb-0.5">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface">BPM / Downbeat Sync</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm font-bold uppercase tracking-wider">Beta DSP</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Harmonically lock crossfade inflection point to incoming measure transients</span>
+</div>
+<input class="w-5 h-5 accent-secondary rounded cursor-pointer shrink-0" type="checkbox"/>
+</div>
+</section>
+<!-- 6. Action Triggers -->
+<div class="flex flex-col gap-2.5 pt-2">
+<button class="w-full py-3.5 px-6 rounded-full bg-gradient-to-r from-primary to-secondary text-on-primary font-title-sm text-title-sm font-bold shadow-[0_8px_24px_-2px_rgba(0,102,255,0.35)] active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">save</span>
+<span>Save &amp; Apply Transition Profile</span>
+</button>
+<button class="w-full py-3 px-6 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-lg text-label-lg font-semibold active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">restore</span>
+<span>Reset to Audiophile Defaults (Gapless ON • Crossfade OFF)</span>
+</button>
+</div>
+</div>
+<!-- 7. Integrated Floating Mini-Player Bar -->
+<div class="fixed bottom-3 left-4 right-4 z-40 h-[68px] rounded-[24px] bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_12px_32px_-4px_rgba(13,19,34,0.12),0_4px_12px_-2px_rgba(13,19,34,0.04)] px-3.5 flex items-center justify-between overflow-hidden">
+<!-- Progress Indicator Line at Bottom -->
+<div class="absolute bottom-0 left-0 h-[3px] bg-surface-container-high w-full">
+<div class="h-full bg-gradient-to-r from-primary to-secondary w-[62%]"></div>
+</div>
+<!-- Media Info -->
+<div class="flex items-center gap-3 min-w-0 pr-2">
+<div class="w-11 h-11 rounded-lg overflow-hidden shrink-0 shadow-sm relative bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Futuristic neon album cover with iridescent holographic fluid soundwaves and luminous violet geometric lines, ultra high definition album artwork" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWsYwU6c6u7RtWrDvWa3a3OqyDJbn6g8KXr2SxntkIoAITGr_wA48OtYUik1JqV9hUeGACIu3eoF1-1n28Ic3xuQweZ-OGMoP7-XCxaltBgf1fh9RPvAXAhQuuKsQtUKclcMDREwGag0DCcqQjgcq2Y3X6EguFBQxpwmjHw46SqyRIMkvQq-BK1brWmLj5xhDnaiijFPEll_wHx61RXWPU7stY-0XSWE8Yfv5ZjUN6"/>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-title-sm text-title-sm font-bold text-on-surface truncate">Neon Horizon</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-bold tracking-tight shrink-0">FLAC 24/192</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Aura Spectrum • 03:42 / 05:14</span>
+</div>
+</div>
+<!-- Playback Controls -->
+<div class="flex items-center gap-1 shrink-0">
+<button aria-label="Playback mode" class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[20px]">shuffle</span>
+</button>
+<button aria-label="Play or pause" class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[22px]">pause</span>
+</button>
+<button aria-label="Next track" class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[20px]">skip_next</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  // Interactive Slider & Curve logic
+  const slider = document.getElementById('crossfade-slider');
+  const sliderReadout = document.getElementById('slider-readout');
+  const activeDurationLabel = document.getElementById('active-duration-label');
+  const auditionText = document.getElementById('audition-text');
+  const curveCards = document.querySelectorAll('.curve-card');
+  let currentProfileName = 'Equal Power';
+
+  if (slider && sliderReadout && activeDurationLabel) {
+    slider.addEventListener('input', (e) => {
+      const val = parseFloat(e.target.value).toFixed(1);
+      sliderReadout.textContent = `${val}s`;
+      activeDurationLabel.textContent = `${val}s ${currentProfileName}`;
+      if (auditionText) {
+        auditionText.textContent = `Audition Transition (${val}s Preview)`;
+      }
+    });
+  }
+
+  // Curve Card Selection
+  curveCards.forEach(card => {
+    card.addEventListener('click', () => {
+      curveCards.forEach(c => {
+        c.classList.remove('bg-primary', 'text-on-primary', 'shadow-md', 'active');
+        c.classList.add('bg-surface-container-low', 'text-on-surface');
+        const icon = c.querySelector('.material-symbols-outlined');
+        if (icon) {
+          icon.textContent = 'radio_button_unchecked';
+          icon.classList.add('text-outline');
+        }
+        const desc = c.querySelector('p');
+        if (desc) {
+          desc.className = 'font-body-sm text-body-sm text-on-surface-variant';
+        }
+      });
+
+      card.classList.remove('bg-surface-container-low', 'text-on-surface');
+      card.classList.add('bg-primary', 'text-on-primary', 'shadow-md', 'active');
+      const activeIcon = card.querySelector('.material-symbols-outlined');
+      if (activeIcon) {
+        activeIcon.textContent = 'check_circle';
+        activeIcon.classList.remove('text-outline');
+      }
+      const activeDesc = card.querySelector('p');
+      if (activeDesc) {
+        activeDesc.className = 'font-body-sm text-body-sm text-primary-fixed opacity-95';
+      }
+
+      const titleEl = card.querySelector('.font-title-sm');
+      if (titleEl) {
+        currentProfileName = titleEl.textContent.trim();
+        const val = slider ? parseFloat(slider.value).toFixed(1) : '4.5';
+        if (activeDurationLabel) {
+          activeDurationLabel.textContent = `${val}s ${currentProfileName}`;
+        }
+      }
+    });
+  });
+
+  // Audition playback trigger preview simulation
+  const auditionBtn = document.getElementById('audition-btn');
+  const auditionIcon = document.getElementById('audition-icon');
+  let isAuditioning = false;
+  let auditionTimer = null;
+
+  if (auditionBtn && auditionIcon) {
+    auditionBtn.addEventListener('click', () => {
+      if (!isAuditioning) {
+        isAuditioning = true;
+        auditionIcon.textContent = 'stop';
+        auditionBtn.classList.add('bg-primary', 'text-on-primary');
+        auditionBtn.classList.remove('bg-surface-container-lowest', 'text-primary');
+
+        const val = slider ? parseFloat(slider.value) * 1000 : 4500;
+        auditionTimer = setTimeout(() => {
+          isAuditioning = false;
+          auditionIcon.textContent = 'play_arrow';
+          auditionBtn.classList.remove('bg-primary', 'text-on-primary');
+          auditionBtn.classList.add('bg-surface-container-lowest', 'text-primary');
+        }, val);
+      } else {
+        clearTimeout(auditionTimer);
+        isAuditioning = false;
+        auditionIcon.textContent = 'play_arrow';
+        auditionBtn.classList.remove('bg-primary', 'text-on-primary');
+        auditionBtn.classList.add('bg-surface-container-lowest', 'text-primary');
+      }
+    });
+  }
+</script></main></body></html>

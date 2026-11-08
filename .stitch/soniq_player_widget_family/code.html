@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-fixed-variant": "#003fa4", "surface-dim": "#d4d9ef", "tertiary-container": "#de006f", "on-secondary-fixed": "#2b0052", "on-tertiary-fixed": "#3f001b", "on-tertiary-container": "#fff6f6", "on-error": "#ffffff", "on-surface": "#151b2b", "outline-variant": "#c2c6d8", "on-error-container": "#93000a", "secondary-fixed": "#efdbff", "inverse-on-surface": "#eef0ff", "surface": "#faf8ff", "surface-bright": "#faf8ff", "secondary-fixed-dim": "#dbb8ff", "surface-variant": "#dde2f7", "on-primary-fixed": "#001849", "error": "#ba1a1a", "surface-container-lowest": "#ffffff", "on-background": "#151b2b", "on-tertiary-fixed-variant": "#8f0045", "on-secondary-container": "#fffbff", "on-secondary-fixed-variant": "#6600b7", "inverse-primary": "#b3c5ff", "surface-container": "#eaedff", "surface-tint": "#0054d6", "surface-container-high": "#e2e7fd", "on-secondary": "#ffffff", "inverse-surface": "#2a3040", "primary-fixed": "#dae1ff", "on-primary-container": "#f8f7ff", "primary-fixed-dim": "#b3c5ff", "tertiary-fixed-dim": "#ffb1c5", "error-container": "#ffdad6", "on-tertiary": "#ffffff", "outline": "#727687", "secondary-container": "#974ce9", "primary-container": "#0066ff", "on-surface-variant": "#424656", "tertiary-fixed": "#ffd9e1", "surface-container-highest": "#dde2f7", "tertiary": "#b10057", "surface-container-low": "#f2f3ff", "on-primary": "#ffffff", "background": "#faf8ff", "secondary": "#7d2dce", "primary": "#0050cb" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "space-xs": "0.25rem", "gutter": "1rem", "margin-desktop": "2rem", "space-md": "1rem", "gutter-tablet": "1.5rem", "space-sm": "0.5rem", "margin-tablet": "1.5rem", "margin": "1rem", "space-xl": "2rem" }, "fontFamily": { "label-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "title-sm": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "telemetry-num": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"] }, "fontSize": { "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }], "display-lg-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "800" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }], "title-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "telemetry-num": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.005em", "fontWeight": "400" }], "title-md": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#faf8ff;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(13,19,34,0.03)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="SONIQ Neon Media Logo.png" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1UuPyYaYvTwOhtga7spFwe35_70_ECQU1K8iV5Q5IqIU2eMILXF9bP6CGIOa4NxxmyIJ0RAIqhamqejwhHqNFE-R-SGojiXxRP4TYkpBcfb3agAAJajGINm7dentWW3lx2EvjCCvNvWCpsTHwd-_h0HMs_r6uK40bH_xMixwa7UFq6lUkvI9qqSB20pPZqhq1iMit5iIVmJMnAuG2nKnUBtTHaV92GswR5-_NwRfStS-SMLzqBFqZeotrM"/><div class="flex flex-col min-w-0"><span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold leading-tight truncate">SONIQ Studio</span><span class="font-title-sm text-title-sm text-on-surface font-semibold truncate leading-tight">Component Catalog</span></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Export Presets" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[22px]">ios_share</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full pt-16 pb-24 bg-surface relative"><div class="flex flex-col w-full px-margin py-space-md space-y-space-xl">
+<!-- Showcase Hero Intro & Theme Toggle Simulation -->
+<section class="flex flex-col space-y-space-xs">
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[14px]">tune</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Android 14+ Glance API Specs</span>
+</div>
+<div class="flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+        Dynamic Mesh Tinting
+      </div>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Android Widget Collection</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+      High-precision, glanceable lock and home screen layouts. Engineered with adaptive Material 3 surfaces, frosted acoustic clarity, and chromatic playback states.
+    </p>
+<!-- Quick Sizing Navigation Pills -->
+<div class="flex items-center gap-space-xs overflow-x-auto py-space-xs no-scrollbar">
+<a class="px-space-md py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm shrink-0 shadow-sm shadow-primary/20" href="#size-1x1">1x1 Micro</a>
+<a class="px-space-md py-1.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm shrink-0 hover:bg-surface-container-high transition-colors" href="#size-2x1">2x1 Bar</a>
+<a class="px-space-md py-1.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm shrink-0 hover:bg-surface-container-high transition-colors" href="#size-2x2">2x2 Square</a>
+<a class="px-space-md py-1.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm shrink-0 hover:bg-surface-container-high transition-colors" href="#size-4x1">4x1 Ribbon</a>
+<a class="px-space-md py-1.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm shrink-0 hover:bg-surface-container-high transition-colors" href="#size-4x2">4x2 Expanded</a>
+<a class="px-space-md py-1.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm shrink-0 hover:bg-surface-container-high transition-colors" href="#size-4x3">4x3 Command</a>
+<a class="px-space-md py-1.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm shrink-0 hover:bg-surface-container-high transition-colors" href="#size-4x4">4x4 Flagship</a>
+</div>
+</section>
+<!-- SECTION 1: 1x1 Compact Widgets -->
+<section class="flex flex-col space-y-space-sm pt-space-xs" id="size-1x1">
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-4 bg-primary rounded-full"></span>
+<h3 class="font-title-md text-title-md text-on-surface">1x1 Compact Controls</h3>
+</div>
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant">80 x 80 dp • 3 Variations</span>
+</div>
+<!-- 3 Variations Grid -->
+<div class="grid grid-cols-3 gap-space-sm">
+<!-- Variant A: Cover Centered Glass Play -->
+<div class="flex flex-col items-center gap-1.5">
+<div class="relative w-full aspect-square rounded-[24px] overflow-hidden shadow-md group cursor-pointer bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Vibrant synthwave album cover with luminous neon cyan and magenta lines curving over a dark retro grid, clean minimal audio artwork styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbEhrqC7HpFFEjkh5JK7gFshR7Wo1eAwp8s7jZemTvQu4Dnq2KCizTFdrzNYlxBq8iGlssVJG6agnGXe4U0dXpHkNLtnVv6zFV83JPRH4enQOFKR2pdYbNoV2U3mvpnCRA-nCUMYaDIiVEwrVPVMGkf8uCv6tEZmzXbHIcu63lkOEC1MpH5Z7bG6DUa6yFhCzLRMtFJAt-s4uudvOX50_DwLK0IfdTxVqBl-XhHfro"/>
+<div class="absolute inset-0 bg-inverse-surface/35 backdrop-blur-[2px] flex items-center justify-center">
+<div class="w-9 h-9 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg transition-transform active:scale-90">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">pause</span>
+</div>
+</div>
+<div class="absolute bottom-1.5 right-1.5 w-2 h-2 rounded-full bg-primary shadow-sm shadow-primary"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-center">A: Glass Play</span>
+</div>
+<!-- Variant B: Minimalist Pulsing Ring -->
+<div class="flex flex-col items-center gap-1.5">
+<div class="relative w-full aspect-square rounded-[24px] bg-surface-container-lowest p-2 shadow-md flex flex-col items-center justify-center cursor-pointer overflow-hidden">
+<!-- Animated Ring SVG -->
+<svg class="absolute inset-0 w-full h-full p-2.5 -rotate-90" viewbox="0 0 100 100">
+<circle class="text-surface-variant" cx="50" cy="50" fill="none" r="42" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-primary" cx="50" cy="50" fill="none" r="42" stroke="currentColor" stroke-dasharray="264" stroke-dashoffset="85" stroke-linecap="round" stroke-width="6"></circle>
+</svg>
+<div class="relative z-10 w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md shadow-primary/30">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+<span class="relative z-10 font-telemetry-num text-telemetry-num text-primary font-bold mt-1">68%</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-center">B: Pulse Dial</span>
+</div>
+<!-- Variant C: Micro Thumbnail + Glow Dot -->
+<div class="flex flex-col items-center gap-1.5">
+<div class="relative w-full aspect-square rounded-[24px] bg-surface-container-low p-2 shadow-md flex flex-col justify-between cursor-pointer">
+<div class="flex items-center justify-between w-full">
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span>
+<span class="w-2 h-2 rounded-full bg-tertiary -ml-3"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold text-[9px]">DSD</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[14px]">graphic_eq</span>
+</div>
+<div class="relative w-9 h-9 rounded-xl overflow-hidden self-center shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Holographic liquid sound sculpture floating in pure white minimalist space, iridescent reflections of violet and blue." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASqRLc1HVqXODMZ7jjQc7vZYsd3_7D-HvDveePOsGENboE08FHg87m95YeUGCFVbHNbP8GaSpSF0wo4U_d0TIkljDTzFlZ4IfR75kwfSmMCpQgwSXSWQ6AgkhbV6OZwYyraj4XX6y2K-IghDYmtW1R6z_XclU8X7YCKo6YJPUbTlWgQecY0S0zqPKGpa605u0XZS0Fg887QKaG1re28xbQ6AwFI_XVmPEtOrQgRVkv"/>
+</div>
+<div class="flex justify-center items-center gap-1">
+<span class="font-label-sm text-label-sm text-on-surface font-bold truncate max-w-[56px]">Aura</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-center">C: Telemetry</span>
+</div>
+</div>
+</section>
+<!-- SECTION 2: 2x1 Mini Player Widget -->
+<section class="flex flex-col space-y-space-sm pt-space-xs" id="size-2x1">
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-4 bg-primary rounded-full"></span>
+<h3 class="font-title-md text-title-md text-on-surface">2x1 Mini Player</h3>
+</div>
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant">160 x 80 dp • Compact Bar</span>
+</div>
+<!-- Dual Appearance: Light & Dark Comparison -->
+<div class="grid grid-cols-1 gap-space-sm">
+<!-- Light Variant -->
+<div class="w-full rounded-[26px] bg-surface-container-lowest p-space-sm shadow-md flex items-center justify-between gap-space-sm relative overflow-hidden">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative w-12 h-12 rounded-xl overflow-hidden shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Ultra crisp geometric cover art featuring neon electric blue lines and sunset violet hues over a textured matte background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpztNEY6AF1RVPyg1LwPVSY0NMQBmA-FDfBmz73aLn4QdMJEWknzC_3LaX9kDjwE9MbunuZ5z9WsvOtEh2nX-zAa6Rhaxu4BBYwWcbA-InXs2JkAPQ5cZeqjEnUEVcckpHbSs8bYAEV-2HYn0BmuA8RL--r1q5sJ1RKJIig-wcjxUd24YqmaeHLRM2J81aWtDGe_AsYHhzhgWtrbKuDZKoZ77BROrrQ3amL5ttBZSC"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/40 to-transparent"></div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1">
+<span class="font-title-sm text-title-sm text-on-surface font-bold truncate">Neon Horizon</span>
+<span class="px-1 py-0.2 rounded-full bg-primary/10 text-primary font-label-sm text-[9px] font-bold">HR</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Aura Spectrum</span>
+</div>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<button aria-label="Previous Track" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">skip_previous</span>
+</button>
+<button aria-label="Play or Pause" class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md shadow-primary/25 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+<button aria-label="Next Track" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">skip_next</span>
+</button>
+</div>
+<!-- Embedded Bottom Mini Progress -->
+<div class="absolute bottom-0 left-0 right-0 h-[3px] bg-surface-variant">
+<div class="h-full bg-primary w-[44%]"></div>
+</div>
+</div>
+<!-- Dark Android Canvas Variation (Sub-widget demo) -->
+<div class="w-full rounded-[26px] bg-inverse-surface text-inverse-on-surface p-space-sm shadow-lg flex items-center justify-between gap-space-sm relative overflow-hidden">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative w-12 h-12 rounded-xl overflow-hidden shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Deep space audio visualization album art, luminous starlight streaks, dark navy and vivid laser violet aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOkRxR0gncMnv_edvCwYyb_3xaGfceWzsBQ3tdfAqBlB2BEpEqmr52SXG7KI8BpoGOFnwruak3cRmRq-tthId67dQNTNEM53cS_yMIpFsNssKfZox-XTINPcgMSFqBl6LVE0gcaQPR3vvbZKXSk-ahJ_OJEq4qo2zpUKqT3kCzxq5rvh3PWQCRfaufzmgOGdnGRrZw6k99SlmjKwafky6nLG91DV9uSFyJZCN2UmNL"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-inverse-on-surface font-bold truncate">Celestial Drift</span>
+<span class="font-body-sm text-body-sm text-outline-variant truncate">Kavinsky &amp; Soniq</span>
+</div>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<button aria-label="Play or Pause" class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-lg shadow-primary/40 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<button aria-label="Next Track" class="w-8 h-8 rounded-full flex items-center justify-center text-outline-variant hover:text-inverse-on-surface">
+<span class="material-symbols-outlined text-[18px]">skip_next</span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-[3px] bg-surface-dim/20">
+<div class="h-full bg-secondary-fixed w-[78%]"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: 2x2 Square Player Widgets -->
+<section class="flex flex-col space-y-space-sm pt-space-xs" id="size-2x2">
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-4 bg-primary rounded-full"></span>
+<h3 class="font-title-md text-title-md text-on-surface">2x2 Square Players</h3>
+</div>
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant">160 x 160 dp • 2 Styles</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Variant A: Artwork Focused -->
+<div class="relative aspect-square rounded-[28px] overflow-hidden shadow-lg bg-surface-container flex flex-col justify-end p-2.5">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Surreal hyper-detailed crystal audio sphere reflecting vibrant holographic sunrise hues, electric blues and fuchsias." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUnKTpZisKuoEsKkWo6ilY4Ul0Qi-Hw6thnjLf0XT8ORZP6LzPQP5OzSVv8DoZF_ZPQ3NXlbdhy9DOB2_N0hvkdJcD7VKWqOgFASM9Vlt0gDO_07_9wBNHq9ZL7m2zOtxfYbbu8d1Lsb8XgdnVW1ow0zTCZ3DiMzL5aBj86x6ffA7ZeoUh_B2cd3JnnxY5AQqdqPoYNRF8--HzjPpvN5V9j3yTpCZ_rJaNw2T_e4Li"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/85 via-inverse-surface/20 to-transparent"></div>
+<!-- Top Floating Codec Chip -->
+<div class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-surface/85 backdrop-blur-md shadow-sm">
+<span class="font-label-sm text-label-sm text-primary font-bold">24-BIT</span>
+</div>
+<!-- Frosted Bottom Overlay -->
+<div class="relative z-10 w-full rounded-2xl bg-surface/90 backdrop-blur-xl p-2.5 shadow-md flex items-center justify-between gap-1.5">
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-bold truncate text-[13px]">Vortex Pulse</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate text-[11px]">Croma Labs</span>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<button aria-label="Favorite Track" class="text-tertiary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<button aria-label="Play or Pause" class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Variant B: Control & Telemetry Focused -->
+<div class="aspect-square rounded-[28px] bg-surface-container-lowest p-space-sm shadow-lg flex flex-col justify-between">
+<!-- Header row -->
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-xl overflow-hidden shadow-sm shrink-0">
+<img class="w-full h-full object-cover" data-alt="Minimalist abstract sound wave typography in glowing indigo and violet gradient, high key white backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlkxIZyzutpPvzfT8QjLub7avjbC2ofted_tMEQCtW9mP8peQLJ0UMH677Jkgj-53qZbQYCwJs3YvWMkX8fy-H6CkM-m5pQ_qMewM5gp8CYskolnT7hMvy9nLY5UIRbz3uFiNaAGmwqaS4aPgU5OXF_cf5H9C2XQBk6HfdX7WVs6A08UV2kdz3r1CVzhb19l7QR1UoEPV-Bvu3TmN5cuRCjZreVv-atCEX4MHp6ZKc"/>
+</div>
+<button aria-label="Favorite toggle" class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+<!-- Metadata -->
+<div class="flex flex-col min-w-0 my-1">
+<span class="font-title-sm text-title-sm text-on-surface font-bold truncate">Resonance</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Elysian Field</span>
+</div>
+<!-- Scrubber -->
+<div class="flex flex-col space-y-1">
+<div class="w-full h-1.5 rounded-full bg-surface-variant overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full w-[62%]"></div>
+</div>
+<div class="flex justify-between font-telemetry-num text-telemetry-num text-on-surface-variant text-[10px]">
+<span>02:14</span>
+<span>-01:28</span>
+</div>
+</div>
+<!-- Controls Cluster -->
+<div class="flex items-center justify-around pt-0.5">
+<button aria-label="Previous" class="text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">skip_previous</span>
+</button>
+<button aria-label="Play or Pause" class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md shadow-primary/30">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+<button aria-label="Next" class="text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">skip_next</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: 4x1 Ultra-Wide Mini Player -->
+<section class="flex flex-col space-y-space-sm pt-space-xs" id="size-4x1">
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-4 bg-primary rounded-full"></span>
+<h3 class="font-title-md text-title-md text-on-surface">4x1 Ultra-Wide Ribbon</h3>
+</div>
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant">340 x 80 dp</span>
+</div>
+<div class="w-full rounded-[28px] bg-surface-container-lowest p-space-sm shadow-lg flex items-center justify-between gap-space-sm relative">
+<!-- Left Thumbnail & Info -->
+<div class="flex items-center gap-space-sm min-w-0 max-w-[42%]">
+<div class="relative w-12 h-12 rounded-xl overflow-hidden shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Prismatic album artwork with iridescent glass refraction, electric violet accents on a pristine white minimalist canvas." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCedJ_1g5KX6gn-l3U_TUh2cgJriyDsVQPQkppjcveGUukvt4CqBm3MrSkLsB_NWBf4oL9yKQqYB22YZiPpGVWLTbTOxn7TluwcAtivB4FVW295knR2t1v1MjALRmAuTxS_n5kzr31dxHIRXJlhfnfJg2UnoBqlh7H8vneVmn1w9iqmrwAhewOuUXwlqtBWvIh8KoX_AxcVP7CLwP94fPUJ06SDBydLA-PXoa6qyQWl"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-bold truncate">Mirage Waves</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Solaar &amp; Nyx</span>
+</div>
+</div>
+<!-- Center Mini Dynamic Waveform Visualizer -->
+<div class="hidden sm:flex items-center gap-0.5 h-6 px-space-xs shrink-0">
+<span class="w-[3px] h-3 bg-primary rounded-full"></span>
+<span class="w-[3px] h-5 bg-primary rounded-full"></span>
+<span class="w-[3px] h-2 bg-primary rounded-full"></span>
+<span class="w-[3px] h-6 bg-secondary rounded-full"></span>
+<span class="w-[3px] h-4 bg-secondary rounded-full"></span>
+<span class="w-[3px] h-1.5 bg-surface-variant rounded-full"></span>
+<span class="w-[3px] h-3 bg-surface-variant rounded-full"></span>
+</div>
+<!-- Right Transport Controls & Queue Action -->
+<div class="flex items-center gap-1 shrink-0">
+<button aria-label="Previous" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[18px]">skip_previous</span>
+</button>
+<button aria-label="Play/Pause" class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-secondary text-on-primary flex items-center justify-center shadow-md shadow-primary/25">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+<button aria-label="Next" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[18px]">skip_next</span>
+</button>
+<button aria-label="Queue shortcut" class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary ml-1">
+<span class="material-symbols-outlined text-[18px]">queue_music</span>
+</button>
+</div>
+</div>
+</section>
+<!-- SECTION 5: 4x2 Expanded Music Player -->
+<section class="flex flex-col space-y-space-sm pt-space-xs" id="size-4x2">
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-4 bg-primary rounded-full"></span>
+<h3 class="font-title-md text-title-md text-on-surface">4x2 Expanded Player</h3>
+</div>
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant">340 x 160 dp • Balanced Pro</span>
+</div>
+<div class="w-full rounded-[32px] bg-surface-container-lowest p-space-md shadow-xl flex flex-col justify-between gap-space-sm relative overflow-hidden">
+<!-- Ambient Backsplash Gradient -->
+<div class="absolute -right-16 -top-16 w-48 h-48 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+<!-- Top Half: Artwork + Detailed Metadata -->
+<div class="flex items-center gap-space-md">
+<div class="relative w-20 h-20 rounded-2xl overflow-hidden shadow-md shrink-0">
+<img class="w-full h-full object-cover" data-alt="High tech cyberpunk audio synth album cover, vibrant magenta laser grids, hyper clear studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEEv_Owo_eAVzGLTWguqCgateb5IAMeiTGV1WvB3tsl0VvVih-jH7M5WJ9wydU0QmeGu281DzeEaZA_bzYw8vIohmbLAKjna5VRy1YjvnswNsbJNC4J7XHbAPC74lYor59cMsBeSXXjoBVrWRTJongLbxp69DdG7_pXDqaCQfFYebuWoGem5coBVXw8vvEFzmF5xQ2N-4wKylaerc8EAUdmvU7D7diHEspRiLgpKHv"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/30 to-transparent"></div>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-1.5 mb-0.5">
+<span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-[10px] font-bold">24-bit / 192kHz</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[9px] uppercase font-bold">FLAC</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">Hyperspace Velocity</span>
+<span class="font-body-md text-body-md text-on-surface-variant truncate">Kallisto &amp; Orbital Sound</span>
+</div>
+<button aria-label="Favorite" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-tertiary shrink-0 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+<!-- Bottom Half: Seeker Bar + Transport Controls -->
+<div class="flex flex-col space-y-space-xs mt-1">
+<!-- Interactive Progress Bar -->
+<div class="w-full flex items-center gap-space-xs">
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant text-[11px]">01:42</span>
+<div class="relative flex-1 h-2 rounded-full bg-surface-variant overflow-hidden cursor-pointer">
+<div class="h-full bg-primary rounded-full w-[45%]"></div>
+</div>
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant text-[11px]">-02:38</span>
+</div>
+<!-- Transports -->
+<div class="flex items-center justify-between pt-1">
+<button aria-label="Shuffle" class="text-primary">
+<span class="material-symbols-outlined text-[20px]">shuffle</span>
+</button>
+<button aria-label="Previous Track" class="text-on-surface">
+<span class="material-symbols-outlined text-[22px]">skip_previous</span>
+</button>
+<button aria-label="Play or Pause" class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-lg shadow-primary/30 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[26px]" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+<button aria-label="Next Track" class="text-on-surface">
+<span class="material-symbols-outlined text-[22px]">skip_next</span>
+</button>
+<button aria-label="Repeat Mode" class="text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[20px]">repeat</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: 4x3 Advanced Music Dashboard -->
+<section class="flex flex-col space-y-space-sm pt-space-xs" id="size-4x3">
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-4 bg-primary rounded-full"></span>
+<h3 class="font-title-md text-title-md text-on-surface">4x3 Command Center</h3>
+</div>
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant">340 x 250 dp • Dual Surface</span>
+</div>
+<div class="w-full rounded-[34px] bg-surface-container-lowest p-space-md shadow-xl flex flex-col space-y-space-md relative overflow-hidden">
+<!-- Main Upper Split: Player + Device Inspector -->
+<div class="grid grid-cols-12 gap-space-md">
+<!-- Left 7 cols: Media Hero -->
+<div class="col-span-7 flex flex-col justify-between">
+<div class="flex items-start gap-space-sm">
+<div class="relative w-16 h-16 rounded-2xl overflow-hidden shadow-md shrink-0">
+<img class="w-full h-full object-cover" data-alt="Prismatic crystal sphere dispersing pure laser beams into acoustic spectral colors on studio backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIRaFQ1ADBCbCCmqejgh2ZHVKnLOgLW62kn9hveRFM_sxN7OagN_ZHVU_SiQRyGHfcMV7WLYXBPUHAXrCVpW_8aY6rD7fmiLVU4pC8AU0b6h3qbGjO04I15r8rvA_FFzMn10FfTSBWA-RkjVmAm4iVM2EIy9gLbB0MtRBjWxR-ReWcplLohR1lMNeV7rCj_0lXWV13u8DOakTl92M-cX0OXyiC1T51tvyVJOffdcGj"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[9px] font-bold w-fit mb-1">ATMOS SPATIAL</span>
+<span class="font-title-md text-title-md text-on-surface font-bold truncate">Quantum Echo</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Valence Trio</span>
+</div>
+</div>
+<!-- Mini Transports -->
+<div class="flex items-center gap-2 mt-space-sm">
+<button aria-label="Rewind" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">fast_rewind</span>
+</button>
+<button aria-label="Play/Pause" class="w-11 h-11 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md shadow-primary/30">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+<button aria-label="Fast Forward" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">fast_forward</span>
+</button>
+</div>
+</div>
+<!-- Right 5 cols: Output Device Badge & Mode Toggle -->
+<div class="col-span-5 flex flex-col justify-between p- space-xs bg-surface-container-low rounded-2xl p-2.5">
+<div class="flex flex-col">
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]">headphones</span>
+<span class="font-label-sm text-label-sm uppercase font-bold text-[10px]">Connected</span>
+</div>
+<span class="font-title-sm text-title-sm text-on-surface font-bold truncate">WH-1000XM5</span>
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant text-[10px]">LDAC • 990 kbps</span>
+</div>
+<!-- DSP Sound Mode Selector -->
+<div class="flex flex-col gap-1 mt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant text-[9px] uppercase font-bold">EQ Profile</span>
+<div class="flex items-center justify-between px-2 py-1 rounded-xl bg-surface-container-lowest shadow-sm">
+<span class="font-label-sm text-label-sm text-primary font-bold">Spatial 3D</span>
+<span class="material-symbols-outlined text-primary text-[14px]">graphic_eq</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Lower Half: Quick Queue Peek (2 upcoming tracks) -->
+<div class="flex flex-col space-y-1.5 pt-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-bold">Up Next in Queue</span>
+<span class="font-telemetry-num text-telemetry-num text-primary">14 Tracks</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs">
+<!-- Next Track 1 -->
+<div class="flex items-center gap-2 p-2 rounded-xl bg-surface-container-low">
+<div class="w-8 h-8 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Monochrome futuristic minimalist album art with vibrant purple circular accent." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxp_JA-X893tbEQfR9gnk0cT3gs-sW8IHh5a0H9IsvgIjzOSpCHoPCPm_uVEYYcsDRR7RA2CzA3k3uncCR1b6wKHR7FxWCFDZEhTnYSsgeVuq2LdG5xxi8GcI31el6iTTIqO61DK97l0BUl3taK9Cj3NVEWfWD4IWc9lrb6hwfNDzRf-yXY6xQ1epu0vyO4fhDpew8ikmg0OaLHPS-IqhoQe-3vtbFFmE_Kk3tW3u7"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate text-[12px]">Solaris</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate text-[10px]">Arp Fiction</span>
+</div>
+</div>
+<!-- Next Track 2 -->
+<div class="flex items-center gap-2 p-2 rounded-xl bg-surface-container-low">
+<div class="w-8 h-8 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Geometric minimalist architectural photography drenched in ambient cyan neon light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvExnzt5NCdDgqeuMhiePOCgFZy-0pWq7QU08VxY9gPj2Oi10vNK6PVdaNaGWxV7FTykQ_FtaxrHlZw8Nu0oUdr1NYYAEaUvlm5lliB7gLRDRA0YqlAq-PP56Sb6RFgdsjD7kb2mQF77LWk2Y1p6EC0vjhAG6NexEQ723u8e9TXFJxlqLTSqqYl0aw8MmmFnQ0s2R5Z8hlRE_D1mHFCKU-7qIvyoBYA2soEC8Jfwpb"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate text-[12px]">Velocity 9</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate text-[10px]">Vectorial</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 7: 4x4 Flagship Full SONIQ Music Dashboard -->
+<section class="flex flex-col space-y-space-sm pt-space-xs" id="size-4x4">
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-4 bg-primary rounded-full"></span>
+<h3 class="font-title-md text-title-md text-on-surface">4x4 Flagship Pro Player</h3>
+</div>
+<span class="font-telemetry-num text-telemetry-num text-primary font-bold">340 x 340 dp • Complete Studio</span>
+</div>
+<!-- Flagship Container -->
+<div class="w-full rounded-[36px] bg-surface-container-lowest p-space-md shadow-2xl flex flex-col space-y-space-sm relative overflow-hidden">
+<!-- Ambient Glow Behind Artwork -->
+<div class="absolute -left-12 -top-12 w-56 h-56 rounded-full bg-secondary/10 blur-3xl pointer-events-none"></div>
+<!-- Top Row: Output Status & Audio Studio Quick Launch -->
+<div class="flex items-center justify-between relative z-10">
+<div class="flex items-center gap-2 px-space-sm py-1 rounded-full bg-surface-container-low">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">Sony LDAC • 96kHz</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">cast_connected</span>
+</div>
+<div class="flex items-center gap-1.5">
+<button aria-label="Playback Speed Selector" class="px-2 py-1 rounded-lg bg-surface-container-low font-telemetry-num text-telemetry-num text-on-surface font-bold text-[11px] active:scale-95 transition-transform">
+            1.0x
+          </button>
+<button aria-label="Open Studio DSP" class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">equalizer</span>
+</button>
+</div>
+</div>
+<!-- Middle Showcase: Album Cover + Dynamic Track Details -->
+<div class="flex items-center gap-space-md relative z-10">
+<div class="relative w-24 h-24 rounded-2xl overflow-hidden shadow-lg shrink-0">
+<img class="w-full h-full object-cover" data-alt="Stunning 3D audio rendered sphere pulsing with holographic color bands, deep rich indigo and electric fuchsia light bursts." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFSrD1bpWfznUrOWiAM3CHF6lFNjhQDOqtQ71eSnAWTVQc7K8TEc8vgHh9tGKLPLm2QfIhxdVsIjxr8gv1zOcL4Jz6JHdk6DzyDUFPv4cvkVVtRKHeKZIHpF_D8HQjr9x88fJXZ08IhIuFGmSeGsSuN2VlDfE3yocHVJIr6ieirY87W1_dZ3Au8Fa-CN4_it8QBAUeiR1B2rPnCo6zClxFgL68Bab8e3saixYcCB-o"/>
+<div class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded-full bg-inverse-surface/80 backdrop-blur-sm text-inverse-on-surface font-label-sm text-[8px] font-bold">
+            MASTER
+          </div>
+</div>
+<div class="flex flex-col min-w-0 flex-1 justify-center">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="px-2 py-0.5 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-[9px] font-bold">SONIQ PURE DSP</span>
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant text-[10px]">Track 4 of 12</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface font-bold truncate">Acoustic Singularity</span>
+<span class="font-body-md text-body-md text-on-surface-variant truncate">NEXUS Audiophile Ensemble</span>
+</div>
+</div>
+<!-- Interactive Waveform Progress Seeker -->
+<div class="flex flex-col space-y-1 relative z-10">
+<div class="flex items-center justify-between font-telemetry-num text-telemetry-num text-on-surface-variant text-[11px]">
+<span class="text-primary font-bold">03:45</span>
+<span>-02:15</span>
+</div>
+<!-- High Fidelity Visualizer Waveform Bar -->
+<div class="flex items-end gap-[3px] h-9 w-full px-1 cursor-pointer">
+<div class="flex-1 h-[40%] bg-primary rounded-full"></div>
+<div class="flex-1 h-[65%] bg-primary rounded-full"></div>
+<div class="flex-1 h-[90%] bg-primary rounded-full"></div>
+<div class="flex-1 h-[75%] bg-primary rounded-full"></div>
+<div class="flex-1 h-[50%] bg-primary rounded-full"></div>
+<div class="flex-1 h-[85%] bg-primary rounded-full"></div>
+<div class="flex-1 h-[100%] bg-primary rounded-full"></div>
+<div class="flex-1 h-[70%] bg-primary rounded-full"></div>
+<div class="flex-1 h-[45%] bg-primary rounded-full"></div>
+<div class="flex-1 h-[30%] bg-primary rounded-full"></div>
+<div class="flex-1 h-[60%] bg-surface-variant rounded-full"></div>
+<div class="flex-1 h-[40%] bg-surface-variant rounded-full"></div>
+<div class="flex-1 h-[25%] bg-surface-variant rounded-full"></div>
+<div class="flex-1 h-[55%] bg-surface-variant rounded-full"></div>
+<div class="flex-1 h-[80%] bg-surface-variant rounded-full"></div>
+<div class="flex-1 h-[45%] bg-surface-variant rounded-full"></div>
+<div class="flex-1 h-[30%] bg-surface-variant rounded-full"></div>
+<div class="flex-1 h-[20%] bg-surface-variant rounded-full"></div>
+</div>
+</div>
+<!-- Complete Transport Controls Array -->
+<div class="flex items-center justify-between px-space-xs pt-1 relative z-10">
+<button aria-label="Favorite Track" class="text-tertiary active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<button aria-label="Skip to previous" class="text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[26px]">skip_previous</span>
+</button>
+<button aria-label="Play or Pause" class="w-14 h-14 rounded-full bg-gradient-to-r from-primary to-secondary text-on-primary flex items-center justify-center shadow-xl shadow-primary/35 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+<button aria-label="Skip to next" class="text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[26px]">skip_next</span>
+</button>
+<button aria-label="Add to Playlist" class="text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[24px]">playlist_add</span>
+</button>
+</div>
+<!-- Bottom Interactive Drawer: Up Next Queue Preview -->
+<div class="flex flex-col space-y-1.5 pt-space-xs relative z-10">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]">queue_music</span>
+<span class="font-label-sm text-label-sm uppercase font-bold text-on-surface">Playing From: Cyber Horizon Radio</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold">View Full (38)</span>
+</div>
+<!-- 2 Preview Queue Cards -->
+<div class="space-y-1">
+<div class="flex items-center justify-between p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2 min-w-0">
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant w-4">05</span>
+<div class="w-7 h-7 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Minimalist abstract techno audio album graphic in deep ultraviolet." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWcP4S-n42zJhL2l-E15Ra-7MHA7YbAxlKfKjnf4MGrL9wS7BWD17kEXaVzzat_BylseEYbT_KvpJ77BENuMf1uFJ5vjo0qRZTnd_nUZUAFmI7uJtXWaeSHQwR95P3-yWH8U6I0mWMZ0yB_yrCJMLU2HluN8TzTy4pai3tASzQy9auTpQ00fn6SKL5Rm-AQvy7QQVF5m_C1_XmkKuQ0wcfy_RHrfM3OoEl2omxzaeW"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate text-[12px]">Neon Synthesis</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate text-[10px]">Aura Spectrum</span>
+</div>
+</div>
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant text-[11px]">04:12</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2 min-w-0">
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant w-4">06</span>
+<div class="w-7 h-7 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Futuristic audio frequency visualizer wave, violet and electric cyan neon lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvCMv73fkHj3xeEcshcS0FKDHQpPFMhMeuZ8Cwik6OLKuCNJdrYJHJhZnQfBXIJuMOC9FukSHZMOvfsocdo4KPBwdQoI6S5ydjVAfSZtDxKg1lFJm_Wl1giSmPjjTEvWJxHS8zDjdWSiF377L3WBBBIF-_aJb9_ODNSF0aqGzAsDqEGkxbKCulO8NqtTyVvt5eTmpkYZzBi9nZFAf9V_jGbGUDcs2GRC7rq6Cx46ZO"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate text-[12px]">Infinite Loop</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate text-[10px]">Kavinsky ft. SONIQ</span>
+</div>
+</div>
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant text-[11px]">03:51</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Glance Config / Export Bar -->
+<section class="flex flex-col space-y-space-sm pt-space-md pb-space-lg">
+<div class="p-space-md rounded-[28px] bg-surface-container flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary shrink-0 shadow-md shadow-primary/20">
+<span class="material-symbols-outlined text-[20px]">android</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-bold">Install to Home Screen</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Widgets auto-adapt to dynamic Material You wallpaper palettes.</span>
+</div>
+</div>
+<button aria-label="Pin widget to home screen" class="px-space-md py-2.5 rounded-full bg-primary text-on-primary font-label-lg text-label-lg font-bold shadow-md shadow-primary/25 active:scale-95 transition-transform flex items-center justify-center gap-1.5 self-start sm:self-auto">
+<span class="material-symbols-outlined text-[18px]">add_to_home_screen</span>
+<span>Pin Widget</span>
+</button>
+</div>
+</section>
+</div>
+<script>
+  // Simple micro-interaction for widget play/pause toggles
+  document.querySelectorAll('button[aria-label*="Play"]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const icon = btn.querySelector('.material-symbols-outlined');
+      if (icon) {
+        if (icon.textContent.trim() === 'pause') {
+          icon.textContent = 'play_arrow';
+          btn.classList.add('scale-95');
+          setTimeout(() => btn.classList.remove('scale-95'), 150);
+        } else {
+          icon.textContent = 'pause';
+          btn.classList.add('scale-105');
+          setTimeout(() => btn.classList.remove('scale-105'), 150);
+        }
+      }
+    });
+  });
+
+  // Favorite toggle animation
+  document.querySelectorAll('button[aria-label*="Favorite"]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const icon = btn.querySelector('.material-symbols-outlined');
+      if (icon) {
+        const isFilled = icon.style.fontVariationSettings?.includes("'FILL' 1");
+        if (isFilled) {
+          icon.style.fontVariationSettings = "'FILL' 0";
+          btn.classList.remove('text-tertiary');
+          btn.classList.add('text-on-surface-variant');
+        } else {
+          icon.style.fontVariationSettings = "'FILL' 1";
+          btn.classList.add('text-tertiary');
+          btn.classList.remove('text-on-surface-variant');
+          btn.classList.add('scale-125');
+          setTimeout(() => btn.classList.remove('scale-125'), 200);
+        }
+      }
+    });
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-4px_24px_rgba(13,19,34,0.04)]" data-active-classes="text-primary font-bold"><div class="h-16 px-margin flex items-center justify-around"><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-0.5" data-path="widget-studio" href="#"><span class="material-symbols-outlined text-[24px]">widgets</span><span class="font-label-md text-label-md">Widgets</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-0.5" data-path="design-tokens" href="#"><span class="material-symbols-outlined text-[24px]">palette</span><span class="font-label-md text-label-md">Tokens</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-12 transition-colors gap-0.5 text-primary font-bold" data-path="component-catalog" href="#"><span class="material-symbols-outlined text-[24px]">dashboard</span><span class="font-label-md text-label-md">Library</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-0.5" data-path="preset-gallery" href="#"><span class="material-symbols-outlined text-[24px]">auto_awesome</span><span class="font-label-md text-label-md">Presets</span></a></div></nav></body></html>

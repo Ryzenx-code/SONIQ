@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-surface": "#2a3040", "on-secondary": "#ffffff", "on-surface": "#151b2b", "on-primary-container": "#f8f7ff", "tertiary-container": "#de006f", "outline": "#727687", "primary": "#0050cb", "surface-container-low": "#f2f3ff", "surface-container-highest": "#dde2f7", "tertiary-fixed-dim": "#ffb1c5", "on-tertiary": "#ffffff", "error-container": "#ffdad6", "primary-fixed-dim": "#b3c5ff", "surface-dim": "#d4d9ef", "surface-variant": "#dde2f7", "on-tertiary-fixed-variant": "#8f0045", "tertiary-fixed": "#ffd9e1", "on-tertiary-container": "#fff6f6", "on-primary-fixed-variant": "#003fa4", "on-background": "#151b2b", "secondary-container": "#974ce9", "on-error": "#ffffff", "surface-container": "#eaedff", "background": "#faf8ff", "secondary-fixed-dim": "#dbb8ff", "surface-container-lowest": "#ffffff", "surface-container-high": "#e2e7fd", "on-surface-variant": "#424656", "primary-fixed": "#dae1ff", "secondary-fixed": "#efdbff", "on-secondary-fixed-variant": "#6600b7", "error": "#ba1a1a", "outline-variant": "#c2c6d8", "on-primary": "#ffffff", "on-primary-fixed": "#001849", "primary-container": "#0066ff", "surface-tint": "#0054d6", "surface": "#faf8ff", "on-secondary-container": "#fffbff", "on-secondary-fixed": "#2b0052", "secondary": "#7d2dce", "tertiary": "#b10057", "surface-bright": "#faf8ff", "inverse-on-surface": "#eef0ff", "on-tertiary-fixed": "#3f001b", "inverse-primary": "#b3c5ff", "on-error-container": "#93000a" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-desktop": "2rem", "space-xl": "2rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "gutter-tablet": "1.5rem", "space-sm": "0.5rem", "margin": "1rem", "gutter": "1rem", "space-md": "1rem", "margin-tablet": "1.5rem" }, "fontFamily": { "body-md": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "title-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "telemetry-num": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.005em", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }], "display-lg-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "800" }], "title-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "700" }], "telemetry-num": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface antialiased min-h-full flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><button aria-label="Go Back" class="w-11 h-11 -ml-1.5 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high transition-colors shrink-0" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="SONIQ Neon Media Logo.png" class="h-7 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1UuPyYaYvTwOhtga7spFwe35_70_ECQU1K8iV5Q5IqIU2eMILXF9bP6CGIOa4NxxmyIJ0RAIqhamqejwhHqNFE-R-SGojiXxRP4TYkpBcfb3agAAJajGINm7dentWW3lx2EvjCCvNvWCpsTHwd-_h0HMs_r6uK40bH_xMixwa7UFq6lUkvI9qqSB20pPZqhq1iMit5iIVmJMnAuG2nKnUBtTHaV92GswR5-_NwRfStS-SMLzqBFqZeotrM"/><span class="font-title-md text-title-md text-on-surface truncate">Permissions &amp; Device Setup</span></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Close Setup" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="window.location.href='#close'"><span class="material-symbols-outlined text-[22px]">close</span></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full px-margin pb-space-xl">
+<!-- Step Tracker Header -->
+<div class="flex flex-col gap-space-xs mt-space-sm mb-space-lg">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary">Setup Journey • Step 2 of 6</span>
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant font-semibold">33%</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary via-primary-container to-secondary rounded-full transition-all duration-500 ease-out" style="width: 33.33%;"></div>
+</div>
+</div>
+<!-- Hero Visual / Cinema-Grade Frame -->
+<div class="relative w-full rounded-xl overflow-hidden bg-surface-container-lowest shadow-md mb-space-lg group">
+<!-- Ambient Prismatic Backdrop Glow -->
+<div class="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-primary-container/15 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-10 -left-10 w-44 h-44 rounded-full bg-secondary-container/15 blur-2xl pointer-events-none"></div>
+<div class="relative aspect-video w-full overflow-hidden bg-inverse-surface flex items-center justify-center">
+<!-- Cinematic Media Backdrop Placeholder -->
+<img class="absolute inset-0 w-full h-full object-cover opacity-85 mix-blend-screen scale-105 transition-transform duration-700 ease-out group-hover:scale-100" data-alt="A vivid cinematic film production frame showing an ultra-detailed sci-fi neon soundstage with anamorphic lens flares, rich deep blues and magenta neon highlights, studio lighting rigs, 8k hyper-resolution cinema monitor aesthetics, high dynamic range depth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAaU-cwUmRO1g82zCaqA2T92naXw3C0RFVVCTzElwbGztP6HNGda-mRDaMXU0FkgET3iZId1Mccdv0IH73yKjYzOeEivq0IaOqBsNO2UHdJ1RGdPTlalrOUhHU-VmVIv8VBjn0XBi2z4gAN7QmGwudU8-OsRwHLelL7YcRn9puDjR4HUT2h9GkjISPArNTzDCMGY966BkR0kaVef9KTAHFHNU9HnIo4kQeWAF4q4I9"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface via-transparent to-inverse-surface/40"></div>
+<!-- Center Play & Soundstage Waveform Overlay -->
+<div class="relative z-10 flex flex-col items-center gap-space-xs">
+<div class="w-14 h-14 rounded-full bg-gradient-to-tr from-primary to-secondary flex items-center justify-center text-on-primary shadow-[0_8px_24px_-2px_rgba(0,102,255,0.45)]">
+<span class="material-symbols-outlined text-[32px] translate-x-0.5" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+<div class="flex items-center gap-1 mt-1">
+<span class="w-1 h-3 rounded-full bg-primary-fixed animate-pulse"></span>
+<span class="w-1 h-5 rounded-full bg-primary-fixed-dim"></span>
+<span class="w-1 h-2 rounded-full bg-on-primary-container"></span>
+<span class="w-1 h-6 rounded-full bg-primary-fixed"></span>
+<span class="w-1 h-4 rounded-full bg-primary-fixed-dim"></span>
+<span class="w-1 h-2 rounded-full bg-secondary-fixed"></span>
+</div>
+</div>
+<!-- Top Overlay Telemetry Chips -->
+<div class="absolute top-2.5 left-3 flex items-center gap-1.5 z-20">
+<span class="h-5 px-2 rounded-full bg-inverse-surface/80 backdrop-blur-md text-on-primary font-label-sm text-label-sm tracking-widest uppercase flex items-center gap-1 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim animate-ping"></span>
+          HDR10+ / DV
+        </span>
+<span class="h-5 px-2 rounded-full bg-primary-container/90 text-on-primary font-label-sm text-label-sm uppercase font-bold tracking-wider">
+          AV1 120 FPS
+        </span>
+</div>
+<div class="absolute top-2.5 right-3 z-20">
+<span class="h-5 px-2 rounded-full bg-inverse-surface/70 backdrop-blur-md text-primary-fixed font-telemetry-num text-telemetry-num flex items-center">
+          BITRATE • 92.4 Mbps
+        </span>
+</div>
+<!-- Bottom Overlay Codec Ribbon -->
+<div class="absolute bottom-2.5 inset-x-3 flex items-center justify-between z-20">
+<span class="h-5 px-2 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-label-sm tracking-tight flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">movie</span>
+          8K MKV Master
+        </span>
+<span class="h-5 px-2 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-label-sm tracking-tight flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary" style="font-variation-settings: 'FILL' 1;">surround_sound</span>
+          Dolby Atmos 7.1
+        </span>
+<span class="h-5 px-2 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-label-sm tracking-tight flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+          Zero Transcoding
+        </span>
+</div>
+</div>
+</div>
+<!-- Hero Headline & Description -->
+<div class="flex flex-col gap-space-xs mb-space-lg">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Cinema-Grade Video Library Access</h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+      Experience studio-master video without transcoding. Allow SONIQ to discover video files on your device to unlock 8K HDR playback, external subtitle matching, and multi-channel audio passthrough.
+    </p>
+</div>
+<!-- Architectural Feature Breakdown -->
+<div class="flex flex-col gap-space-sm mb-space-lg">
+<!-- Item 1: Android Media Permission Sandboxing -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-start gap-space-md">
+<div class="w-11 h-11 rounded-full bg-surface-container flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 mb-0.5">
+<h2 class="font-title-sm text-title-sm text-on-surface">Android Media Video Permission</h2>
+<span class="h-4 px-1.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm uppercase">READ_ONLY</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Strictly sandboxed read-only access to video formats (MKV, MP4, WebM, TS). SONIQ never accesses personal camera photos or private gallery albums.
+        </p>
+</div>
+</div>
+<!-- Item 2: Multi-Track Audio & Subtitles -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-start gap-space-md">
+<div class="w-11 h-11 rounded-full bg-surface-container flex items-center justify-center shrink-0 text-secondary">
+<span class="material-symbols-outlined text-[24px]">subtitles</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h2 class="font-title-sm text-title-sm text-on-surface mb-0.5">Multi-Track Audio &amp; Embedded Subtitles</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Extracts embedded Dolby TrueHD, DTS:X, and FLAC audio channels alongside SRT, ASS/SSA, and PGS graphic subtitles with microsecond sync.
+        </p>
+</div>
+</div>
+<!-- Item 3: Hardware-Accelerated Zero Transcoding -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-start gap-space-md">
+<div class="w-11 h-11 rounded-full bg-surface-container flex items-center justify-center shrink-0 text-tertiary">
+<span class="material-symbols-outlined text-[24px]">memory</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h2 class="font-title-sm text-title-sm text-on-surface mb-0.5">Hardware-Accelerated Zero Transcoding</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Feeds pristine bitstreams directly to your device hardware decoder for maximum battery efficiency and zero quality loss.
+        </p>
+</div>
+</div>
+</div>
+<!-- Smart Filter Card / Toggle -->
+<div class="p-space-md rounded-xl bg-surface-container-low mb-space-lg flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Include Short Clips &amp; WhatsApp</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ignores clips under 30s to keep cinema library clean</span>
+</div>
+</div>
+<!-- Custom Switch UI -->
+<label class="relative inline-flex items-center cursor-pointer shrink-0 select-none" for="shortClipsToggle">
+<input class="sr-only peer" id="shortClipsToggle" type="checkbox"/>
+<div class="w-[52px] h-[32px] bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:bg-primary-container transition-colors duration-200"></div>
+<div class="absolute left-1 top-1 w-6 h-6 bg-surface-container-lowest rounded-full shadow-sm peer-checked:translate-x-5 transition-transform duration-200 flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-outline opacity-0 peer-checked:opacity-100 peer-checked:text-primary transition-opacity duration-150">check</span>
+</div>
+</label>
+</div>
+<!-- Action CTAs -->
+<div class="flex flex-col gap-space-sm mb-space-md">
+<button class="w-full h-14 rounded-full bg-gradient-to-r from-primary via-primary-container to-secondary text-on-primary font-title-sm text-title-sm font-semibold flex items-center justify-center gap-space-xs shadow-[0_8px_24px_-2px_rgba(0,102,255,0.35)] active:scale-[0.98] transition-transform" id="grantPermissionBtn">
+<span>Grant Video Permission</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<button class="w-full h-12 rounded-full bg-surface-container text-on-surface font-title-sm text-title-sm font-medium flex items-center justify-center hover:bg-surface-container-high active:scale-[0.98] transition-all" id="skipBtn">
+      Not Now (Audio Player Only)
+    </button>
+</div>
+<!-- Explanatory Footer Caption -->
+<div class="flex items-center justify-center gap-1.5 text-center px-space-md">
+<span class="material-symbols-outlined text-[16px] text-outline">info</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+      You can enable video playback at any time from SONIQ Settings.
+    </p>
+</div>
+</div>
+<script>
+  (function() {
+    const grantBtn = document.getElementById('grantPermissionBtn');
+    const skipBtn = document.getElementById('skipBtn');
+    const toggle = document.getElementById('shortClipsToggle');
+
+    if (grantBtn) {
+      grantBtn.addEventListener('click', function() {
+        const includeShorts = toggle ? toggle.checked : false;
+        grantBtn.innerHTML = `
+          <div class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+          <span>Discovering Video Master Index...</span>
+        `;
+        grantBtn.disabled = true;
+        setTimeout(() => {
+          grantBtn.innerHTML = `
+            <span class="material-symbols-outlined text-[20px]">check_circle</span>
+            <span>Video Library Linked</span>
+          `;
+          grantBtn.classList.remove('from-primary', 'via-primary-container', 'to-secondary');
+          grantBtn.classList.add('bg-primary-container');
+        }, 800);
+      });
+    }
+
+    if (skipBtn) {
+      skipBtn.addEventListener('click', function() {
+        skipBtn.classList.add('opacity-70');
+      });
+    }
+  })();
+</script></main></body></html>

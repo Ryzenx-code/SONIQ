@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-fixed-variant": "#003fa4", "surface-dim": "#d4d9ef", "tertiary-container": "#de006f", "on-secondary-fixed": "#2b0052", "on-tertiary-fixed": "#3f001b", "on-tertiary-container": "#fff6f6", "on-error": "#ffffff", "on-surface": "#151b2b", "outline-variant": "#c2c6d8", "on-error-container": "#93000a", "secondary-fixed": "#efdbff", "inverse-on-surface": "#eef0ff", "surface": "#faf8ff", "surface-bright": "#faf8ff", "secondary-fixed-dim": "#dbb8ff", "surface-variant": "#dde2f7", "on-primary-fixed": "#001849", "error": "#ba1a1a", "surface-container-lowest": "#ffffff", "on-background": "#151b2b", "on-tertiary-fixed-variant": "#8f0045", "on-secondary-container": "#fffbff", "on-secondary-fixed-variant": "#6600b7", "inverse-primary": "#b3c5ff", "surface-container": "#eaedff", "surface-tint": "#0054d6", "surface-container-high": "#e2e7fd", "on-secondary": "#ffffff", "inverse-surface": "#2a3040", "primary-fixed": "#dae1ff", "on-primary-container": "#f8f7ff", "primary-fixed-dim": "#b3c5ff", "tertiary-fixed-dim": "#ffb1c5", "error-container": "#ffdad6", "on-tertiary": "#ffffff", "outline": "#727687", "secondary-container": "#974ce9", "primary-container": "#0066ff", "on-surface-variant": "#424656", "tertiary-fixed": "#ffd9e1", "surface-container-highest": "#dde2f7", "tertiary": "#b10057", "surface-container-low": "#f2f3ff", "on-primary": "#ffffff", "background": "#faf8ff", "secondary": "#7d2dce", "primary": "#0050cb" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "space-xs": "0.25rem", "gutter": "1rem", "margin-desktop": "2rem", "space-md": "1rem", "gutter-tablet": "1.5rem", "space-sm": "0.5rem", "margin-tablet": "1.5rem", "margin": "1rem", "space-xl": "2rem" }, "fontFamily": { "label-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "title-sm": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "telemetry-num": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"] }, "fontSize": { "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }], "display-lg-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "800" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }], "title-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "telemetry-num": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.005em", "fontWeight": "400" }], "title-md": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#faf8ff;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(13,19,34,0.03)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="SONIQ Neon Media Logo.png" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1UuPyYaYvTwOhtga7spFwe35_70_ECQU1K8iV5Q5IqIU2eMILXF9bP6CGIOa4NxxmyIJ0RAIqhamqejwhHqNFE-R-SGojiXxRP4TYkpBcfb3agAAJajGINm7dentWW3lx2EvjCCvNvWCpsTHwd-_h0HMs_r6uK40bH_xMixwa7UFq6lUkvI9qqSB20pPZqhq1iMit5iIVmJMnAuG2nKnUBtTHaV92GswR5-_NwRfStS-SMLzqBFqZeotrM"/><div class="flex flex-col min-w-0"><span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold leading-tight truncate">SONIQ Studio</span><span class="font-title-sm text-title-sm text-on-surface font-semibold truncate leading-tight">Widget Studio</span></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Export Presets" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[22px]">ios_share</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full pt-16 pb-24 bg-surface relative"><div class="flex flex-col w-full pb-8">
+<!-- Live Interactive Widget Preview Canvas Area -->
+<section class="px-margin pt-space-sm pb-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">view_quilt</span>
+<span class="font-title-sm text-title-sm text-on-surface">Glance Canvas Preview</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed tracking-wide uppercase">Jetpack v1.1</span>
+</div>
+<!-- Wallpaper & Canvas Backdrop Toggles -->
+<div class="flex items-center bg-surface-container p-1 rounded-full gap-1">
+<button aria-label="Light Wallpaper" class="w-7 h-7 rounded-full flex items-center justify-center bg-surface-container-lowest text-primary shadow-sm transition-all" id="wp-light-btn">
+<span class="material-symbols-outlined text-[16px]">wb_sunny</span>
+</button>
+<button aria-label="Dark Wallpaper" class="w-7 h-7 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-all" id="wp-dark-btn">
+<span class="material-symbols-outlined text-[16px]">nightlight</span>
+</button>
+<button aria-label="Abstract Glass Wallpaper" class="w-7 h-7 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-all" id="wp-blur-btn">
+<span class="material-symbols-outlined text-[16px]">grain</span>
+</button>
+</div>
+</div>
+<!-- Realistic Android Home Screen Stage -->
+<div class="relative w-full rounded-2xl overflow-hidden shadow-[0_12px_36px_-6px_rgba(13,19,34,0.08)] bg-gradient-to-br from-[#eaedff] via-[#f7f8ff] to-[#dde2f7] transition-all duration-300 p-space-md flex flex-col justify-between min-h-[280px]" id="launcher-viewport">
+<!-- Mock Android Launcher Status Info & App Grid Hint -->
+<div class="flex items-center justify-between text-on-surface/50 text-telemetry-num font-telemetry-num select-none">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+<span>Thu, Oct 24 • 21°C</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[14px]">wifi</span>
+<span class="material-symbols-outlined text-[14px]">battery_full</span>
+</div>
+</div>
+<!-- Live Widget Container Mock (Android Glance Widget) -->
+<div class="my-auto py-2 flex justify-center items-center w-full">
+<div class="w-full max-w-sm rounded-2xl bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_8px_24px_rgba(13,19,34,0.06)] p-3.5 transition-all duration-200 relative overflow-hidden" id="widget-card">
+<!-- Codec / State Chip Badge -->
+<div class="flex items-center justify-between mb-2.5">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase text-primary font-bold" id="widget-badge-text">SONIQ Lossless 96kHz</span>
+</div>
+<span class="font-telemetry-num text-telemetry-num text-on-surface-variant" id="widget-cell-spec">4×2 Glance • 320×140dp</span>
+</div>
+<!-- Widget Main Media Content (Music Player Variant Default) -->
+<div class="flex flex-col gap-2.5" id="widget-content">
+<div class="flex items-center gap-3">
+<!-- Album Artwork with dynamic state -->
+<div class="relative w-14 h-14 rounded-xl overflow-hidden flex-shrink-0 shadow-sm" id="widget-art-wrapper">
+<img class="w-full h-full object-cover" data-alt="A vivid modern electronic synthwave album artwork floating with neon blue and magenta chromatic reflections against a pristine white studio background, high resolution, minimalist audiophile vinyl aesthetic" id="widget-art" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlbIVzmMZWcy2M8CZuavF0XhSAWY3wFyu8JqHlcCtBMb2l8XSVYQopeMiQpE6iuS9nH_oyhO7F8qDFkesZL9T18nrm7QcO0m5tu5HlLEUiI1Fuv1sihwaRh03J0Qt1-WTohRM8qUEfmF3k4CubJ04NhKD06iUeWDZduT6agvdo7CCuZ6VD_M4iJ0F3QQzeLPtjOhSSAcvc0AMvtNzSgyDAqKgw6I24YeXfQ8E5fVTC"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+</div>
+<!-- Metadata -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5">
+<h4 class="font-title-sm text-title-sm text-on-surface truncate font-bold" id="widget-title">Hyperdrive Echoes</h4>
+<span class="material-symbols-outlined text-primary text-[15px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate" id="widget-artist">Celesphere • Neon Horizon</p>
+<!-- Quick format badge -->
+<div class="flex items-center gap-1 mt-1">
+<span class="font-label-sm text-[9px] px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface-variant font-semibold uppercase">FLAC 24-Bit</span>
+<span class="font-label-sm text-[9px] px-1.5 py-0.2 rounded-full bg-secondary-fixed text-on-secondary-fixed font-semibold uppercase">LDAC</span>
+</div>
+</div>
+</div>
+<!-- Waveform & Scrubber Preview Component -->
+<div class="flex flex-col gap-1 pt-1" id="widget-progress-group">
+<div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden flex">
+<div class="h-full bg-gradient-to-r from-primary-container to-secondary rounded-full w-[62%] transition-all" id="widget-progress-bar"></div>
+</div>
+<div class="flex items-center justify-between text-telemetry-num font-telemetry-num text-on-surface-variant text-[10px]">
+<span id="widget-time-curr">02:44</span>
+<span class="text-primary font-bold">LIVE STREAM</span>
+<span id="widget-time-total">04:20</span>
+</div>
+</div>
+<!-- Playback Controls -->
+<div class="flex items-center justify-between pt-0.5">
+<div class="flex items-center gap-1" id="widget-shuffle-ctrl">
+<button aria-label="Shuffle" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">shuffle</span>
+</button>
+<button aria-label="Repeat" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">repeat</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="Previous Track" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface bg-surface-container-low hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">skip_previous</span>
+</button>
+<!-- Hero Action Play Button with Chromatic Glow -->
+<button aria-label="Play/Pause" class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary-container to-secondary text-on-primary flex items-center justify-center shadow-[0_4px_16px_rgba(0,102,255,0.35)] transition-transform active:scale-95" id="widget-play-btn">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<button aria-label="Next Track" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface bg-surface-container-low hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">skip_next</span>
+</button>
+</div>
+<button aria-label="Favorite" class="w-8 h-8 rounded-full flex items-center justify-center text-primary-container hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Android Glance Grid Helper & Pin Status -->
+<div class="flex items-center justify-between text-on-surface/40 text-label-sm font-label-sm pt-1">
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          Interactive AppWidgetHost Preview
+        </span>
+<span class="uppercase tracking-wider">Glance AppWidget API</span>
+</div>
+</div>
+</section>
+<!-- Controls Section: Tabs & Customization Panels -->
+<section class="flex flex-col gap-space-md px-margin">
+<!-- Widget Type Selector (Chips) -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-title-sm text-title-sm text-on-surface">Widget Template</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant">7 Modules</span>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-1 -mx-margin px-margin scrollbar-none" id="widget-type-scroll">
+<button class="type-chip flex-shrink-0 h-9 px-3.5 rounded-full bg-on-surface text-surface flex items-center gap-1.5 text-label-lg font-label-lg shadow-sm transition-all" data-type="player">
+<span class="material-symbols-outlined text-[18px]">graphic_eq</span>
+<span>Music Player</span>
+</button>
+<button class="type-chip flex-shrink-0 h-9 px-3.5 rounded-full bg-surface-container text-on-surface-variant flex items-center gap-1.5 text-label-lg font-label-lg hover:bg-surface-container-high transition-all" data-type="playlists">
+<span class="material-symbols-outlined text-[18px]">queue_music</span>
+<span>Smart Playlists</span>
+</button>
+<button class="type-chip flex-shrink-0 h-9 px-3.5 rounded-full bg-surface-container text-on-surface-variant flex items-center gap-1.5 text-label-lg font-label-lg hover:bg-surface-container-high transition-all" data-type="stats">
+<span class="material-symbols-outlined text-[18px]">equalizer</span>
+<span>Listening Stats</span>
+</button>
+<button class="type-chip flex-shrink-0 h-9 px-3.5 rounded-full bg-surface-container text-on-surface-variant flex items-center gap-1.5 text-label-lg font-label-lg hover:bg-surface-container-high transition-all" data-type="gamification">
+<span class="material-symbols-outlined text-[18px]">workspace_premium</span>
+<span>Audiophile XP</span>
+</button>
+<button class="type-chip flex-shrink-0 h-9 px-3.5 rounded-full bg-surface-container text-on-surface-variant flex items-center gap-1.5 text-label-lg font-label-lg hover:bg-surface-container-high transition-all" data-type="video">
+<span class="material-symbols-outlined text-[18px]">smart_display</span>
+<span>Video Quick Resume</span>
+</button>
+<button class="type-chip flex-shrink-0 h-9 px-3.5 rounded-full bg-surface-container text-on-surface-variant flex items-center gap-1.5 text-label-lg font-label-lg hover:bg-surface-container-high transition-all" data-type="wifi">
+<span class="material-symbols-outlined text-[18px]">cast</span>
+<span>Cast &amp; Wi-Fi Link</span>
+</button>
+<button class="type-chip flex-shrink-0 h-9 px-3.5 rounded-full bg-surface-container text-on-surface-variant flex items-center gap-1.5 text-label-lg font-label-lg hover:bg-surface-container-high transition-all" data-type="timer">
+<span class="material-symbols-outlined text-[18px]">bedtime</span>
+<span>Sleep Timer</span>
+</button>
+</div>
+</div>
+<!-- Size Grid Selector (Cells & Dp Indicators) -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-title-sm text-title-sm text-on-surface">Home Grid Span</label>
+<span class="font-telemetry-num text-telemetry-num text-primary font-semibold" id="current-span-indicator">4×2 (Responsive)</span>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<button class="size-btn flex flex-col items-center justify-center p-2 rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" data-span="1x1">
+<span class="font-label-lg text-label-lg font-bold">1×1</span>
+<span class="font-telemetry-num text-[10px] text-on-surface-variant/70">80×80dp</span>
+</button>
+<button class="size-btn flex flex-col items-center justify-center p-2 rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" data-span="2x1">
+<span class="font-label-lg text-label-lg font-bold">2×1</span>
+<span class="font-telemetry-num text-[10px] text-on-surface-variant/70">160×80dp</span>
+</button>
+<button class="size-btn flex flex-col items-center justify-center p-2 rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" data-span="2x2">
+<span class="font-label-lg text-label-lg font-bold">2×2</span>
+<span class="font-telemetry-num text-[10px] text-on-surface-variant/70">160×160dp</span>
+</button>
+<button class="size-btn flex flex-col items-center justify-center p-2 rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" data-span="4x1">
+<span class="font-label-lg text-label-lg font-bold">4×1</span>
+<span class="font-telemetry-num text-[10px] text-on-surface-variant/70">320×70dp</span>
+</button>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-0.5">
+<button class="size-btn active flex flex-col items-center justify-center p-2.5 rounded-xl bg-primary-container text-on-primary-container shadow-sm transition-all" data-span="4x2">
+<span class="font-label-lg text-label-lg font-bold">4×2 (Standard)</span>
+<span class="font-telemetry-num text-[10px] text-on-primary-container/80">320×140dp</span>
+</button>
+<button class="size-btn flex flex-col items-center justify-center p-2.5 rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" data-span="4x3">
+<span class="font-label-lg text-label-lg font-bold">4×3</span>
+<span class="font-telemetry-num text-[10px] text-on-surface-variant/70">320×210dp</span>
+</button>
+<button class="size-btn flex flex-col items-center justify-center p-2.5 rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" data-span="4x4">
+<span class="font-label-lg text-label-lg font-bold">4×4 (Full Hero)</span>
+<span class="font-telemetry-num text-[10px] text-on-surface-variant/70">320×280dp</span>
+</button>
+</div>
+</div>
+<!-- Visual Theme Presets Bento Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-[0_4px_16px_-2px_rgba(13,19,34,0.04)] flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">palette</span>
+<label class="font-title-sm text-title-sm text-on-surface">Material 3 Visual Theme</label>
+</div>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold">Preserves M3 You</span>
+</div>
+<!-- Presets Horizontal Scroller -->
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Preset 1: SONIQ Classic -->
+<button class="theme-card active flex items-start gap-2.5 p-2.5 rounded-xl bg-surface-container-low text-left transition-all" data-theme="classic">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-center flex-shrink-0 text-primary">
+<span class="material-symbols-outlined text-[18px]">light_mode</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface font-bold truncate">SONIQ Pure</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant truncate">Crisp laboratory white</p>
+</div>
+</button>
+<!-- Preset 2: SONIQ Midnight -->
+<button class="theme-card flex items-start gap-2.5 p-2.5 rounded-xl bg-surface-container-low text-left transition-all" data-theme="midnight">
+<div class="w-8 h-8 rounded-lg bg-inverse-surface shadow-sm flex items-center justify-center flex-shrink-0 text-inverse-on-surface">
+<span class="material-symbols-outlined text-[18px]">dark_mode</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface font-bold truncate">Midnight Pitch</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant truncate">True charcoal contrast</p>
+</div>
+</button>
+<!-- Preset 3: SONIQ Neon Flow -->
+<button class="theme-card flex items-start gap-2.5 p-2.5 rounded-xl bg-surface-container-low text-left transition-all" data-theme="neon">
+<div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-primary to-secondary shadow-sm flex items-center justify-center flex-shrink-0 text-on-primary">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface font-bold truncate">Neon Spectrum</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant truncate">Electric blue &amp; violet</p>
+</div>
+</button>
+<!-- Preset 4: SONIQ Frosted Glass -->
+<button class="theme-card flex items-start gap-2.5 p-2.5 rounded-xl bg-surface-container-low text-left transition-all" data-theme="glass">
+<div class="w-8 h-8 rounded-lg bg-surface-variant/60 backdrop-blur-md shadow-sm flex items-center justify-center flex-shrink-0 text-secondary">
+<span class="material-symbols-outlined text-[18px]">blur_on</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface font-bold truncate">Acoustic Glass</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant truncate">24dp frosted acrylic</p>
+</div>
+</button>
+</div>
+</div>
+<!-- Background & Geometry Style Controls -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-[0_4px_16px_-2px_rgba(13,19,34,0.04)] flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<label class="font-title-sm text-title-sm text-on-surface">Surface &amp; Geometry Sliders</label>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">tune</span>
+</div>
+<!-- Surface Opacity Slider -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-md text-on-surface">Surface Alpha Opacity</span>
+<span class="font-telemetry-num text-telemetry-num text-primary font-bold" id="opacity-val">95%</span>
+</div>
+<div class="relative flex items-center w-full py-1">
+<input class="w-full h-2 bg-surface-container-high rounded-lg appearance-none cursor-pointer accent-primary" id="opacity-slider" max="100" min="10" type="range" value="95"/>
+</div>
+<div class="flex justify-between text-telemetry-num text-[10px] text-on-surface-variant">
+<span>0% Ultra Translucent</span>
+<span>50%</span>
+<span>100% Solid Solidified</span>
+</div>
+</div>
+<!-- Corner Radius Slider -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-md text-on-surface">Corner Curvature (dp)</span>
+<span class="font-telemetry-num text-telemetry-num text-primary font-bold" id="radius-val">16dp</span>
+</div>
+<div class="relative flex items-center w-full py-1">
+<input class="w-full h-2 bg-surface-container-high rounded-lg appearance-none cursor-pointer accent-primary" id="radius-slider" max="28" min="8" type="range" value="16"/>
+</div>
+<div class="flex justify-between text-telemetry-num text-[10px] text-on-surface-variant">
+<span>8dp Squircle</span>
+<span>16dp Balanced</span>
+<span>28dp Full Pill</span>
+</div>
+</div>
+<!-- Dynamic Accent Color Swatches -->
+<div class="flex flex-col gap-2 pt-1">
+<span class="font-body-md text-body-md text-on-surface">Playback Accent Hue</span>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<button class="color-swatch active w-9 h-9 rounded-full bg-[#0066FF] shadow-sm flex items-center justify-center text-white ring-2 ring-offset-2 ring-primary transition-transform" data-color="blue">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</button>
+<button class="color-swatch w-9 h-9 rounded-full bg-[#7C3AED] shadow-sm flex items-center justify-center text-white transition-transform" data-color="violet">
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+</button>
+<button class="color-swatch w-9 h-9 rounded-full bg-[#EC4899] shadow-sm flex items-center justify-center text-white transition-transform" data-color="magenta">
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+</button>
+<button class="color-swatch w-9 h-9 rounded-full bg-[#F59E0B] shadow-sm flex items-center justify-center text-white transition-transform" data-color="amber">
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+</button>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[14px]">auto_fix_high</span>
+<span>Dynamic Artwork Match</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Jetpack Glance Component Toggles -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-[0_4px_16px_-2px_rgba(13,19,34,0.04)] flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-1">
+<div>
+<label class="font-title-sm text-title-sm text-on-surface">Visible Subcomponents</label>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Toggle sub-views within Glance memory limit</p>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">toggle_on</span>
+</div>
+<!-- Toggle 1: Album Artwork -->
+<div class="flex items-center justify-between py-1.5">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Hi-Res Album Artwork</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Embedded cover art display</span>
+</div>
+<button class="w-12 h-7 rounded-full bg-primary-container p-0.5 flex items-center justify-end transition-colors" data-active="true" id="toggle-art">
+<div class="w-6 h-6 rounded-full bg-surface-container-lowest shadow-sm"></div>
+</button>
+</div>
+<!-- Toggle 2: Progress Scrubber -->
+<div class="flex items-center justify-between py-1.5">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Waveform Track &amp; Timestamps</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Realtime progress bar representation</span>
+</div>
+<button class="w-12 h-7 rounded-full bg-primary-container p-0.5 flex items-center justify-end transition-colors" data-active="true" id="toggle-progress">
+<div class="w-6 h-6 rounded-full bg-surface-container-lowest shadow-sm"></div>
+</button>
+</div>
+<!-- Toggle 3: Shuffle / Repeat -->
+<div class="flex items-center justify-between py-1.5">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Secondary Shuffle &amp; Repeat</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Direct queue mode controls</span>
+</div>
+<button class="w-12 h-7 rounded-full bg-primary-container p-0.5 flex items-center justify-end transition-colors" data-active="true" id="toggle-shuffle">
+<div class="w-6 h-6 rounded-full bg-surface-container-lowest shadow-sm"></div>
+</button>
+</div>
+<!-- Toggle 4: Battery Saver Eco-Update Mode -->
+<div class="flex items-center justify-between py-1.5">
+<div class="flex flex-col pr-2">
+<div class="flex items-center gap-1.5">
+<span class="font-body-md text-body-md text-on-surface font-medium">Battery Eco-Update Mode</span>
+<span class="font-label-sm text-[9px] px-1.5 py-0.5 rounded-full bg-surface-container text-secondary font-bold">15m Glance Limit</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Throttle background worker poll requests</span>
+</div>
+<button class="w-12 h-7 rounded-full bg-surface-container-high p-0.5 flex items-center justify-start transition-colors" data-active="false" id="toggle-eco">
+<div class="w-6 h-6 rounded-full bg-surface-container-lowest shadow-sm"></div>
+</button>
+</div>
+</div>
+<!-- Presets and Primary Android Intent Actions -->
+<div class="flex flex-col gap-2.5 pt-2">
+<!-- Primary Action: Pin to Home Screen CTA -->
+<button class="w-full h-14 rounded-full bg-gradient-to-r from-primary-container via-primary to-secondary text-on-primary flex items-center justify-center gap-2 shadow-[0_8px_24px_-2px_rgba(0,102,255,0.35)] active:scale-[0.98] transition-all" id="pin-widget-cta">
+<span class="material-symbols-outlined text-[24px]">add_to_home_screen</span>
+<span class="font-title-md text-title-md font-bold tracking-wide">Add to Android Home Screen</span>
+</button>
+<!-- Secondary Action: Save Widget Preset -->
+<div class="flex gap-2">
+<button class="flex-1 h-12 rounded-full bg-surface-container text-on-surface flex items-center justify-center gap-2 font-title-sm text-title-sm font-semibold hover:bg-surface-container-high transition-colors" id="save-preset-btn">
+<span class="material-symbols-outlined text-[18px]">bookmark_add</span>
+<span>Save Custom Preset</span>
+</button>
+<button aria-label="Reset Defaults" class="w-12 h-12 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center hover:bg-surface-container-high transition-colors" id="reset-defaults-btn">
+<span class="material-symbols-outlined text-[20px]">restart_alt</span>
+</button>
+</div>
+<!-- Android Glance System Note Badge -->
+<div class="flex items-center justify-center gap-1.5 pt-1 text-on-surface-variant/70 text-body-sm">
+<span class="material-symbols-outlined text-[14px]">android</span>
+<span class="text-label-sm font-label-sm">Requires Android 12+ (Material You Widget Support)</span>
+</div>
+</div>
+</section>
+<!-- Interactive Toast Notification for Pin Widget Action (Hidden by default) -->
+<div class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-full shadow-lg flex items-center gap-2.5 transition-all opacity-0 pointer-events-none duration-300" id="status-toast">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="font-title-sm text-title-sm" id="toast-message">Requesting Android Home Screen Pin...</span>
+</div>
+</div>
+<script>
+  (function initSONIQWidgetStudio() {
+    // DOM Elements
+    const viewport = document.getElementById('launcher-viewport');
+    const widgetCard = document.getElementById('widget-card');
+    const badgeText = document.getElementById('widget-badge-text');
+    const cellSpec = document.getElementById('widget-cell-spec');
+    const spanIndicator = document.getElementById('current-span-indicator');
+    const opacitySlider = document.getElementById('opacity-slider');
+    const opacityVal = document.getElementById('opacity-val');
+    const radiusSlider = document.getElementById('radius-slider');
+    const radiusVal = document.getElementById('radius-val');
+    const playBtn = document.getElementById('widget-play-btn');
+    const progressBar = document.getElementById('widget-progress-bar');
+    const toast = document.getElementById('status-toast');
+    const toastMsg = document.getElementById('toast-message');
+
+    // Wallpaper Switchers
+    const wpLight = document.getElementById('wp-light-btn');
+    const wpDark = document.getElementById('wp-dark-btn');
+    const wpBlur = document.getElementById('wp-blur-btn');
+
+    wpLight.addEventListener('click', () => {
+      viewport.className = "relative w-full rounded-2xl overflow-hidden shadow-[0_12px_36px_-6px_rgba(13,19,34,0.08)] bg-gradient-to-br from-[#eaedff] via-[#f7f8ff] to-[#dde2f7] transition-all duration-300 p-space-md flex flex-col justify-between min-h-[280px]";
+      wpLight.className = "w-7 h-7 rounded-full flex items-center justify-center bg-surface-container-lowest text-primary shadow-sm transition-all";
+      wpDark.className = "w-7 h-7 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-all";
+      wpBlur.className = "w-7 h-7 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-all";
+    });
+
+    wpDark.addEventListener('click', () => {
+      viewport.className = "relative w-full rounded-2xl overflow-hidden shadow-[0_12px_36px_-6px_rgba(13,19,34,0.08)] bg-gradient-to-br from-[#121624] via-[#1a2138] to-[#0a0d17] transition-all duration-300 p-space-md flex flex-col justify-between min-h-[280px]";
+      wpDark.className = "w-7 h-7 rounded-full flex items-center justify-center bg-surface-container-lowest text-primary shadow-sm transition-all";
+      wpLight.className = "w-7 h-7 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-all";
+      wpBlur.className = "w-7 h-7 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-all";
+    });
+
+    wpBlur.addEventListener('click', () => {
+      viewport.className = "relative w-full rounded-2xl overflow-hidden shadow-[0_12px_36px_-6px_rgba(13,19,34,0.08)] bg-gradient-to-tr from-[#6366f1] via-[#d946ef] to-[#06b6d4] transition-all duration-300 p-space-md flex flex-col justify-between min-h-[280px]";
+      wpBlur.className = "w-7 h-7 rounded-full flex items-center justify-center bg-surface-container-lowest text-primary shadow-sm transition-all";
+      wpLight.className = "w-7 h-7 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-all";
+      wpDark.className = "w-7 h-7 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-all";
+    });
+
+    // Opacity Slider
+    opacitySlider.addEventListener('input', (e) => {
+      const val = e.target.value;
+      opacityVal.textContent = val + '%';
+      widgetCard.style.opacity = val / 100;
+    });
+
+    // Corner Radius Slider
+    radiusSlider.addEventListener('input', (e) => {
+      const val = e.target.value;
+      radiusVal.textContent = val + 'dp';
+      widgetCard.style.borderRadius = val + 'px';
+    });
+
+    // Grid Size Selectors
+    const sizeButtons = document.querySelectorAll('.size-btn');
+    sizeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        sizeButtons.forEach(b => {
+          b.classList.remove('bg-primary-container', 'text-on-primary-container', 'shadow-sm');
+          b.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+        });
+        btn.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+        btn.classList.add('bg-primary-container', 'text-on-primary-container', 'shadow-sm');
+
+        const span = btn.getAttribute('data-span');
+        spanIndicator.textContent = span + ' Glance Cell';
+        cellSpec.textContent = span + ' • Responsive';
+
+        if (span === '1x1') {
+          widgetCard.className = "w-28 h-28 mx-auto rounded-2xl bg-surface-container-lowest/95 backdrop-blur-xl shadow-md p-2.5 flex flex-col items-center justify-center text-center transition-all";
+          widgetCard.innerHTML = `
+            <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary shadow-sm mb-1">
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+            </div>
+            <p class="font-title-sm text-[11px] font-bold truncate w-full text-on-surface">Hyperdrive</p>
+            <p class="font-label-sm text-[9px] text-primary truncate w-full">SONIQ Lossless</p>
+          `;
+        } else if (span === '2x1') {
+          widgetCard.className = "w-full max-w-[240px] mx-auto rounded-2xl bg-surface-container-lowest/95 backdrop-blur-xl shadow-md p-3 flex items-center justify-between transition-all";
+          widgetCard.innerHTML = `
+            <div class="flex items-center gap-2 min-w-0">
+              <div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary flex-shrink-0">
+                <span class="material-symbols-outlined text-[18px]">graphic_eq</span>
+              </div>
+              <div class="min-w-0">
+                <p class="font-title-sm text-[12px] font-bold text-on-surface truncate">Hyperdrive</p>
+                <p class="font-label-sm text-[10px] text-on-surface-variant truncate">Celesphere</p>
+              </div>
+            </div>
+            <button class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 shadow-sm">
+              <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+            </button>
+          `;
+        } else {
+          location.reload(); // restore 4x2 standard for full fidelity
+        }
+      });
+    });
+
+    // Theme Presets
+    const themeCards = document.querySelectorAll('.theme-card');
+    themeCards.forEach(tc => {
+      tc.addEventListener('click', () => {
+        themeCards.forEach(t => t.classList.remove('bg-surface-container-high', 'ring-2', 'ring-primary'));
+        tc.classList.add('bg-surface-container-high');
+        
+        const mode = tc.getAttribute('data-theme');
+        if (mode === 'midnight') {
+          widgetCard.style.backgroundColor = '#151b2b';
+          widgetCard.querySelectorAll('h4, p, span').forEach(el => {
+            if (!el.classList.contains('text-primary') && !el.classList.contains('bg-primary-container')) {
+              el.style.color = '#f8f7ff';
+            }
+          });
+        } else if (mode === 'glass') {
+          widgetCard.style.backgroundColor = 'rgba(255, 255, 255, 0.45)';
+          widgetCard.style.backdropFilter = 'blur(28px)';
+        } else if (mode === 'neon') {
+          widgetCard.style.backgroundColor = '#ffffff';
+          badgeText.className = "font-label-sm text-label-sm tracking-wider uppercase font-bold text-secondary";
+          playBtn.className = "w-10 h-10 rounded-full bg-gradient-to-tr from-secondary to-tertiary text-on-primary flex items-center justify-center shadow-lg transition-transform active:scale-95";
+        } else {
+          widgetCard.style.backgroundColor = '#ffffff';
+          widgetCard.style.backdropFilter = 'none';
+        }
+      });
+    });
+
+    // Color Swatches
+    const swatches = document.querySelectorAll('.color-swatch');
+    swatches.forEach(swatch => {
+      swatch.addEventListener('click', () => {
+        swatches.forEach(s => {
+          s.classList.remove('ring-2', 'ring-offset-2', 'ring-primary');
+          const chk = s.querySelector('.material-symbols-outlined');
+          if (chk) chk.classList.add('hidden');
+        });
+        swatch.classList.add('ring-2', 'ring-offset-2', 'ring-primary');
+        const chk = swatch.querySelector('.material-symbols-outlined');
+        if (chk) chk.classList.remove('hidden');
+
+        const col = swatch.getAttribute('data-color');
+        if (col === 'blue') {
+          playBtn.style.background = 'linear-gradient(to top right, #0066FF, #7928CA)';
+          progressBar.style.background = '#0066FF';
+        } else if (col === 'violet') {
+          playBtn.style.background = 'linear-gradient(to top right, #7C3AED, #974CE9)';
+          progressBar.style.background = '#7C3AED';
+        } else if (col === 'magenta') {
+          playBtn.style.background = 'linear-gradient(to top right, #EC4899, #B10057)';
+          progressBar.style.background = '#EC4899';
+        } else if (col === 'amber') {
+          playBtn.style.background = 'linear-gradient(to top right, #F59E0B, #EA580C)';
+          progressBar.style.background = '#F59E0B';
+        }
+      });
+    });
+
+    // Toggle Subcomponents
+    function makeToggle(buttonId, targetElementId) {
+      const btn = document.getElementById(buttonId);
+      const target = document.getElementById(targetElementId);
+      if (!btn || !target) return;
+
+      btn.addEventListener('click', () => {
+        const isActive = btn.getAttribute('data-active') === 'true';
+        if (isActive) {
+          btn.setAttribute('data-active', 'false');
+          btn.className = "w-12 h-7 rounded-full bg-surface-container-high p-0.5 flex items-center justify-start transition-colors";
+          target.style.display = 'none';
+        } else {
+          btn.setAttribute('data-active', 'true');
+          btn.className = "w-12 h-7 rounded-full bg-primary-container p-0.5 flex items-center justify-end transition-colors";
+          target.style.display = '';
+        }
+      });
+    }
+
+    makeToggle('toggle-art', 'widget-art-wrapper');
+    makeToggle('toggle-progress', 'widget-progress-group');
+    makeToggle('toggle-shuffle', 'widget-shuffle-ctrl');
+
+    // Eco toggle
+    const ecoBtn = document.getElementById('toggle-eco');
+    ecoBtn.addEventListener('click', () => {
+      const isEco = ecoBtn.getAttribute('data-active') === 'true';
+      if (isEco) {
+        ecoBtn.setAttribute('data-active', 'false');
+        ecoBtn.className = "w-12 h-7 rounded-full bg-surface-container-high p-0.5 flex items-center justify-start transition-colors";
+      } else {
+        ecoBtn.setAttribute('data-active', 'true');
+        ecoBtn.className = "w-12 h-7 rounded-full bg-primary-container p-0.5 flex items-center justify-end transition-colors";
+        showToast("Eco Mode enabled: updates aligned to Android 15-min Glance queue.");
+      }
+    });
+
+    // Toast Trigger Helper
+    function showToast(text) {
+      toastMsg.textContent = text;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0', 'pointer-events-none');
+      }, 2600);
+    }
+
+    // Pin Action
+    document.getElementById('pin-widget-cta').addEventListener('click', () => {
+      showToast("AppWidgetManager.requestPinAppWidget() invoked!");
+    });
+
+    // Save Preset Action
+    document.getElementById('save-preset-btn').addEventListener('click', () => {
+      showToast("Preset saved to SONIQ Cloud Library");
+    });
+
+    // Reset Defaults
+    document.getElementById('reset-defaults-btn').addEventListener('click', () => {
+      opacitySlider.value = 95;
+      radiusSlider.value = 16;
+      opacityVal.textContent = '95%';
+      radiusVal.textContent = '16dp';
+      widgetCard.style.opacity = '0.95';
+      widgetCard.style.borderRadius = '16px';
+      showToast("Studio resets applied");
+    });
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-4px_24px_rgba(13,19,34,0.04)]" data-active-classes="text-primary font-bold"><div class="h-16 px-margin flex items-center justify-around"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-12 transition-colors gap-0.5 text-primary font-bold" data-path="widget-studio" href="#"><span class="material-symbols-outlined text-[24px]">widgets</span><span class="font-label-md text-label-md">Widgets</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-0.5" data-path="design-tokens" href="#"><span class="material-symbols-outlined text-[24px]">palette</span><span class="font-label-md text-label-md">Tokens</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-0.5" data-path="component-catalog" href="#"><span class="material-symbols-outlined text-[24px]">dashboard</span><span class="font-label-md text-label-md">Library</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-0.5" data-path="preset-gallery" href="#"><span class="material-symbols-outlined text-[24px]">auto_awesome</span><span class="font-label-md text-label-md">Presets</span></a></div></nav></body></html>
