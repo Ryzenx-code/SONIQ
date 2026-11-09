@@ -169,7 +169,8 @@ object SampleMediaRepository {
             audioChannels = "Dolby Atmos 7.1.4",
             genre = "Cyberpunk",
             playCount = 65,
-            waveformData = generateWaveform(201)
+            waveformData = generateWaveform(201),
+            mediaUri = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
         ),
         MediaItem(
             id = "track_video_2",
@@ -186,7 +187,8 @@ object SampleMediaRepository {
             audioChannels = "360 Spatial Ambisonic",
             genre = "Spatial Ambisonic",
             playCount = 31,
-            waveformData = generateWaveform(202)
+            waveformData = generateWaveform(202),
+            mediaUri = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
         )
     )
 

@@ -44,14 +44,16 @@ fun LyricsSheet(
     state: AudioEngineState,
     onDismiss: () -> Unit,
     onSeekTo: (Long) -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    positionMsProvider: () -> Long = { 0L }
 ) {
     val track = state.currentTrack
     val lyrics = track.lyrics
     val listState = rememberLazyListState()
 
     // Determine current active lyric index
-    val activeIndex = lyrics.indexOfLast { it.timeMs <= state.currentPositionMs }.coerceAtLeast(0)
+    val curPos = positionMsProvider()
+    val activeIndex = lyrics.indexOfLast { it.timeMs <= curPos }.coerceAtLeast(0)
 
     LaunchedEffect(activeIndex) {
         if (lyrics.isNotEmpty() && activeIndex in lyrics.indices) {

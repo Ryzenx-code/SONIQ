@@ -60,7 +60,7 @@ import kotlin.math.abs
 fun SoniqMiniPlayer(
     currentTrack: MediaItem,
     isPlaying: Boolean,
-    currentPositionMs: Long,
+    positionMsProvider: () -> Long,
     durationMs: Long,
     onTogglePlay: () -> Unit,
     onSkipNext: () -> Unit,
@@ -70,10 +70,6 @@ fun SoniqMiniPlayer(
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val progress = if (durationMs > 0) {
-        (currentPositionMs.toFloat() / durationMs.toFloat()).coerceIn(0f, 1f)
-    } else 0f
-
     var dragX by remember { mutableFloatStateOf(0f) }
     var dragY by remember { mutableFloatStateOf(0f) }
 
@@ -82,15 +78,9 @@ fun SoniqMiniPlayer(
             .fillMaxWidth()
             .padding(horizontal = 16.dp, vertical = 6.dp)
             .height(68.dp)
-            .shadow(
-                elevation = 16.dp,
-                shape = RoundedCornerShape(20.dp),
-                ambientColor = Color.Black,
-                spotColor = NeonElectricBlue.copy(alpha = 0.25f)
-            )
             .clip(RoundedCornerShape(20.dp))
             .background(MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.95f))
-            .border(1.dp, Color(0x24FFFFFF), RoundedCornerShape(20.dp))
+            .border(1.dp, NeonElectricBlue.copy(alpha = 0.35f), RoundedCornerShape(20.dp))
             .pointerInput(Unit) {
                 detectDragGestures(
                     onDragStart = {
@@ -247,13 +237,15 @@ fun SoniqMiniPlayer(
             }
         }
 
-        // Bottom Seamless Progress Line
+        // Bottom Seamless Progress Line: computed strictly in Draw Phase
         Canvas(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(3.dp)
                 .align(Alignment.BottomStart)
         ) {
+            val curPos = positionMsProvider()
+            val progress = if (durationMs > 0) (curPos.toFloat() / durationMs.toFloat()).coerceIn(0f, 1f) else 0f
             val progressWidth = size.width * progress
             drawLine(
                 brush = Brush.horizontalGradient(

@@ -1,0 +1,18 @@
+# Baseline Profile for SONIQ Android
+Lcom/example/soniq/MainActivity;
+Lcom/example/soniq/MainViewModel;
+Lcom/example/soniq/playback/SoniqPlaybackService;
+Lcom/example/soniq/audio/SoniqAudioEngine;
+Lcom/example/soniq/audio/AudioEngineState;
+Lcom/example/soniq/data/MediaItem;
+Lcom/example/soniq/data/EqualizerPreset;
+Lcom/example/soniq/ui/screens/HomeScreenKt;
+Lcom/example/soniq/ui/screens/LibraryScreenKt;
+Lcom/example/soniq/ui/screens/NowPlayingScreenKt;
+Lcom/example/soniq/ui/screens/AudioStudioScreenKt;
+Lcom/example/soniq/ui/components/SoniqMiniPlayerKt;
+Lcom/example/soniq/ui/components/RealtimeAudioVisualizerKt;
+Lcom/example/soniq/ui/components/FrequencyVisualizerKt;
+Lcom/example/soniq/ui/components/MultiBandEqualizerKt;
+Landroidx/compose/runtime/Composable;
+Landroidx/compose/material3/ScaffoldKt;

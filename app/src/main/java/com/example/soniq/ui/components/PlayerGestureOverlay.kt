@@ -181,10 +181,9 @@ fun PlayerGestureContainer(
         ) {
             Box(
                 modifier = Modifier
-                    .shadow(24.dp, RoundedCornerShape(24.dp), spotColor = NeonElectricBlue)
                     .clip(RoundedCornerShape(24.dp))
                     .background(OledPitchBlack.copy(alpha = 0.94f))
-                    .border(1.5.dp, NeonElectricBlue.copy(alpha = 0.6f), RoundedCornerShape(24.dp))
+                    .border(1.5.dp, NeonElectricBlue.copy(alpha = 0.8f), RoundedCornerShape(24.dp))
                     .padding(horizontal = 24.dp, vertical = 20.dp)
                     .testTag("volume_gesture_hud"),
                 contentAlignment = Alignment.Center
@@ -264,7 +263,6 @@ fun PlayerGestureContainer(
         ) {
             Box(
                 modifier = Modifier
-                    .shadow(24.dp, RoundedCornerShape(22.dp), spotColor = NeonViolet)
                     .clip(RoundedCornerShape(22.dp))
                     .background(OledPitchBlack.copy(alpha = 0.94f))
                     .border(1.5.dp, if (isNextTrack) NeonCyan else NeonViolet, RoundedCornerShape(22.dp))

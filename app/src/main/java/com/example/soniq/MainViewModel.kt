@@ -13,6 +13,9 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
+import androidx.compose.runtime.Immutable
+
+@Immutable
 data class MainUiState(
     val selectedTab: SoniqTab = SoniqTab.HOME,
     val isNowPlayingExpanded: Boolean = false,
@@ -25,6 +28,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     val audioEngine = SoniqAudioEngine(viewModelScope, application)
     val engineState: StateFlow<AudioEngineState> = audioEngine.state
+    val positionMs: StateFlow<Long> = audioEngine.positionMs
 
     private val _uiState = MutableStateFlow(MainUiState())
     val uiState: StateFlow<MainUiState> = _uiState.asStateFlow()

@@ -66,6 +66,11 @@ import com.example.soniq.ui.theme.VibrantMagenta
 
 import com.example.soniq.ui.theme.OledPitchBlack
 
+import androidx.biometric.BiometricPrompt
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.FragmentActivity
+import androidx.compose.ui.platform.LocalContext
+
 enum class AuthMode {
     BIOMETRIC,
     PIN
@@ -76,24 +81,73 @@ fun PrivateLockerScreen(
     onPlayTrack: (MediaItem) -> Unit,
     modifier: Modifier = Modifier
 ) {
+    val context = LocalContext.current
     var isUnlocked by remember { mutableStateOf(false) }
     var authMode by remember { mutableStateOf(AuthMode.BIOMETRIC) }
     var pinDigits by remember { mutableStateOf("") }
     var authError by remember { mutableStateOf(false) }
+    var authErrorMessage by remember { mutableStateOf("Incorrect PIN. Try default: 123456") }
     val vaultItems = remember { mutableStateListOf(*SampleMediaRepository.vaultTracks.toTypedArray()) }
     var showImportSuccess by remember { mutableStateOf(false) }
+
+    fun launchBiometricPrompt() {
+        val activity = context as? FragmentActivity
+        if (activity != null) {
+            val executor = ContextCompat.getMainExecutor(context)
+            val promptInfo = BiometricPrompt.PromptInfo.Builder()
+                .setTitle("Unlock SONIQ Private Vault")
+                .setSubtitle("Confirm fingerprint or face biometric")
+                .setNegativeButtonText("Use PIN")
+                .build()
+
+            val biometricPrompt = BiometricPrompt(
+                activity,
+                executor,
+                object : BiometricPrompt.AuthenticationCallback() {
+                    override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
+                        super.onAuthenticationSucceeded(result)
+                        isUnlocked = true
+                        authError = false
+                    }
+
+                    override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
+                        super.onAuthenticationError(errorCode, errString)
+                        if (errorCode == BiometricPrompt.ERROR_NEGATIVE_BUTTON) {
+                            authMode = AuthMode.PIN
+                        } else {
+                            // If biometric not enrolled or unavailable, fallback gracefully to PIN
+                            authMode = AuthMode.PIN
+                            authError = true
+                            authErrorMessage = errString.toString()
+                        }
+                    }
+
+                    override fun onAuthenticationFailed() {
+                        super.onAuthenticationFailed()
+                        authError = true
+                        authErrorMessage = "Biometric authentication failed. Try again or use PIN."
+                    }
+                }
+            )
+            biometricPrompt.authenticate(promptInfo)
+        } else {
+            // If host activity is not FragmentActivity, unlock or fall back to PIN
+            authMode = AuthMode.PIN
+        }
+    }
 
     fun checkPin(digit: String) {
         if (pinDigits.length < 6) {
             val updated = pinDigits + digit
             pinDigits = updated
             if (updated.length == 6) {
-                // Default test PIN is 123456 or any 6 digits
+                // Default test PIN is 123456 or 000000
                 if (updated == "123456" || updated == "000000") {
                     isUnlocked = true
                     authError = false
                 } else {
                     authError = true
+                    authErrorMessage = "Incorrect PIN. Try default: 123456"
                     pinDigits = ""
                 }
             }
@@ -269,8 +323,7 @@ fun PrivateLockerScreen(
                             .background(SurfaceSlate)
                             .border(2.dp, NeonCyan.copy(alpha = 0.5f), CircleShape)
                             .clickable {
-                                // Simulate successful biometric authentication
-                                isUnlocked = true
+                                launchBiometricPrompt()
                             }
                             .testTag("biometric_sensor_btn"),
                         contentAlignment = Alignment.Center
@@ -504,7 +557,7 @@ fun PrivateLockerScreen(
                 )
             }
 
-            items(vaultItems) { item ->
+            items(vaultItems, key = { it.id }) { item ->
                 Card(
                     shape = RoundedCornerShape(14.dp),
                     colors = CardDefaults.cardColors(containerColor = SurfaceSlate),

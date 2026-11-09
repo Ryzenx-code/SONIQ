@@ -35,22 +35,52 @@ import com.example.soniq.ui.theme.NeonViolet
 import com.example.soniq.ui.theme.VibrantMagenta
 import kotlin.math.sin
 
+import androidx.compose.runtime.mutableFloatStateOf
+import androidx.compose.runtime.remember
+
 @Composable
 fun FrequencyVisualizer(
     isPlaying: Boolean,
     bandGains: List<Float>,
     modifier: Modifier = Modifier
 ) {
-    val infiniteTransition = rememberInfiniteTransition(label = "spectrum_wave")
-    val phase by infiniteTransition.animateFloat(
-        initialValue = 0f,
-        targetValue = 6.283f,
-        animationSpec = infiniteRepeatable(
-            animation = tween(2400, easing = LinearEasing),
-            repeatMode = RepeatMode.Restart
-        ),
-        label = "phase"
-    )
+    val phaseState = if (isPlaying) {
+        val infiniteTransition = rememberInfiniteTransition(label = "spectrum_wave")
+        infiniteTransition.animateFloat(
+            initialValue = 0f,
+            targetValue = 6.283f,
+            animationSpec = infiniteRepeatable(
+                animation = tween(2400, easing = LinearEasing),
+                repeatMode = RepeatMode.Restart
+            ),
+            label = "phase"
+        )
+    } else {
+        remember { mutableFloatStateOf(0f) }
+    }
+
+    val areaPath = remember { Path() }
+    val linePath = remember { Path() }
+    val areaGradient = remember {
+        Brush.verticalGradient(
+            colors = listOf(
+                NeonCyan.copy(alpha = 0.35f),
+                NeonViolet.copy(alpha = 0.20f),
+                VibrantMagenta.copy(alpha = 0.08f),
+                Color.Transparent
+            )
+        )
+    }
+    val strokeGradient = remember {
+        Brush.horizontalGradient(
+            colors = listOf(
+                NeonCyan,
+                NeonElectricBlue,
+                NeonViolet,
+                VibrantMagenta
+            )
+        )
+    }
 
     Box(
         modifier = modifier
@@ -64,6 +94,7 @@ fun FrequencyVisualizer(
         Canvas(modifier = Modifier.fillMaxSize()) {
             val w = size.width
             val h = size.height
+            val phase = phaseState.value
 
             // Reference dB Grid Lines
             val dbLevels = listOf(
@@ -85,8 +116,15 @@ fun FrequencyVisualizer(
             }
 
             // Real-time curve calculation
-            val points = mutableListOf<Offset>()
             val steps = 60
+            areaPath.reset()
+            linePath.reset()
+            areaPath.moveTo(0f, h)
+
+            var node1 = Offset.Zero
+            var node2 = Offset.Zero
+            var node3 = Offset.Zero
+
             for (i in 0..steps) {
                 val t = i.toFloat() / steps
                 val x = t * w
@@ -104,44 +142,27 @@ fun FrequencyVisualizer(
                 // 0dB is at y = h * 0.5
                 val gainOffset = -(gain / 12f) * (h * 0.35f)
                 val y = (h * 0.5f + gainOffset + animatedAmp).coerceIn(10f, h - 8f)
-                points.add(Offset(x, y))
+
+                if (i == 0) {
+                    linePath.moveTo(x, y)
+                    areaPath.lineTo(x, y)
+                } else {
+                    linePath.lineTo(x, y)
+                    areaPath.lineTo(x, y)
+                }
+
+                if (i == 12) node1 = Offset(x, y)
+                if (i == 30) node2 = Offset(x, y)
+                if (i == 48) node3 = Offset(x, y)
             }
+
+            areaPath.lineTo(w, h)
+            areaPath.close()
 
             // Area path under curve
-            val areaPath = Path().apply {
-                moveTo(0f, h)
-                points.forEachIndexed { index, pt ->
-                    if (index == 0) lineTo(pt.x, pt.y) else lineTo(pt.x, pt.y)
-                }
-                lineTo(w, h)
-                close()
-            }
-
-            val areaGradient = Brush.verticalGradient(
-                colors = listOf(
-                    NeonCyan.copy(alpha = 0.35f),
-                    NeonViolet.copy(alpha = 0.20f),
-                    VibrantMagenta.copy(alpha = 0.08f),
-                    Color.Transparent
-                )
-            )
             drawPath(path = areaPath, brush = areaGradient)
 
             // Neon spline line
-            val linePath = Path().apply {
-                points.forEachIndexed { index, pt ->
-                    if (index == 0) moveTo(pt.x, pt.y) else lineTo(pt.x, pt.y)
-                }
-            }
-
-            val strokeGradient = Brush.horizontalGradient(
-                colors = listOf(
-                    NeonCyan,
-                    NeonElectricBlue,
-                    NeonViolet,
-                    VibrantMagenta
-                )
-            )
             drawPath(
                 path = linePath,
                 brush = strokeGradient,
@@ -149,15 +170,9 @@ fun FrequencyVisualizer(
             )
 
             // Dynamic peak nodes
-            if (points.size >= 45) {
-                val node1 = points[12]
-                val node2 = points[30]
-                val node3 = points[48]
-
-                drawCircle(color = NeonCyan, radius = 5.dp.toPx(), center = node1)
-                drawCircle(color = NeonViolet, radius = 5.dp.toPx(), center = node2)
-                drawCircle(color = VibrantMagenta, radius = 5.dp.toPx(), center = node3)
-            }
+            drawCircle(color = NeonCyan, radius = 5.dp.toPx(), center = node1)
+            drawCircle(color = NeonViolet, radius = 5.dp.toPx(), center = node2)
+            drawCircle(color = VibrantMagenta, radius = 5.dp.toPx(), center = node3)
         }
 
         // dB labels on left

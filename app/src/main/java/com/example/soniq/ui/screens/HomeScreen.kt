@@ -59,6 +59,8 @@ import com.example.soniq.ui.theme.SurfaceSlate
 import com.example.soniq.ui.theme.SurfaceSlateHigh
 import com.example.soniq.ui.theme.VibrantMagenta
 
+import androidx.compose.foundation.Canvas
+
 @Composable
 fun HomeScreen(
     state: AudioEngineState,
@@ -66,7 +68,8 @@ fun HomeScreen(
     onNavigateLibrary: () -> Unit,
     onNavigateStudio: () -> Unit,
     onNavigateVault: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    positionMsProvider: () -> Long = { 0L }
 ) {
     LazyColumn(
         modifier = modifier
@@ -396,7 +399,7 @@ fun HomeScreen(
 
                             Spacer(modifier = Modifier.height(8.dp))
 
-                            // Mini Progress bar
+                            // Mini Progress bar computed in draw phase
                             Box(
                                 modifier = Modifier
                                     .fillMaxWidth()
@@ -404,13 +407,14 @@ fun HomeScreen(
                                     .clip(RoundedCornerShape(2.dp))
                                     .background(SurfaceSlateHigh)
                             ) {
-                                val progress = (state.currentPositionMs.toFloat() / state.durationMs.toFloat()).coerceIn(0f, 1f)
-                                Box(
-                                    modifier = Modifier
-                                        .fillMaxWidth(progress)
-                                        .height(4.dp)
-                                        .background(brush = SonicFlowGradient)
-                                )
+                                Canvas(modifier = Modifier.fillMaxSize()) {
+                                    val curPos = positionMsProvider()
+                                    val progress = if (state.durationMs > 0) (curPos.toFloat() / state.durationMs.toFloat()).coerceIn(0f, 1f) else 0f
+                                    drawRect(
+                                        brush = SonicFlowGradient,
+                                        size = androidx.compose.ui.geometry.Size(size.width * progress, size.height)
+                                    )
+                                }
                             }
                         }
 
@@ -649,7 +653,10 @@ fun HomeScreen(
                 LazyRow(
                     horizontalArrangement = Arrangement.spacedBy(12.dp)
                 ) {
-                    items(SampleMediaRepository.defaultTracks) { track ->
+                    items(
+                        items = SampleMediaRepository.defaultTracks,
+                        key = { it.id }
+                    ) { track ->
                         RecentTrackCard(
                             track = track,
                             isPlayingThis = state.isPlaying && state.currentTrack.id == track.id,

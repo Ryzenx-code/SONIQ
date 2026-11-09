@@ -16,13 +16,15 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.update
+import androidx.compose.runtime.Immutable
 import kotlin.math.PI
 import kotlin.math.sin
 
+@Immutable
 data class AudioEngineState(
     val currentTrack: MediaItem = SampleMediaRepository.defaultTracks[0],
     val isPlaying: Boolean = false,
-    val currentPositionMs: Long = 68000L, // 1:08
     val durationMs: Long = 312000L,
     val queue: List<MediaItem> = SampleMediaRepository.defaultTracks,
     val queueIndex: Int = 0,
@@ -37,8 +39,8 @@ data class AudioEngineState(
     val virtualizer: Int = SampleMediaRepository.defaultPresets[0].virtualizerPercent,
     val crystalizer: Int = SampleMediaRepository.defaultPresets[0].crystalizerPercent,
     val directDacActive: Boolean = true,
-    val listeningXp: Int = 2450,
-    val dailyStreakDays: Int = 18,
+    val listeningXp: Int = 0,
+    val dailyStreakDays: Int = 0,
     val sleepTimerMinutesLeft: Int? = null,
     val isDarkTheme: Boolean = true
 )
@@ -49,6 +51,9 @@ class SoniqAudioEngine(
 ) {
     private val _state = MutableStateFlow(AudioEngineState())
     val state: StateFlow<AudioEngineState> = _state.asStateFlow()
+
+    private val _positionMs = MutableStateFlow(0L)
+    val positionMs: StateFlow<Long> = _positionMs.asStateFlow()
 
     private var audioTrack: AudioTrack? = null
     private var synthesisJob: Job? = null
@@ -61,37 +66,6 @@ class SoniqAudioEngine(
     }
 
     private fun setupServiceListener() {
-        val listener = object : com.example.soniq.playback.MediaPlaybackService.PlaybackActionListener {
-            override fun onPlayRequested() {
-                play()
-            }
-            override fun onPauseRequested() {
-                pause()
-            }
-            override fun onTogglePlayRequested() {
-                togglePlayPause()
-            }
-            override fun onNextRequested() {
-                playNext()
-            }
-            override fun onPreviousRequested() {
-                playPrevious()
-            }
-            override fun onSeekRequested(positionMs: Long) {
-                seekTo(positionMs)
-            }
-            override fun onStopRequested() {
-                pause()
-            }
-            override fun onDuckVolumeRequested(duckLevel: Float) {
-                audioTrack?.setVolume((_state.value.volume * duckLevel).coerceIn(0f, 1f))
-            }
-            override fun onRestoreVolumeRequested() {
-                audioTrack?.setVolume(_state.value.volume)
-            }
-        }
-        com.example.soniq.playback.MediaPlaybackService.actionListener = listener
-
         com.example.soniq.playback.SoniqPlaybackService.actionListener = object : com.example.soniq.playback.SoniqPlaybackService.PlaybackActionListener {
             override fun onPlayRequested() { play() }
             override fun onPauseRequested() { pause() }
@@ -111,11 +85,11 @@ class SoniqAudioEngine(
 
     private fun updateServiceState() {
         context?.let { ctx ->
-            com.example.soniq.playback.MediaPlaybackService.syncState(
+            com.example.soniq.playback.SoniqPlaybackService.syncState(
                 ctx,
                 _state.value.currentTrack,
                 _state.value.isPlaying,
-                _state.value.currentPositionMs
+                _positionMs.value
             )
         }
     }
@@ -126,15 +100,15 @@ class SoniqAudioEngine(
             while (isActive) {
                 delay(200)
                 if (_state.value.isPlaying) {
-                    val current = _state.value.currentPositionMs
+                    val current = _positionMs.value
                     val duration = _state.value.durationMs
                     val speed = _state.value.playbackSpeed
                     val nextPos = current + (200 * speed).toLong()
 
-                    if (nextPos >= duration) {
+                    if (duration > 0 && nextPos >= duration) {
                         when (_state.value.repeatMode) {
                             RepeatMode.ONE -> {
-                                _state.value = _state.value.copy(currentPositionMs = 0L)
+                                _positionMs.value = 0L
                             }
                             RepeatMode.ALL -> {
                                 playNext(autoAdvance = true)
@@ -144,21 +118,18 @@ class SoniqAudioEngine(
                                     playNext(autoAdvance = true)
                                 } else {
                                     pause()
-                                    _state.value = _state.value.copy(currentPositionMs = duration)
+                                    _positionMs.value = duration
                                 }
                             }
                         }
                     } else {
                         // Increment XP subtly when listening
-                        val newXp = if (nextPos % 5000 < 200) {
-                            (_state.value.listeningXp + 2).coerceAtMost(3000)
-                        } else {
-                            _state.value.listeningXp
+                        if (nextPos % 5000 < 200) {
+                            _state.update { curr ->
+                                curr.copy(listeningXp = (curr.listeningXp + 2).coerceAtMost(3000))
+                            }
                         }
-                        _state.value = _state.value.copy(
-                            currentPositionMs = nextPos,
-                            listeningXp = newXp
-                        )
+                        _positionMs.value = nextPos
                     }
                 }
             }
@@ -166,16 +137,23 @@ class SoniqAudioEngine(
     }
 
     fun playTrack(track: MediaItem) {
-        val q = _state.value.queue
-        val index = q.indexOfFirst { it.id == track.id }
-        val newIndex = if (index >= 0) index else 0
-        _state.value = _state.value.copy(
-            currentTrack = track,
-            currentPositionMs = 0L,
-            durationMs = track.durationMs,
-            queueIndex = newIndex,
-            isPlaying = true
-        )
+        _positionMs.value = 0L
+        _state.update { curr ->
+            val q = curr.queue
+            val index = q.indexOfFirst { it.id == track.id }
+            val (newQueue, newIndex) = if (index >= 0) {
+                Pair(q, index)
+            } else {
+                Pair(q + track, q.size)
+            }
+            curr.copy(
+                currentTrack = track,
+                durationMs = track.durationMs,
+                queue = newQueue,
+                queueIndex = newIndex,
+                isPlaying = true
+            )
+        }
         startAudioSynthesis()
         updateServiceState()
     }
@@ -189,66 +167,95 @@ class SoniqAudioEngine(
     }
 
     fun play() {
-        _state.value = _state.value.copy(isPlaying = true)
+        _state.update { it.copy(isPlaying = true) }
         startAudioSynthesis()
         updateServiceState()
     }
 
     fun pause() {
-        _state.value = _state.value.copy(isPlaying = false)
+        _state.update { it.copy(isPlaying = false) }
         stopAudioSynthesis()
         updateServiceState()
     }
 
     fun seekTo(positionMs: Long) {
         val clamped = positionMs.coerceIn(0L, _state.value.durationMs)
-        _state.value = _state.value.copy(currentPositionMs = clamped)
+        _positionMs.value = clamped
         updateServiceState()
     }
+
+    private var shuffledIndices: List<Int> = emptyList()
+    private var shufflePointer: Int = 0
 
     fun playNext(autoAdvance: Boolean = false) {
         val q = _state.value.queue
         if (q.isEmpty()) return
         val nextIndex = if (_state.value.isShuffle) {
-            val validIndices = q.indices.filter { it != _state.value.queueIndex }
-            if (validIndices.isNotEmpty()) validIndices.random() else 0
+            if (shuffledIndices.size != q.size) {
+                shuffledIndices = q.indices.shuffled()
+                shufflePointer = (shuffledIndices.indexOf(_state.value.queueIndex) + 1) % shuffledIndices.size
+            } else {
+                shufflePointer = (shufflePointer + 1) % shuffledIndices.size
+            }
+            shuffledIndices[shufflePointer]
         } else {
             (_state.value.queueIndex + 1) % q.size
         }
         val nextTrack = q[nextIndex]
-        _state.value = _state.value.copy(
-            currentTrack = nextTrack,
-            queueIndex = nextIndex,
-            currentPositionMs = 0L,
-            durationMs = nextTrack.durationMs,
-            isPlaying = true
-        )
+        _positionMs.value = 0L
+        _state.update { curr ->
+            curr.copy(
+                currentTrack = nextTrack,
+                queueIndex = nextIndex,
+                durationMs = nextTrack.durationMs,
+                isPlaying = true
+            )
+        }
         startAudioSynthesis()
         updateServiceState()
     }
 
     fun playPrevious() {
-        if (_state.value.currentPositionMs > 4000L) {
+        if (_positionMs.value > 3000L) {
             seekTo(0L)
             return
         }
         val q = _state.value.queue
         if (q.isEmpty()) return
-        val prevIndex = if (_state.value.queueIndex - 1 < 0) q.size - 1 else _state.value.queueIndex - 1
+        val prevIndex = if (_state.value.isShuffle) {
+            if (shuffledIndices.size != q.size) {
+                shuffledIndices = q.indices.shuffled()
+                shufflePointer = (shuffledIndices.indexOf(_state.value.queueIndex) - 1 + shuffledIndices.size) % shuffledIndices.size
+            } else {
+                shufflePointer = (shufflePointer - 1 + shuffledIndices.size) % shuffledIndices.size
+            }
+            shuffledIndices[shufflePointer]
+        } else {
+            if (_state.value.queueIndex - 1 < 0) q.size - 1 else _state.value.queueIndex - 1
+        }
         val prevTrack = q[prevIndex]
-        _state.value = _state.value.copy(
-            currentTrack = prevTrack,
-            queueIndex = prevIndex,
-            currentPositionMs = 0L,
-            durationMs = prevTrack.durationMs,
-            isPlaying = true
-        )
+        _positionMs.value = 0L
+        _state.update { curr ->
+            curr.copy(
+                currentTrack = prevTrack,
+                queueIndex = prevIndex,
+                durationMs = prevTrack.durationMs,
+                isPlaying = true
+            )
+        }
         startAudioSynthesis()
         updateServiceState()
     }
 
     fun toggleShuffle() {
-        _state.value = _state.value.copy(isShuffle = !_state.value.isShuffle)
+        _state.update { curr ->
+            val newShuffle = !curr.isShuffle
+            if (newShuffle) {
+                shuffledIndices = curr.queue.indices.shuffled()
+                shufflePointer = shuffledIndices.indexOf(curr.queueIndex).coerceAtLeast(0)
+            }
+            curr.copy(isShuffle = newShuffle)
+        }
     }
 
     fun cycleRepeatMode() {
@@ -257,128 +264,146 @@ class SoniqAudioEngine(
             RepeatMode.ALL -> RepeatMode.ONE
             RepeatMode.ONE -> RepeatMode.OFF
         }
-        _state.value = _state.value.copy(repeatMode = nextMode)
+        _state.update { it.copy(repeatMode = nextMode) }
     }
 
     fun setPlaybackSpeed(speed: Float) {
-        _state.value = _state.value.copy(playbackSpeed = speed)
+        _state.update { it.copy(playbackSpeed = speed) }
     }
 
     fun setVolume(vol: Float) {
         val clamped = vol.coerceIn(0f, 1f)
-        _state.value = _state.value.copy(volume = clamped)
+        _state.update { it.copy(volume = clamped) }
         audioTrack?.setVolume(clamped)
     }
 
     fun toggleTheme() {
-        _state.value = _state.value.copy(isDarkTheme = !_state.value.isDarkTheme)
+        _state.update { it.copy(isDarkTheme = !it.isDarkTheme) }
     }
 
     fun toggleFavorite(trackId: String) {
-        val updatedQueue = _state.value.queue.map {
-            if (it.id == trackId) it.copy(isFavorite = !it.isFavorite) else it
+        _state.update { curr ->
+            val updatedQueue = curr.queue.map {
+                if (it.id == trackId) it.copy(isFavorite = !it.isFavorite) else it
+            }
+            val updatedCurrent = if (curr.currentTrack.id == trackId) {
+                curr.currentTrack.copy(isFavorite = !curr.currentTrack.isFavorite)
+            } else {
+                curr.currentTrack
+            }
+            curr.copy(
+                queue = updatedQueue,
+                currentTrack = updatedCurrent
+            )
         }
-        val updatedCurrent = if (_state.value.currentTrack.id == trackId) {
-            _state.value.currentTrack.copy(isFavorite = !_state.value.currentTrack.isFavorite)
-        } else {
-            _state.value.currentTrack
-        }
-        _state.value = _state.value.copy(
-            queue = updatedQueue,
-            currentTrack = updatedCurrent
-        )
     }
 
     fun addToQueue(track: MediaItem) {
-        val newQueue = _state.value.queue.toMutableList().apply { add(track) }
-        _state.value = _state.value.copy(queue = newQueue)
+        _state.update { curr ->
+            curr.copy(queue = curr.queue + track)
+        }
     }
 
     fun removeFromQueue(index: Int) {
-        if (index in _state.value.queue.indices) {
-            val newQueue = _state.value.queue.toMutableList().apply { removeAt(index) }
-            val newIndex = if (_state.value.queueIndex >= newQueue.size) {
-                (newQueue.size - 1).coerceAtLeast(0)
+        _state.update { curr ->
+            if (index in curr.queue.indices) {
+                val newQueue = curr.queue.toMutableList().apply { removeAt(index) }
+                val newIndex = if (curr.queueIndex >= newQueue.size) {
+                    (newQueue.size - 1).coerceAtLeast(0)
+                } else {
+                    curr.queueIndex
+                }
+                curr.copy(queue = newQueue, queueIndex = newIndex)
             } else {
-                _state.value.queueIndex
+                curr
             }
-            _state.value = _state.value.copy(queue = newQueue, queueIndex = newIndex)
         }
     }
 
     fun clearQueue() {
-        val current = _state.value.currentTrack
-        _state.value = _state.value.copy(queue = listOf(current), queueIndex = 0)
+        _state.update { curr ->
+            curr.copy(queue = listOf(curr.currentTrack), queueIndex = 0)
+        }
     }
 
     // DSP and Equalizer Controls
     fun toggleDsp() {
-        _state.value = _state.value.copy(isDspEnabled = !_state.value.isDspEnabled)
+        _state.update { it.copy(isDspEnabled = !it.isDspEnabled) }
     }
 
     fun selectPreset(preset: EqualizerPreset) {
-        _state.value = _state.value.copy(
-            currentPreset = preset,
-            bandGains = preset.bandGainsDb,
-            bassBoost = preset.bassBoostPercent,
-            virtualizer = preset.virtualizerPercent,
-            crystalizer = preset.crystalizerPercent
-        )
+        _state.update { curr ->
+            curr.copy(
+                currentPreset = preset,
+                bandGains = preset.bandGainsDb,
+                bassBoost = preset.bassBoostPercent,
+                virtualizer = preset.virtualizerPercent,
+                crystalizer = preset.crystalizerPercent
+            )
+        }
     }
 
     fun setBandGain(bandIndex: Int, gainDb: Float) {
-        if (bandIndex in _state.value.bandGains.indices) {
-            val updated = _state.value.bandGains.toMutableList()
-            updated[bandIndex] = gainDb.coerceIn(-12.0f, 12.0f)
-            _state.value = _state.value.copy(
-                bandGains = updated,
-                currentPreset = _state.value.currentPreset.copy(name = "Custom Tuning")
-            )
+        _state.update { curr ->
+            if (bandIndex in curr.bandGains.indices) {
+                val updated = curr.bandGains.toMutableList()
+                updated[bandIndex] = gainDb.coerceIn(-12.0f, 12.0f)
+                curr.copy(
+                    bandGains = updated,
+                    currentPreset = curr.currentPreset.copy(name = "Custom Tuning")
+                )
+            } else {
+                curr
+            }
         }
     }
 
     fun resetEqToUnity() {
         val unity = List(10) { 0.0f }
-        _state.value = _state.value.copy(
-            bandGains = unity,
-            bassBoost = 0,
-            virtualizer = 0,
-            crystalizer = 0,
-            currentPreset = SampleMediaRepository.defaultPresets.find { it.id == "flat" }
-                ?: _state.value.currentPreset
-        )
+        _state.update { curr ->
+            curr.copy(
+                bandGains = unity,
+                bassBoost = 0,
+                virtualizer = 0,
+                crystalizer = 0,
+                currentPreset = SampleMediaRepository.defaultPresets.find { it.id == "flat" }
+                    ?: curr.currentPreset
+            )
+        }
     }
 
     fun setBassBoost(percent: Int) {
-        _state.value = _state.value.copy(bassBoost = percent.coerceIn(0, 100))
+        _state.update { it.copy(bassBoost = percent.coerceIn(0, 100)) }
     }
 
     fun setVirtualizer(percent: Int) {
-        _state.value = _state.value.copy(virtualizer = percent.coerceIn(0, 100))
+        _state.update { it.copy(virtualizer = percent.coerceIn(0, 100)) }
     }
 
     fun setCrystalizer(percent: Int) {
-        _state.value = _state.value.copy(crystalizer = percent.coerceIn(0, 100))
+        _state.update { it.copy(crystalizer = percent.coerceIn(0, 100)) }
     }
 
     fun setSleepTimer(minutes: Int?) {
         sleepTimerJob?.cancel()
-        _state.value = _state.value.copy(sleepTimerMinutesLeft = minutes)
+        _state.update { it.copy(sleepTimerMinutesLeft = minutes) }
         if (minutes != null && minutes > 0) {
             sleepTimerJob = scope.launch(Dispatchers.Default) {
                 var remaining = minutes
                 while (remaining > 0 && isActive) {
                     delay(60000L)
                     remaining -= 1
-                    _state.value = _state.value.copy(sleepTimerMinutesLeft = remaining)
+                    _state.update { it.copy(sleepTimerMinutesLeft = remaining) }
                 }
-                // Fade out volume and pause
+                // Fade out volume and pause without permanently wiping the user's saved volume setting
+                val originalVolume = _state.value.volume
                 for (v in 10 downTo 0) {
-                    setVolume(v / 10f * _state.value.volume)
+                    audioTrack?.setVolume((v / 10f * originalVolume).coerceIn(0f, 1f))
                     delay(150)
                 }
                 pause()
-                _state.value = _state.value.copy(sleepTimerMinutesLeft = null)
+                audioTrack?.setVolume(originalVolume)
+                _state.update { it.copy(sleepTimerMinutesLeft = null) }
             }
         }
     }

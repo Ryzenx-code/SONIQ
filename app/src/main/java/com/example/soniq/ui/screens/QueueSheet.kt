@@ -186,7 +186,10 @@ fun QueueSheet(
                 .weight(1f),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            itemsIndexed(state.queue) { index, item ->
+            itemsIndexed(
+                items = state.queue,
+                key = { index, item -> "${item.id}_$index" }
+            ) { index, item ->
                 val isCurrent = index == state.queueIndex
                 Row(
                     modifier = Modifier

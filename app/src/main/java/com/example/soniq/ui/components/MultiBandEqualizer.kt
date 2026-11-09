@@ -337,7 +337,7 @@ fun MultiBandEqualizer(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 contentPadding = PaddingValues(vertical = 2.dp)
             ) {
-                items(presets) { preset ->
+                items(presets, key = { it.id }) { preset ->
                     val isSelected = currentPresetName == preset.name
                     val chipBg by animateColorAsState(
                         targetValue = if (isSelected) NeonElectricBlue.copy(alpha = 0.25f) else OledPitchBlack,

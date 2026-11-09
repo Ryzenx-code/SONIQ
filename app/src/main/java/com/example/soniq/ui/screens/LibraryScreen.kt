@@ -145,13 +145,15 @@ fun LibraryScreen(
     }
 
     // Filter by search query
-    val searchedTracks = combinedTracks.filter { track ->
-        if (searchQuery.isBlank()) true
+    val searchedTracks = remember(combinedTracks, searchQuery) {
+        if (searchQuery.isBlank()) combinedTracks
         else {
-            track.title.contains(searchQuery, ignoreCase = true) ||
-                    track.artist.contains(searchQuery, ignoreCase = true) ||
-                    track.album.contains(searchQuery, ignoreCase = true) ||
-                    track.genre.contains(searchQuery, ignoreCase = true)
+            combinedTracks.filter { track ->
+                track.title.contains(searchQuery, ignoreCase = true) ||
+                        track.artist.contains(searchQuery, ignoreCase = true) ||
+                        track.album.contains(searchQuery, ignoreCase = true) ||
+                        track.genre.contains(searchQuery, ignoreCase = true)
+            }
         }
     }
 
@@ -372,22 +374,26 @@ private fun AllTracksView(
     onAddToQueue: (MediaItem) -> Unit,
     onToggleFavorite: (String) -> Unit
 ) {
-    val filteredList = tracks.filter { track ->
-        when (quickFilter) {
-            LibraryQuickFilter.ALL -> true
-            LibraryQuickFilter.HI_RES -> track.isHiRes && track.mediaType == MediaType.AUDIO
-            LibraryQuickFilter.VIDEO -> track.mediaType == MediaType.VIDEO
-            LibraryQuickFilter.FAVORITES -> state.queue.find { it.id == track.id }?.isFavorite == true || track.isFavorite
+    val filteredList = remember(tracks, quickFilter, state.queue) {
+        tracks.filter { track ->
+            when (quickFilter) {
+                LibraryQuickFilter.ALL -> true
+                LibraryQuickFilter.HI_RES -> track.isHiRes && track.mediaType == MediaType.AUDIO
+                LibraryQuickFilter.VIDEO -> track.mediaType == MediaType.VIDEO
+                LibraryQuickFilter.FAVORITES -> state.queue.find { it.id == track.id }?.isFavorite == true || track.isFavorite
+            }
         }
     }
 
-    val sortedList = when (sortCriteria) {
-        SortCriteria.DEFAULT -> filteredList
-        SortCriteria.PLAY_COUNT -> filteredList.sortedByDescending { it.playCount }
-        SortCriteria.TITLE -> filteredList.sortedBy { it.title.lowercase() }
-        SortCriteria.ARTIST -> filteredList.sortedBy { it.artist.lowercase() }
-        SortCriteria.BITRATE -> filteredList.sortedByDescending { it.bitrateKbps }
-        SortCriteria.DURATION -> filteredList.sortedByDescending { it.durationMs }
+    val sortedList = remember(filteredList, sortCriteria) {
+        when (sortCriteria) {
+            SortCriteria.DEFAULT -> filteredList
+            SortCriteria.PLAY_COUNT -> filteredList.sortedByDescending { it.playCount }
+            SortCriteria.TITLE -> filteredList.sortedBy { it.title.lowercase() }
+            SortCriteria.ARTIST -> filteredList.sortedBy { it.artist.lowercase() }
+            SortCriteria.BITRATE -> filteredList.sortedByDescending { it.bitrateKbps }
+            SortCriteria.DURATION -> filteredList.sortedByDescending { it.durationMs }
+        }
     }
 
     Column(modifier = Modifier.fillMaxSize()) {
@@ -403,7 +409,7 @@ private fun AllTracksView(
                 horizontalArrangement = Arrangement.spacedBy(6.dp),
                 modifier = Modifier.weight(1f)
             ) {
-                items(LibraryQuickFilter.values()) { filter ->
+                items(LibraryQuickFilter.values(), key = { it.name }) { filter ->
                     val isSelected = quickFilter == filter
                     Box(
                         modifier = Modifier
@@ -525,7 +531,11 @@ private fun AllTracksView(
                 .testTag("all_tracks_list"),
             contentPadding = PaddingValues(bottom = 120.dp)
         ) {
-            items(sortedList) { track ->
+            items(
+                items = sortedList,
+                key = { it.id },
+                contentType = { "track_row" }
+            ) { track ->
                 val isPlaying = state.isPlaying && state.currentTrack.id == track.id
                 val isFavorite = state.queue.find { it.id == track.id }?.isFavorite ?: track.isFavorite
 
@@ -557,7 +567,9 @@ private fun GenreCategorizedView(
     onToggleFavorite: (String) -> Unit
 ) {
     val activeGenre = selectedGenre ?: genres.firstOrNull() ?: "Electronic"
-    val genreTracks = tracks.filter { it.genre.equals(activeGenre, ignoreCase = true) }
+    val genreTracks = remember(tracks, activeGenre) {
+        tracks.filter { it.genre.equals(activeGenre, ignoreCase = true) }
+    }
 
     Column(modifier = Modifier.fillMaxSize()) {
         // Genre Chips Horizontal Carousel
@@ -565,7 +577,7 @@ private fun GenreCategorizedView(
             contentPadding = PaddingValues(horizontal = 16.dp, vertical = 6.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            items(genres) { genre ->
+            items(genres, key = { it }) { genre ->
                 val isSelected = genre.equals(activeGenre, ignoreCase = true)
                 val count = tracks.count { it.genre.equals(genre, ignoreCase = true) }
 
@@ -677,7 +689,11 @@ private fun GenreCategorizedView(
                 .testTag("genre_track_list"),
             contentPadding = PaddingValues(bottom = 120.dp)
         ) {
-            items(genreTracks) { track ->
+            items(
+                items = genreTracks,
+                key = { it.id },
+                contentType = { "track_row" }
+            ) { track ->
                 val isPlaying = state.isPlaying && state.currentTrack.id == track.id
                 val isFavorite = state.queue.find { it.id == track.id }?.isFavorite ?: track.isFavorite
 
@@ -715,7 +731,7 @@ private fun ArtistCategorizedView(
         contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
         verticalArrangement = Arrangement.spacedBy(10.dp)
     ) {
-        items(artists) { artist ->
+        items(artists, key = { it }) { artist ->
             val artistTracks = tracks.filter { it.artist.equals(artist, ignoreCase = true) }
             val isExpanded = expandedArtist == artist
             val highestCodec = artistTracks.maxByOrNull { it.bitrateKbps }?.codec?.label ?: "FLAC"
@@ -948,7 +964,7 @@ private fun PlaybackFrequencyCategorizedView(
                     accentColor = VibrantMagenta
                 )
             }
-            items(heavyRotation) { track ->
+            items(heavyRotation, key = { it.id }) { track ->
                 FrequencyTrackRow(
                     track = track,
                     state = state,
@@ -970,7 +986,7 @@ private fun PlaybackFrequencyCategorizedView(
                     accentColor = NeonElectricBlue
                 )
             }
-            items(frequentListens) { track ->
+            items(frequentListens, key = { it.id }) { track ->
                 FrequencyTrackRow(
                     track = track,
                     state = state,
@@ -992,7 +1008,7 @@ private fun PlaybackFrequencyCategorizedView(
                     accentColor = NeonCyan
                 )
             }
-            items(casualDiscoveries) { track ->
+            items(casualDiscoveries, key = { it.id }) { track ->
                 FrequencyTrackRow(
                     track = track,
                     state = state,

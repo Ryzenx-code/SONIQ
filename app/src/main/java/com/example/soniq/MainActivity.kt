@@ -18,11 +18,11 @@ import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.soniq.data.SoniqTab
 import com.example.soniq.ui.components.SoniqBottomNavBar
 import com.example.soniq.ui.components.SoniqMiniPlayer
@@ -38,7 +38,9 @@ import com.example.soniq.ui.screens.VideoPlayerScreen
 import com.example.soniq.ui.components.NotificationPermissionRequester
 import com.example.soniq.ui.theme.SoniqTheme
 
-open class MainActivity : ComponentActivity() {
+import androidx.fragment.app.FragmentActivity
+
+open class MainActivity : FragmentActivity() {
 
     private val viewModel: MainViewModel by viewModels()
 
@@ -47,8 +49,9 @@ open class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
 
         setContent {
-            val uiState by viewModel.uiState.collectAsState()
-            val engineState by viewModel.engineState.collectAsState()
+            val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+            val engineState by viewModel.engineState.collectAsStateWithLifecycle()
+            val positionMs by viewModel.positionMs.collectAsStateWithLifecycle()
 
             SoniqTheme(darkTheme = engineState.isDarkTheme) {
                 // Request Android 13+ Notification permission for background playback controls
@@ -82,6 +85,7 @@ open class MainActivity : ComponentActivity() {
                     // Full Screen Now Playing View
                     NowPlayingScreen(
                         state = engineState,
+                        positionMsProvider = { positionMs },
                         onCollapse = { viewModel.collapseNowPlaying() },
                         onTogglePlay = { viewModel.audioEngine.togglePlayPause() },
                         onSeekTo = { viewModel.audioEngine.seekTo(it) },
@@ -133,6 +137,7 @@ open class MainActivity : ComponentActivity() {
                                 SoniqTab.HOME -> {
                                     HomeScreen(
                                         state = engineState,
+                                        positionMsProvider = { positionMs },
                                         onPlayTrack = { viewModel.playTrack(it) },
                                         onNavigateLibrary = { viewModel.selectTab(SoniqTab.LIBRARY) },
                                         onNavigateStudio = { viewModel.selectTab(SoniqTab.AUDIO_STUDIO) },
@@ -170,7 +175,7 @@ open class MainActivity : ComponentActivity() {
                             SoniqMiniPlayer(
                                 currentTrack = engineState.currentTrack,
                                 isPlaying = engineState.isPlaying,
-                                currentPositionMs = engineState.currentPositionMs,
+                                positionMsProvider = { positionMs },
                                 durationMs = engineState.durationMs,
                                 onTogglePlay = { viewModel.audioEngine.togglePlayPause() },
                                 onSkipNext = { viewModel.audioEngine.playNext() },
@@ -209,6 +214,7 @@ open class MainActivity : ComponentActivity() {
                 ) {
                     LyricsSheet(
                         state = engineState,
+                        positionMsProvider = { positionMs },
                         onDismiss = { viewModel.closeLyricsSheet() },
                         onSeekTo = { viewModel.audioEngine.seekTo(it) }
                     )

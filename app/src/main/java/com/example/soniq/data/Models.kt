@@ -1,10 +1,15 @@
 package com.example.soniq.data
 
+import androidx.compose.runtime.Immutable
+import androidx.compose.runtime.Stable
+
+@Stable
 enum class MediaType {
     AUDIO,
     VIDEO
 }
 
+@Stable
 enum class AudioCodec(
     val label: String,
     val bitDepth: String,
@@ -20,11 +25,13 @@ enum class AudioCodec(
     AAC_HD("AAC 320", "16-bit", "48 kHz", false)
 }
 
+@Immutable
 data class LyricLine(
     val timeMs: Long,
     val text: String
 )
 
+@Immutable
 data class MediaItem(
     val id: String,
     val title: String,
@@ -43,9 +50,11 @@ data class MediaItem(
     val waveformData: List<Float> = emptyList(),
     val genre: String = "Electronic",
     val playCount: Int = 0,
-    val releaseYear: Int = 2026
+    val releaseYear: Int = 2026,
+    val mediaUri: String? = null
 )
 
+@Immutable
 data class EqualizerPreset(
     val id: String,
     val name: String,
@@ -56,12 +65,14 @@ data class EqualizerPreset(
     val replayGainDb: Float = -1.5f
 )
 
+@Stable
 enum class RepeatMode {
     OFF,
     ALL,
     ONE
 }
 
+@Stable
 enum class SoniqTab {
     HOME,
     LIBRARY,

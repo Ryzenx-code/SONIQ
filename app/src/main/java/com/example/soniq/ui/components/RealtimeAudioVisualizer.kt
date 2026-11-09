@@ -87,31 +87,59 @@ fun RealtimeAudioVisualizer(
 ) {
     var mode by remember { mutableStateOf(initialMode) }
 
-    // Multi-phase continuous animation loop
-    val infiniteTransition = rememberInfiniteTransition(label = "audio_visualizer_engine")
-    val phase by infiniteTransition.animateFloat(
-        initialValue = 0f,
-        targetValue = 2f * PI.toFloat(),
-        animationSpec = infiniteRepeatable(
-            animation = tween(2800, easing = LinearEasing),
-            repeatMode = RepeatMode.Restart
-        ),
-        label = "phase"
-    )
+    // Multi-phase continuous animation loop: only run transition while isPlaying is true
+    val phaseState: androidx.compose.runtime.State<Float>
+    val fastPhaseState: androidx.compose.runtime.State<Float>
 
-    val fastPhase by infiniteTransition.animateFloat(
-        initialValue = 0f,
-        targetValue = 2f * PI.toFloat(),
-        animationSpec = infiniteRepeatable(
-            animation = tween(1200, easing = LinearEasing),
-            repeatMode = RepeatMode.Restart
-        ),
-        label = "fast_phase"
-    )
+    if (isPlaying) {
+        val infiniteTransition = rememberInfiniteTransition(label = "audio_visualizer_engine")
+        phaseState = infiniteTransition.animateFloat(
+            initialValue = 0f,
+            targetValue = 2f * PI.toFloat(),
+            animationSpec = infiniteRepeatable(
+                animation = tween(2800, easing = LinearEasing),
+                repeatMode = RepeatMode.Restart
+            ),
+            label = "phase"
+        )
+        fastPhaseState = infiniteTransition.animateFloat(
+            initialValue = 0f,
+            targetValue = 2f * PI.toFloat(),
+            animationSpec = infiniteRepeatable(
+                animation = tween(1200, easing = LinearEasing),
+                repeatMode = RepeatMode.Restart
+            ),
+            label = "fast_phase"
+        )
+    } else {
+        phaseState = remember { androidx.compose.runtime.mutableFloatStateOf(0f) }
+        fastPhaseState = remember { androidx.compose.runtime.mutableFloatStateOf(0f) }
+    }
 
     // Dynamic volume multiplier: scales all visual components directly by volume (0f..1f)
-    // If paused, maintain a subtle 4% ambient idle baseline
     val activeVolumeFactor = if (isPlaying) volume.coerceIn(0f, 1f) else (volume * 0.06f).coerceIn(0f, 0.06f)
+
+    // Reusable cached paths
+    val wavePath = remember { Path() }
+    val underGlowPath = remember { Path() }
+    val wave2Path = remember { Path() }
+
+    // Cached brushes
+    val spectrumBrush = remember {
+        Brush.verticalGradient(
+            colors = listOf(
+                VibrantMagenta,
+                NeonViolet,
+                NeonElectricBlue,
+                NeonCyan
+            )
+        )
+    }
+    val waveBrush = remember {
+        Brush.horizontalGradient(
+            colors = listOf(NeonCyan, NeonElectricBlue, NeonViolet, VibrantMagenta)
+        )
+    }
 
     Box(
         modifier = modifier
@@ -186,7 +214,7 @@ fun RealtimeAudioVisualizer(
                 }
             }
 
-            // Main Canvas Rendering Area
+            // Main Canvas Rendering Area: phase is read strictly inside the Canvas lambda!
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -203,6 +231,8 @@ fun RealtimeAudioVisualizer(
                 ) {
                     val w = size.width
                     val h = size.height
+                    val currentPhase = phaseState.value
+                    val currentFastPhase = fastPhaseState.value
 
                     when (mode) {
                         VisualizerMode.SPECTRUM -> {
@@ -211,9 +241,10 @@ fun RealtimeAudioVisualizer(
                                 height = h,
                                 volumeFactor = activeVolumeFactor,
                                 isPlaying = isPlaying,
-                                phase = phase,
-                                fastPhase = fastPhase,
-                                bandGains = bandGains
+                                phase = currentPhase,
+                                fastPhase = currentFastPhase,
+                                bandGains = bandGains,
+                                barBrush = spectrumBrush
                             )
                         }
                         VisualizerMode.OSCILLOSCOPE -> {
@@ -222,9 +253,13 @@ fun RealtimeAudioVisualizer(
                                 height = h,
                                 volumeFactor = activeVolumeFactor,
                                 isPlaying = isPlaying,
-                                phase = phase,
-                                fastPhase = fastPhase,
-                                bandGains = bandGains
+                                phase = currentPhase,
+                                fastPhase = currentFastPhase,
+                                bandGains = bandGains,
+                                wavePath = wavePath,
+                                underGlowPath = underGlowPath,
+                                wave2Path = wave2Path,
+                                waveBrush = waveBrush
                             )
                         }
                         VisualizerMode.RADIAL -> {
@@ -233,8 +268,8 @@ fun RealtimeAudioVisualizer(
                                 height = h,
                                 volumeFactor = activeVolumeFactor,
                                 isPlaying = isPlaying,
-                                phase = phase,
-                                fastPhase = fastPhase,
+                                phase = currentPhase,
+                                fastPhase = currentFastPhase,
                                 bandGains = bandGains
                             )
                         }
@@ -305,7 +340,8 @@ private fun androidx.compose.ui.graphics.drawscope.DrawScope.drawSpectrumBars(
     isPlaying: Boolean,
     phase: Float,
     fastPhase: Float,
-    bandGains: List<Float>
+    bandGains: List<Float>,
+    barBrush: Brush
 ) {
     // Reference horizontal grid lines
     val gridLines = listOf(0.2f, 0.4f, 0.6f, 0.8f)
@@ -325,16 +361,8 @@ private fun androidx.compose.ui.graphics.drawscope.DrawScope.drawSpectrumBars(
     val baselineY = height * 0.90f
     val maxHeight = height * 0.82f
 
-    val barBrush = Brush.verticalGradient(
-        colors = listOf(
-            VibrantMagenta,
-            NeonViolet,
-            NeonElectricBlue,
-            NeonCyan
-        ),
-        startY = 0f,
-        endY = baselineY
-    )
+    val reflectionAlpha = (0.25f * volumeFactor).coerceIn(0f, 1f)
+    val reflectionColor = NeonCyan.copy(alpha = reflectionAlpha)
 
     for (i in 0 until barCount) {
         val t = i.toFloat() / (barCount - 1)
@@ -383,14 +411,10 @@ private fun androidx.compose.ui.graphics.drawscope.DrawScope.drawSpectrumBars(
             cornerRadius = CornerRadius(1.dp.toPx(), 1.dp.toPx())
         )
 
-        // Subtle dark OLED floor reflection
+        // Subtle dark OLED floor reflection without re-allocating a brush
         val reflectionHeight = (targetHeight * 0.22f).coerceAtMost(height - baselineY)
         drawRoundRect(
-            brush = Brush.verticalGradient(
-                colors = listOf(NeonCyan.copy(alpha = 0.25f * volumeFactor), Color.Transparent),
-                startY = baselineY,
-                endY = baselineY + reflectionHeight
-            ),
+            color = reflectionColor,
             topLeft = Offset(x, baselineY + 1.dp.toPx()),
             size = Size(barWidth, reflectionHeight),
             cornerRadius = CornerRadius(1.dp.toPx(), 1.dp.toPx())
@@ -409,7 +433,11 @@ private fun androidx.compose.ui.graphics.drawscope.DrawScope.drawOscilloscopeWav
     isPlaying: Boolean,
     phase: Float,
     fastPhase: Float,
-    bandGains: List<Float>
+    bandGains: List<Float>,
+    wavePath: Path,
+    underGlowPath: Path,
+    wave2Path: Path,
+    waveBrush: Brush
 ) {
     val centerY = height * 0.5f
     val maxAmp = (height * 0.42f) * volumeFactor
@@ -423,8 +451,9 @@ private fun androidx.compose.ui.graphics.drawscope.DrawScope.drawOscilloscopeWav
     )
 
     val steps = 80
-    val wavePath = Path()
-    val underGlowPath = Path()
+    wavePath.reset()
+    underGlowPath.reset()
+    wave2Path.reset()
 
     underGlowPath.moveTo(0f, centerY)
 
@@ -473,15 +502,12 @@ private fun androidx.compose.ui.graphics.drawscope.DrawScope.drawOscilloscopeWav
     // Primary Neon Wave
     drawPath(
         path = wavePath,
-        brush = Brush.horizontalGradient(
-            colors = listOf(NeonCyan, NeonElectricBlue, NeonViolet, VibrantMagenta)
-        ),
+        brush = waveBrush,
         style = Stroke(width = 3.dp.toPx(), cap = StrokeCap.Round)
     )
 
     // Secondary sub-harmonic wave (Stereo Right channel phase shift)
     if (isPlaying && volumeFactor > 0.05f) {
-        val wave2Path = Path()
         for (i in 0..steps) {
             val t = i.toFloat() / steps
             val x = t * width

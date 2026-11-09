@@ -108,7 +108,8 @@ fun NowPlayingScreen(
     onResetUnity: () -> Unit = {},
     onSelectPreset: (EqualizerPreset) -> Unit = {},
     onSetVolume: (Float) -> Unit = {},
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    positionMsProvider: () -> Long = { 0L }
 ) {
     var showSpeedDialog by remember { mutableStateOf(false) }
     var showSleepDialog by remember { mutableStateOf(false) }
@@ -116,10 +117,6 @@ fun NowPlayingScreen(
     var showStudioVisualizer by remember { mutableStateOf(false) }
 
     val track = state.currentTrack
-    val progress = if (state.durationMs > 0) {
-        (state.currentPositionMs.toFloat() / state.durationMs.toFloat()).coerceIn(0f, 1f)
-    } else 0f
-
     val isFavorite = state.queue.find { it.id == track.id }?.isFavorite ?: track.isFavorite
 
     PlayerGestureContainer(
@@ -277,12 +274,6 @@ fun NowPlayingScreen(
                 modifier = Modifier
                     .fillMaxWidth(0.78f)
                     .aspectRatio(1f)
-                    .shadow(
-                        elevation = 28.dp,
-                        shape = RoundedCornerShape(24.dp),
-                        ambientColor = NeonElectricBlue,
-                        spotColor = VibrantMagenta
-                    )
                     .clip(RoundedCornerShape(24.dp))
                     .background(
                         brush = Brush.radialGradient(
@@ -293,7 +284,7 @@ fun NowPlayingScreen(
                             )
                         )
                     )
-                    .border(1.dp, Color(0x33FFFFFF), RoundedCornerShape(24.dp))
+                    .border(1.5.dp, NeonElectricBlue.copy(alpha = 0.4f), RoundedCornerShape(24.dp))
                     .clickable { showStudioVisualizer = true }
                     .testTag("hero_vinyl_box"),
                 contentAlignment = Alignment.Center
@@ -457,47 +448,12 @@ fun NowPlayingScreen(
             }
         }
 
-        // 4. Interactive Scrubber & Waveform Seeker
-        Column(modifier = Modifier.fillMaxWidth()) {
-            Slider(
-                value = progress,
-                onValueChange = { newProgress ->
-                    val newPos = (newProgress * state.durationMs).toLong()
-                    onSeekTo(newPos)
-                },
-                colors = SliderDefaults.colors(
-                    thumbColor = Color.White,
-                    activeTrackColor = NeonElectricBlue,
-                    inactiveTrackColor = SurfaceSlateHigh
-                ),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .testTag("now_playing_seeker")
-            )
-
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
-                val curMins = state.currentPositionMs / 60000
-                val curSecs = (state.currentPositionMs % 60000) / 1000
-                val durMins = state.durationMs / 60000
-                val durSecs = (state.durationMs % 60000) / 1000
-
-                Text(
-                    text = String.format("%d:%02d", curMins, curSecs),
-                    color = Color.White,
-                    fontSize = 11.sp,
-                    fontWeight = FontWeight.SemiBold
-                )
-                Text(
-                    text = String.format("%d:%02d", durMins, durSecs),
-                    color = Color(0xFF94A3B8),
-                    fontSize = 11.sp,
-                    fontWeight = FontWeight.SemiBold
-                )
-            }
-        }
+        // 4. Interactive Scrubber & Waveform Seeker (Isolated recomposition)
+        NowPlayingProgressBar(
+            durationMs = state.durationMs,
+            positionMsProvider = positionMsProvider,
+            onSeekTo = onSeekTo
+        )
 
         // 5. Main Transport Controls
         Row(
@@ -539,13 +495,9 @@ fun NowPlayingScreen(
             Box(
                 modifier = Modifier
                     .size(64.dp)
-                    .shadow(
-                        elevation = 20.dp,
-                        shape = CircleShape,
-                        spotColor = NeonElectricBlue
-                    )
                     .clip(CircleShape)
                     .background(brush = SonicFlowGradient)
+                    .border(1.5.dp, NeonCyan.copy(alpha = 0.5f), CircleShape)
                     .clickable { onTogglePlay() }
                     .testTag("hero_play_btn"),
                 contentAlignment = Alignment.Center
@@ -659,6 +611,7 @@ fun NowPlayingScreen(
                 )
             }
         }
+    }
     }
 
     // Playback Speed Dialog
@@ -777,5 +730,55 @@ fun NowPlayingScreen(
         }
     }
 }
-}
 
+@Composable
+fun NowPlayingProgressBar(
+    durationMs: Long,
+    positionMsProvider: () -> Long,
+    onSeekTo: (Long) -> Unit,
+    modifier: Modifier = Modifier
+) {
+    val curPos = positionMsProvider()
+    val progress = if (durationMs > 0) (curPos.toFloat() / durationMs.toFloat()).coerceIn(0f, 1f) else 0f
+
+    val curMins = curPos / 60000
+    val curSecs = (curPos % 60000) / 1000
+    val durMins = durationMs / 60000
+    val durSecs = (durationMs % 60000) / 1000
+
+    Column(modifier = modifier.fillMaxWidth()) {
+        Slider(
+            value = progress,
+            onValueChange = { newProgress ->
+                val newPos = (newProgress * durationMs).toLong()
+                onSeekTo(newPos)
+            },
+            colors = SliderDefaults.colors(
+                thumbColor = Color.White,
+                activeTrackColor = NeonElectricBlue,
+                inactiveTrackColor = SurfaceSlateHigh
+            ),
+            modifier = Modifier
+                .fillMaxWidth()
+                .testTag("now_playing_seeker")
+        )
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Text(
+                text = String.format("%d:%02d", curMins, curSecs),
+                color = Color.White,
+                fontSize = 11.sp,
+                fontWeight = FontWeight.SemiBold
+            )
+            Text(
+                text = String.format("%d:%02d", durMins, durSecs),
+                color = Color(0xFF94A3B8),
+                fontSize = 11.sp,
+                fontWeight = FontWeight.SemiBold
+            )
+        }
+    }
+}
