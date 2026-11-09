@@ -1,0 +1,6 @@
+{
+  "name": "SONIQ",
+  "description": "High-fidelity universal media player with audio studio, equalizer, private locker, and sleek OLED design.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
